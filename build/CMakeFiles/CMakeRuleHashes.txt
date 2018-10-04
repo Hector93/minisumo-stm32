@@ -1,3 +1,3 @@
 # Hashes of file build rules.
-3c83c161d050d5405dd0ecfcf0051e69 CMakeFiles/FreeRTOS.bin
-21fff85d01bcee56b3ab511575166af9 CMakeFiles/FreeRTOS.hex
+ac637a4dd73b1cfe0c08dcc54ed7dd03 CMakeFiles/minisumo-stm32.bin
+adf3181630f81b9e59f83ce353627ffd CMakeFiles/minisumo-stm32.hex

@@ -47,7 +47,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/FreeRTOS.elf.dir/DependInfo.cmake"
-  "CMakeFiles/FreeRTOS.bin.dir/DependInfo.cmake"
-  "CMakeFiles/FreeRTOS.hex.dir/DependInfo.cmake"
+  "CMakeFiles/minisumo-stm32.bin.dir/DependInfo.cmake"
+  "CMakeFiles/minisumo-stm32.elf.dir/DependInfo.cmake"
+  "CMakeFiles/minisumo-stm32.hex.dir/DependInfo.cmake"
   )

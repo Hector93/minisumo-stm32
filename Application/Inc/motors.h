@@ -11,12 +11,14 @@
 extern "C" {
 #endif
 
-#include "FreeRTOS.h"
-#include "mensaje.h"
+  //#include "tim.h"
+  //#include "gpio.h"
+  #include "serial.h"
 
-  void motors(void const* argument); //funcion que controla el proceso, esta definida en freertos.c
-  mensaje getConfig();
+  void motorR(void const* argument); //funcion que controla el proceso, esta definida en freertos.c
+  void motorL(void const* argument); //funcion que controla el proceso, esta definida en freertos.c
 
 #endif
+  
   
   

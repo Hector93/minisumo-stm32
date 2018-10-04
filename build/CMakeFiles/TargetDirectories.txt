@@ -1,5 +1,5 @@
-/home/hector/Documentos/Robotica/firmware/FreeRTOS/build/CMakeFiles/rebuild_cache.dir
-/home/hector/Documentos/Robotica/firmware/FreeRTOS/build/CMakeFiles/FreeRTOS.elf.dir
-/home/hector/Documentos/Robotica/firmware/FreeRTOS/build/CMakeFiles/edit_cache.dir
-/home/hector/Documentos/Robotica/firmware/FreeRTOS/build/CMakeFiles/FreeRTOS.bin.dir
-/home/hector/Documentos/Robotica/firmware/FreeRTOS/build/CMakeFiles/FreeRTOS.hex.dir
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/rebuild_cache.dir
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/edit_cache.dir
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.bin.dir
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.hex.dir

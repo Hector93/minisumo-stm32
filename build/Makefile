@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hector/Documentos/Robotica/firmware/FreeRTOS
+CMAKE_SOURCE_DIR = /home/hector/Documentos/Robotica/firmware/minisumo-stm32
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hector/Documentos/Robotica/firmware/FreeRTOS/build
+CMAKE_BINARY_DIR = /home/hector/Documentos/Robotica/firmware/minisumo-stm32/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hector/Documentos/Robotica/firmware/FreeRTOS/build/CMakeFiles /home/hector/Documentos/Robotica/firmware/FreeRTOS/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles /home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hector/Documentos/Robotica/firmware/FreeRTOS/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,43 +111,70 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named FreeRTOS.elf
+# Target rules for targets named minisumo-stm32.bin
 
 # Build rule for target.
-FreeRTOS.elf: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 FreeRTOS.elf
-.PHONY : FreeRTOS.elf
+minisumo-stm32.bin: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 minisumo-stm32.bin
+.PHONY : minisumo-stm32.bin
 
 # fast build rule for target.
-FreeRTOS.elf/fast:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/build
-.PHONY : FreeRTOS.elf/fast
+minisumo-stm32.bin/fast:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.bin.dir/build.make CMakeFiles/minisumo-stm32.bin.dir/build
+.PHONY : minisumo-stm32.bin/fast
 
 #=============================================================================
-# Target rules for targets named FreeRTOS.bin
+# Target rules for targets named minisumo-stm32.elf
 
 # Build rule for target.
-FreeRTOS.bin: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 FreeRTOS.bin
-.PHONY : FreeRTOS.bin
+minisumo-stm32.elf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 minisumo-stm32.elf
+.PHONY : minisumo-stm32.elf
 
 # fast build rule for target.
-FreeRTOS.bin/fast:
-	$(MAKE) -f CMakeFiles/FreeRTOS.bin.dir/build.make CMakeFiles/FreeRTOS.bin.dir/build
-.PHONY : FreeRTOS.bin/fast
+minisumo-stm32.elf/fast:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/build
+.PHONY : minisumo-stm32.elf/fast
 
 #=============================================================================
-# Target rules for targets named FreeRTOS.hex
+# Target rules for targets named minisumo-stm32.hex
 
 # Build rule for target.
-FreeRTOS.hex: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 FreeRTOS.hex
-.PHONY : FreeRTOS.hex
+minisumo-stm32.hex: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 minisumo-stm32.hex
+.PHONY : minisumo-stm32.hex
 
 # fast build rule for target.
-FreeRTOS.hex/fast:
-	$(MAKE) -f CMakeFiles/FreeRTOS.hex.dir/build.make CMakeFiles/FreeRTOS.hex.dir/build
-.PHONY : FreeRTOS.hex/fast
+minisumo-stm32.hex/fast:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.hex.dir/build.make CMakeFiles/minisumo-stm32.hex.dir/build
+.PHONY : minisumo-stm32.hex/fast
+
+Application/Src/message.o: Application/Src/message.c.o
+
+.PHONY : Application/Src/message.o
+
+# target to build an object file
+Application/Src/message.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.o
+.PHONY : Application/Src/message.c.o
+
+Application/Src/message.i: Application/Src/message.c.i
+
+.PHONY : Application/Src/message.i
+
+# target to preprocess a source file
+Application/Src/message.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.i
+.PHONY : Application/Src/message.c.i
+
+Application/Src/message.s: Application/Src/message.c.s
+
+.PHONY : Application/Src/message.s
+
+# target to generate assembly for a file
+Application/Src/message.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.s
+.PHONY : Application/Src/message.c.s
 
 Application/Src/motors.o: Application/Src/motors.c.o
 
@@ -155,7 +182,7 @@ Application/Src/motors.o: Application/Src/motors.c.o
 
 # target to build an object file
 Application/Src/motors.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Application/Src/motors.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o
 .PHONY : Application/Src/motors.c.o
 
 Application/Src/motors.i: Application/Src/motors.c.i
@@ -164,7 +191,7 @@ Application/Src/motors.i: Application/Src/motors.c.i
 
 # target to preprocess a source file
 Application/Src/motors.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Application/Src/motors.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.i
 .PHONY : Application/Src/motors.c.i
 
 Application/Src/motors.s: Application/Src/motors.c.s
@@ -173,8 +200,35 @@ Application/Src/motors.s: Application/Src/motors.c.s
 
 # target to generate assembly for a file
 Application/Src/motors.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Application/Src/motors.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.s
 .PHONY : Application/Src/motors.c.s
+
+Application/Src/serial.o: Application/Src/serial.c.o
+
+.PHONY : Application/Src/serial.o
+
+# target to build an object file
+Application/Src/serial.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o
+.PHONY : Application/Src/serial.c.o
+
+Application/Src/serial.i: Application/Src/serial.c.i
+
+.PHONY : Application/Src/serial.i
+
+# target to preprocess a source file
+Application/Src/serial.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.i
+.PHONY : Application/Src/serial.c.i
+
+Application/Src/serial.s: Application/Src/serial.c.s
+
+.PHONY : Application/Src/serial.s
+
+# target to generate assembly for a file
+Application/Src/serial.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.s
+.PHONY : Application/Src/serial.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.o
 
@@ -182,7 +236,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o: Drivers/STM32F1xx_HAL_Driver/S
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.i
@@ -191,7 +245,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.i: Drivers/STM32F1xx_HAL_Driver/S
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.s
@@ -200,7 +254,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.s: Drivers/STM32F1xx_HAL_Driver/S
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.o
@@ -209,7 +263,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.o: Drivers/STM32F1xx_HAL_Driv
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.i
@@ -218,7 +272,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.i: Drivers/STM32F1xx_HAL_Driv
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.s
@@ -227,7 +281,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.s: Drivers/STM32F1xx_HAL_Driv
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.o
@@ -236,7 +290,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.o: Drivers/STM32F1xx_HAL_D
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.i
@@ -245,7 +299,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.i: Drivers/STM32F1xx_HAL_D
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.s
@@ -254,7 +308,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.s: Drivers/STM32F1xx_HAL_D
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.o
@@ -263,7 +317,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o: Drivers/STM32F1xx_HAL_D
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.i
@@ -272,7 +326,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.i: Drivers/STM32F1xx_HAL_D
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.s
@@ -281,7 +335,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.s: Drivers/STM32F1xx_HAL_D
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.o
@@ -290,7 +344,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o: Drivers/STM32F1xx_HAL_Driv
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.i
@@ -299,7 +353,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.i: Drivers/STM32F1xx_HAL_Driv
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.s
@@ -308,7 +362,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.s: Drivers/STM32F1xx_HAL_Driv
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.o
@@ -317,7 +371,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o: Drivers/STM32F1xx_HAL_Dr
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.i
@@ -326,7 +380,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.i: Drivers/STM32F1xx_HAL_Dr
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.s
@@ -335,7 +389,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.s: Drivers/STM32F1xx_HAL_Dr
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.o
@@ -344,7 +398,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o: Drivers/STM32F1xx_HAL
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.i
@@ -353,7 +407,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.i: Drivers/STM32F1xx_HAL
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.s
@@ -362,7 +416,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.s: Drivers/STM32F1xx_HAL
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.o
@@ -371,7 +425,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o: Drivers/STM32F1xx_HAL_Dri
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.i
@@ -380,7 +434,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.i: Drivers/STM32F1xx_HAL_Dri
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.s
@@ -389,7 +443,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.s: Drivers/STM32F1xx_HAL_Dri
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.o
@@ -398,7 +452,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o: Drivers/STM32F1xx_HAL_
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.i
@@ -407,7 +461,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.i: Drivers/STM32F1xx_HAL_
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.s
@@ -416,7 +470,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.s: Drivers/STM32F1xx_HAL_
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.o
@@ -425,7 +479,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o: Drivers/STM32F1xx_HAL_Driv
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.i
@@ -434,7 +488,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.i: Drivers/STM32F1xx_HAL_Driv
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.s
@@ -443,7 +497,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.s: Drivers/STM32F1xx_HAL_Driv
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.o
@@ -452,7 +506,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o: Drivers/STM32F1xx_HAL_Driv
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.i
@@ -461,7 +515,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.i: Drivers/STM32F1xx_HAL_Driv
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.s
@@ -470,7 +524,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.s: Drivers/STM32F1xx_HAL_Driv
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.o
@@ -479,7 +533,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o: Drivers/STM32F1xx_HAL_Driv
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.i
@@ -488,7 +542,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.i: Drivers/STM32F1xx_HAL_Driv
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.s
@@ -497,7 +551,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.s: Drivers/STM32F1xx_HAL_Driv
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.o
@@ -506,7 +560,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o: Drivers/STM32F1xx_HAL_D
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.i
@@ -515,7 +569,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.i: Drivers/STM32F1xx_HAL_D
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.s
@@ -524,7 +578,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.s: Drivers/STM32F1xx_HAL_D
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.o
@@ -533,7 +587,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o: Drivers/STM32F1xx_HAL_Driv
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.i
@@ -542,7 +596,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.i: Drivers/STM32F1xx_HAL_Driv
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.s
@@ -551,7 +605,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.s: Drivers/STM32F1xx_HAL_Driv
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.o
@@ -560,7 +614,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o: Drivers/STM32F1xx_HAL_D
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.i
@@ -569,7 +623,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.i: Drivers/STM32F1xx_HAL_D
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.s
@@ -578,7 +632,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.s: Drivers/STM32F1xx_HAL_D
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.o
@@ -587,7 +641,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o: Drivers/STM32F1xx_HAL_Dri
 
 # target to build an object file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.o
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.o
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i
@@ -596,7 +650,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.i: Drivers/STM32F1xx_HAL_Dri
 
 # target to preprocess a source file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s
@@ -605,7 +659,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.s: Drivers/STM32F1xx_HAL_Dri
 
 # target to generate assembly for a file
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s
 
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o: Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.o
@@ -614,7 +668,7 @@ Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o: Middlewares/Third
 
 # target to build an object file
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.o
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.o
 
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.i: Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.i
@@ -623,7 +677,7 @@ Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.i: Middlewares/Third
 
 # target to preprocess a source file
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.i
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.i
 
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.s: Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.s
@@ -632,7 +686,7 @@ Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.s: Middlewares/Third
 
 # target to generate assembly for a file
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.s
 
 Middlewares/Third_Party/FreeRTOS/Source/croutine.o: Middlewares/Third_Party/FreeRTOS/Source/croutine.c.o
@@ -641,7 +695,7 @@ Middlewares/Third_Party/FreeRTOS/Source/croutine.o: Middlewares/Third_Party/Free
 
 # target to build an object file
 Middlewares/Third_Party/FreeRTOS/Source/croutine.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.o
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/croutine.c.o
 
 Middlewares/Third_Party/FreeRTOS/Source/croutine.i: Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i
@@ -650,7 +704,7 @@ Middlewares/Third_Party/FreeRTOS/Source/croutine.i: Middlewares/Third_Party/Free
 
 # target to preprocess a source file
 Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i
 
 Middlewares/Third_Party/FreeRTOS/Source/croutine.s: Middlewares/Third_Party/FreeRTOS/Source/croutine.c.s
@@ -659,7 +713,7 @@ Middlewares/Third_Party/FreeRTOS/Source/croutine.s: Middlewares/Third_Party/Free
 
 # target to generate assembly for a file
 Middlewares/Third_Party/FreeRTOS/Source/croutine.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/croutine.c.s
 
 Middlewares/Third_Party/FreeRTOS/Source/event_groups.o: Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.o
@@ -668,7 +722,7 @@ Middlewares/Third_Party/FreeRTOS/Source/event_groups.o: Middlewares/Third_Party/
 
 # target to build an object file
 Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.o
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.o
 
 Middlewares/Third_Party/FreeRTOS/Source/event_groups.i: Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i
@@ -677,7 +731,7 @@ Middlewares/Third_Party/FreeRTOS/Source/event_groups.i: Middlewares/Third_Party/
 
 # target to preprocess a source file
 Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i
 
 Middlewares/Third_Party/FreeRTOS/Source/event_groups.s: Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.s
@@ -686,7 +740,7 @@ Middlewares/Third_Party/FreeRTOS/Source/event_groups.s: Middlewares/Third_Party/
 
 # target to generate assembly for a file
 Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.s
 
 Middlewares/Third_Party/FreeRTOS/Source/list.o: Middlewares/Third_Party/FreeRTOS/Source/list.c.o
@@ -695,7 +749,7 @@ Middlewares/Third_Party/FreeRTOS/Source/list.o: Middlewares/Third_Party/FreeRTOS
 
 # target to build an object file
 Middlewares/Third_Party/FreeRTOS/Source/list.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.o
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/list.c.o
 
 Middlewares/Third_Party/FreeRTOS/Source/list.i: Middlewares/Third_Party/FreeRTOS/Source/list.c.i
@@ -704,7 +758,7 @@ Middlewares/Third_Party/FreeRTOS/Source/list.i: Middlewares/Third_Party/FreeRTOS
 
 # target to preprocess a source file
 Middlewares/Third_Party/FreeRTOS/Source/list.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.i
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/list.c.i
 
 Middlewares/Third_Party/FreeRTOS/Source/list.s: Middlewares/Third_Party/FreeRTOS/Source/list.c.s
@@ -713,7 +767,7 @@ Middlewares/Third_Party/FreeRTOS/Source/list.s: Middlewares/Third_Party/FreeRTOS
 
 # target to generate assembly for a file
 Middlewares/Third_Party/FreeRTOS/Source/list.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/list.c.s
 
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o: Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.o
@@ -722,7 +776,7 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o: Middlewares
 
 # target to build an object file
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.o
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.o
 
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.i: Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i
@@ -731,7 +785,7 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.i: Middlewares
 
 # target to preprocess a source file
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i
 
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.s: Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.s
@@ -740,7 +794,7 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.s: Middlewares
 
 # target to generate assembly for a file
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.s
 
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o: Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.o
@@ -749,7 +803,7 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o: Middlewares/T
 
 # target to build an object file
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.o
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.o
 
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.i: Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i
@@ -758,7 +812,7 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.i: Middlewares/T
 
 # target to preprocess a source file
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i
 
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.s: Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.s
@@ -767,7 +821,7 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.s: Middlewares/T
 
 # target to generate assembly for a file
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.s
 
 Middlewares/Third_Party/FreeRTOS/Source/queue.o: Middlewares/Third_Party/FreeRTOS/Source/queue.c.o
@@ -776,7 +830,7 @@ Middlewares/Third_Party/FreeRTOS/Source/queue.o: Middlewares/Third_Party/FreeRTO
 
 # target to build an object file
 Middlewares/Third_Party/FreeRTOS/Source/queue.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.o
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/queue.c.o
 
 Middlewares/Third_Party/FreeRTOS/Source/queue.i: Middlewares/Third_Party/FreeRTOS/Source/queue.c.i
@@ -785,7 +839,7 @@ Middlewares/Third_Party/FreeRTOS/Source/queue.i: Middlewares/Third_Party/FreeRTO
 
 # target to preprocess a source file
 Middlewares/Third_Party/FreeRTOS/Source/queue.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.i
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/queue.c.i
 
 Middlewares/Third_Party/FreeRTOS/Source/queue.s: Middlewares/Third_Party/FreeRTOS/Source/queue.c.s
@@ -794,7 +848,7 @@ Middlewares/Third_Party/FreeRTOS/Source/queue.s: Middlewares/Third_Party/FreeRTO
 
 # target to generate assembly for a file
 Middlewares/Third_Party/FreeRTOS/Source/queue.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/queue.c.s
 
 Middlewares/Third_Party/FreeRTOS/Source/tasks.o: Middlewares/Third_Party/FreeRTOS/Source/tasks.c.o
@@ -803,7 +857,7 @@ Middlewares/Third_Party/FreeRTOS/Source/tasks.o: Middlewares/Third_Party/FreeRTO
 
 # target to build an object file
 Middlewares/Third_Party/FreeRTOS/Source/tasks.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.o
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/tasks.c.o
 
 Middlewares/Third_Party/FreeRTOS/Source/tasks.i: Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i
@@ -812,7 +866,7 @@ Middlewares/Third_Party/FreeRTOS/Source/tasks.i: Middlewares/Third_Party/FreeRTO
 
 # target to preprocess a source file
 Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i
 
 Middlewares/Third_Party/FreeRTOS/Source/tasks.s: Middlewares/Third_Party/FreeRTOS/Source/tasks.c.s
@@ -821,7 +875,7 @@ Middlewares/Third_Party/FreeRTOS/Source/tasks.s: Middlewares/Third_Party/FreeRTO
 
 # target to generate assembly for a file
 Middlewares/Third_Party/FreeRTOS/Source/tasks.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/tasks.c.s
 
 Middlewares/Third_Party/FreeRTOS/Source/timers.o: Middlewares/Third_Party/FreeRTOS/Source/timers.c.o
@@ -830,7 +884,7 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.o: Middlewares/Third_Party/FreeRT
 
 # target to build an object file
 Middlewares/Third_Party/FreeRTOS/Source/timers.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.o
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/timers.c.o
 
 Middlewares/Third_Party/FreeRTOS/Source/timers.i: Middlewares/Third_Party/FreeRTOS/Source/timers.c.i
@@ -839,7 +893,7 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.i: Middlewares/Third_Party/FreeRT
 
 # target to preprocess a source file
 Middlewares/Third_Party/FreeRTOS/Source/timers.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.i
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/timers.c.i
 
 Middlewares/Third_Party/FreeRTOS/Source/timers.s: Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
@@ -848,7 +902,7 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.s: Middlewares/Third_Party/FreeRT
 
 # target to generate assembly for a file
 Middlewares/Third_Party/FreeRTOS/Source/timers.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
 
 Src/adc.o: Src/adc.c.o
@@ -857,7 +911,7 @@ Src/adc.o: Src/adc.c.o
 
 # target to build an object file
 Src/adc.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/adc.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.o
 .PHONY : Src/adc.c.o
 
 Src/adc.i: Src/adc.c.i
@@ -866,7 +920,7 @@ Src/adc.i: Src/adc.c.i
 
 # target to preprocess a source file
 Src/adc.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/adc.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.i
 .PHONY : Src/adc.c.i
 
 Src/adc.s: Src/adc.c.s
@@ -875,7 +929,7 @@ Src/adc.s: Src/adc.c.s
 
 # target to generate assembly for a file
 Src/adc.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/adc.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.s
 .PHONY : Src/adc.c.s
 
 Src/dma.o: Src/dma.c.o
@@ -884,7 +938,7 @@ Src/dma.o: Src/dma.c.o
 
 # target to build an object file
 Src/dma.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/dma.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.o
 .PHONY : Src/dma.c.o
 
 Src/dma.i: Src/dma.c.i
@@ -893,7 +947,7 @@ Src/dma.i: Src/dma.c.i
 
 # target to preprocess a source file
 Src/dma.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/dma.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.i
 .PHONY : Src/dma.c.i
 
 Src/dma.s: Src/dma.c.s
@@ -902,7 +956,7 @@ Src/dma.s: Src/dma.c.s
 
 # target to generate assembly for a file
 Src/dma.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/dma.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.s
 .PHONY : Src/dma.c.s
 
 Src/freertos.o: Src/freertos.c.o
@@ -911,7 +965,7 @@ Src/freertos.o: Src/freertos.c.o
 
 # target to build an object file
 Src/freertos.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/freertos.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o
 .PHONY : Src/freertos.c.o
 
 Src/freertos.i: Src/freertos.c.i
@@ -920,7 +974,7 @@ Src/freertos.i: Src/freertos.c.i
 
 # target to preprocess a source file
 Src/freertos.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/freertos.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.i
 .PHONY : Src/freertos.c.i
 
 Src/freertos.s: Src/freertos.c.s
@@ -929,7 +983,7 @@ Src/freertos.s: Src/freertos.c.s
 
 # target to generate assembly for a file
 Src/freertos.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/freertos.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.s
 .PHONY : Src/freertos.c.s
 
 Src/gpio.o: Src/gpio.c.o
@@ -938,7 +992,7 @@ Src/gpio.o: Src/gpio.c.o
 
 # target to build an object file
 Src/gpio.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/gpio.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/gpio.c.o
 .PHONY : Src/gpio.c.o
 
 Src/gpio.i: Src/gpio.c.i
@@ -947,7 +1001,7 @@ Src/gpio.i: Src/gpio.c.i
 
 # target to preprocess a source file
 Src/gpio.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/gpio.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/gpio.c.i
 .PHONY : Src/gpio.c.i
 
 Src/gpio.s: Src/gpio.c.s
@@ -956,7 +1010,7 @@ Src/gpio.s: Src/gpio.c.s
 
 # target to generate assembly for a file
 Src/gpio.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/gpio.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/gpio.c.s
 .PHONY : Src/gpio.c.s
 
 Src/i2c.o: Src/i2c.c.o
@@ -965,7 +1019,7 @@ Src/i2c.o: Src/i2c.c.o
 
 # target to build an object file
 Src/i2c.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/i2c.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.o
 .PHONY : Src/i2c.c.o
 
 Src/i2c.i: Src/i2c.c.i
@@ -974,7 +1028,7 @@ Src/i2c.i: Src/i2c.c.i
 
 # target to preprocess a source file
 Src/i2c.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/i2c.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.i
 .PHONY : Src/i2c.c.i
 
 Src/i2c.s: Src/i2c.c.s
@@ -983,7 +1037,7 @@ Src/i2c.s: Src/i2c.c.s
 
 # target to generate assembly for a file
 Src/i2c.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/i2c.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.s
 .PHONY : Src/i2c.c.s
 
 Src/main.o: Src/main.c.o
@@ -992,7 +1046,7 @@ Src/main.o: Src/main.c.o
 
 # target to build an object file
 Src/main.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/main.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.o
 .PHONY : Src/main.c.o
 
 Src/main.i: Src/main.c.i
@@ -1001,7 +1055,7 @@ Src/main.i: Src/main.c.i
 
 # target to preprocess a source file
 Src/main.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/main.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.i
 .PHONY : Src/main.c.i
 
 Src/main.s: Src/main.c.s
@@ -1010,7 +1064,7 @@ Src/main.s: Src/main.c.s
 
 # target to generate assembly for a file
 Src/main.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/main.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.s
 .PHONY : Src/main.c.s
 
 Src/stm32f1xx_hal_msp.o: Src/stm32f1xx_hal_msp.c.o
@@ -1019,7 +1073,7 @@ Src/stm32f1xx_hal_msp.o: Src/stm32f1xx_hal_msp.c.o
 
 # target to build an object file
 Src/stm32f1xx_hal_msp.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/stm32f1xx_hal_msp.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o
 .PHONY : Src/stm32f1xx_hal_msp.c.o
 
 Src/stm32f1xx_hal_msp.i: Src/stm32f1xx_hal_msp.c.i
@@ -1028,7 +1082,7 @@ Src/stm32f1xx_hal_msp.i: Src/stm32f1xx_hal_msp.c.i
 
 # target to preprocess a source file
 Src/stm32f1xx_hal_msp.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/stm32f1xx_hal_msp.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.i
 .PHONY : Src/stm32f1xx_hal_msp.c.i
 
 Src/stm32f1xx_hal_msp.s: Src/stm32f1xx_hal_msp.c.s
@@ -1037,7 +1091,7 @@ Src/stm32f1xx_hal_msp.s: Src/stm32f1xx_hal_msp.c.s
 
 # target to generate assembly for a file
 Src/stm32f1xx_hal_msp.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/stm32f1xx_hal_msp.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.s
 .PHONY : Src/stm32f1xx_hal_msp.c.s
 
 Src/stm32f1xx_it.o: Src/stm32f1xx_it.c.o
@@ -1046,7 +1100,7 @@ Src/stm32f1xx_it.o: Src/stm32f1xx_it.c.o
 
 # target to build an object file
 Src/stm32f1xx_it.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/stm32f1xx_it.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o
 .PHONY : Src/stm32f1xx_it.c.o
 
 Src/stm32f1xx_it.i: Src/stm32f1xx_it.c.i
@@ -1055,7 +1109,7 @@ Src/stm32f1xx_it.i: Src/stm32f1xx_it.c.i
 
 # target to preprocess a source file
 Src/stm32f1xx_it.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/stm32f1xx_it.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.i
 .PHONY : Src/stm32f1xx_it.c.i
 
 Src/stm32f1xx_it.s: Src/stm32f1xx_it.c.s
@@ -1064,7 +1118,7 @@ Src/stm32f1xx_it.s: Src/stm32f1xx_it.c.s
 
 # target to generate assembly for a file
 Src/stm32f1xx_it.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/stm32f1xx_it.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.s
 .PHONY : Src/stm32f1xx_it.c.s
 
 Src/system_stm32f1xx.o: Src/system_stm32f1xx.c.o
@@ -1073,7 +1127,7 @@ Src/system_stm32f1xx.o: Src/system_stm32f1xx.c.o
 
 # target to build an object file
 Src/system_stm32f1xx.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/system_stm32f1xx.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o
 .PHONY : Src/system_stm32f1xx.c.o
 
 Src/system_stm32f1xx.i: Src/system_stm32f1xx.c.i
@@ -1082,7 +1136,7 @@ Src/system_stm32f1xx.i: Src/system_stm32f1xx.c.i
 
 # target to preprocess a source file
 Src/system_stm32f1xx.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/system_stm32f1xx.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.i
 .PHONY : Src/system_stm32f1xx.c.i
 
 Src/system_stm32f1xx.s: Src/system_stm32f1xx.c.s
@@ -1091,7 +1145,7 @@ Src/system_stm32f1xx.s: Src/system_stm32f1xx.c.s
 
 # target to generate assembly for a file
 Src/system_stm32f1xx.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/system_stm32f1xx.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.s
 .PHONY : Src/system_stm32f1xx.c.s
 
 Src/tim.o: Src/tim.c.o
@@ -1100,7 +1154,7 @@ Src/tim.o: Src/tim.c.o
 
 # target to build an object file
 Src/tim.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/tim.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o
 .PHONY : Src/tim.c.o
 
 Src/tim.i: Src/tim.c.i
@@ -1109,7 +1163,7 @@ Src/tim.i: Src/tim.c.i
 
 # target to preprocess a source file
 Src/tim.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/tim.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.i
 .PHONY : Src/tim.c.i
 
 Src/tim.s: Src/tim.c.s
@@ -1118,7 +1172,7 @@ Src/tim.s: Src/tim.c.s
 
 # target to generate assembly for a file
 Src/tim.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/tim.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.s
 .PHONY : Src/tim.c.s
 
 Src/usart.o: Src/usart.c.o
@@ -1127,7 +1181,7 @@ Src/usart.o: Src/usart.c.o
 
 # target to build an object file
 Src/usart.c.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/usart.c.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o
 .PHONY : Src/usart.c.o
 
 Src/usart.i: Src/usart.c.i
@@ -1136,7 +1190,7 @@ Src/usart.i: Src/usart.c.i
 
 # target to preprocess a source file
 Src/usart.c.i:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/usart.c.i
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.i
 .PHONY : Src/usart.c.i
 
 Src/usart.s: Src/usart.c.s
@@ -1145,7 +1199,7 @@ Src/usart.s: Src/usart.c.s
 
 # target to generate assembly for a file
 Src/usart.c.s:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/Src/usart.c.s
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.s
 .PHONY : Src/usart.c.s
 
 startup/startup_stm32f103xb.o: startup/startup_stm32f103xb.s.o
@@ -1154,7 +1208,7 @@ startup/startup_stm32f103xb.o: startup/startup_stm32f103xb.s.o
 
 # target to build an object file
 startup/startup_stm32f103xb.s.o:
-	$(MAKE) -f CMakeFiles/FreeRTOS.elf.dir/build.make CMakeFiles/FreeRTOS.elf.dir/startup/startup_stm32f103xb.s.o
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o
 .PHONY : startup/startup_stm32f103xb.s.o
 
 # Help Target
@@ -1164,13 +1218,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... FreeRTOS.elf"
 	@echo "... edit_cache"
-	@echo "... FreeRTOS.bin"
-	@echo "... FreeRTOS.hex"
+	@echo "... minisumo-stm32.bin"
+	@echo "... minisumo-stm32.elf"
+	@echo "... minisumo-stm32.hex"
+	@echo "... Application/Src/message.o"
+	@echo "... Application/Src/message.i"
+	@echo "... Application/Src/message.s"
 	@echo "... Application/Src/motors.o"
 	@echo "... Application/Src/motors.i"
 	@echo "... Application/Src/motors.s"
+	@echo "... Application/Src/serial.o"
+	@echo "... Application/Src/serial.i"
+	@echo "... Application/Src/serial.s"
 	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
 	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.i"
 	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.s"

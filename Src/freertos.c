@@ -56,9 +56,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
-#include "tim.h"
-#include "gpio.h"
-#include "mensaje.h"
+#include "message.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -81,16 +79,40 @@
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
-osThreadId motoresHandle;
-osMessageQId serialHandle;
+uint32_t defaultTaskBuffer[ 64 ];
+osStaticThreadDef_t defaultTaskControlBlock;
+osThreadId motorDHandle;
+uint32_t motorDBuffer[ 64 ];
+osStaticThreadDef_t motorDControlBlock;
+osThreadId motorIHandle;
+uint32_t motorIBuffer[ 64 ];
+osStaticThreadDef_t motorIControlBlock;
+osThreadId usartHandle;
+uint32_t usartBuffer[ 64 ];
+osStaticThreadDef_t usartControlBlock;
+osMessageQId serialQueueHandle;
+uint8_t serialQueueBuffer[ 10 * sizeof( message ) ];
+osStaticMessageQDef_t serialQueueControlBlock;
+osMessageQId motorRQueueHandle;
+uint8_t motorRQueueBuffer[ 5 * sizeof( message ) ];
+osStaticMessageQDef_t motorRQueueControlBlock;
+osMessageQId motorLQueueHandle;
+uint8_t motorLQueueBuffer[ 5 * sizeof( message ) ];
+osStaticMessageQDef_t motorLQueueControlBlock;
+osSemaphoreId serialSemTxHandle;
+osStaticSemaphoreDef_t serialSemTxControlBlock;
+osSemaphoreId serialSemRxHandle;
+osStaticSemaphoreDef_t serialSemRxControlBlock;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-
+//extern osMessageQId* serialQHandle;
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void const * argument);
-extern void motors(void const * argument);
+extern void motorR(void const * argument);
+extern void motorL(void const * argument);
+extern void serial(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -124,6 +146,15 @@ void MX_FREERTOS_Init(void) {
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
 
+  /* Create the semaphores(s) */
+  /* definition and creation of serialSemTx */
+  osSemaphoreStaticDef(serialSemTx, &serialSemTxControlBlock);
+  serialSemTxHandle = osSemaphoreCreate(osSemaphore(serialSemTx), 1);
+
+  /* definition and creation of serialSemRx */
+  osSemaphoreStaticDef(serialSemRx, &serialSemRxControlBlock);
+  serialSemRxHandle = osSemaphoreCreate(osSemaphore(serialSemRx), 1);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -134,25 +165,41 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  osThreadStaticDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 64, defaultTaskBuffer, &defaultTaskControlBlock);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
-  /* definition and creation of motores */
-  osThreadDef(motores, motors, osPriorityNormal, 0, 128);
-  motoresHandle = osThreadCreate(osThread(motores), NULL);
+  /* definition and creation of motorD */
+  osThreadStaticDef(motorD, motorR, osPriorityNormal, 0, 64, motorDBuffer, &motorDControlBlock);
+  motorDHandle = osThreadCreate(osThread(motorD), NULL);
+
+  /* definition and creation of motorI */
+  osThreadStaticDef(motorI, motorL, osPriorityNormal, 0, 64, motorIBuffer, &motorIControlBlock);
+  motorIHandle = osThreadCreate(osThread(motorI), NULL);
+
+  /* definition and creation of usart */
+  osThreadStaticDef(usart, serial, osPriorityNormal, 0, 64, usartBuffer, &usartControlBlock);
+  usartHandle = osThreadCreate(osThread(usart), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 
   /* Create the queue(s) */
-  /* definition and creation of serial */
-/* what about the sizeof here??? cd native code */
-  osMessageQDef(serial, 10, mensaje);
-  serialHandle = osMessageCreate(osMessageQ(serial), NULL);
+  /* definition and creation of serialQueue */
+  osMessageQStaticDef(serialQueue, 10, message, serialQueueBuffer, &serialQueueControlBlock);
+  serialQueueHandle = osMessageCreate(osMessageQ(serialQueue), NULL);
+
+  /* definition and creation of motorRQueue */
+  osMessageQStaticDef(motorRQueue, 5, message, motorRQueueBuffer, &motorRQueueControlBlock);
+  motorRQueueHandle = osMessageCreate(osMessageQ(motorRQueue), NULL);
+
+  /* definition and creation of motorLQueue */
+  osMessageQStaticDef(motorLQueue, 5, message, motorLQueueBuffer, &motorLQueueControlBlock);
+  motorLQueueHandle = osMessageCreate(osMessageQ(motorLQueue), NULL);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+  // serialQHandle = &serialQueueHandle;
   /* USER CODE END RTOS_QUEUES */
 }
 
