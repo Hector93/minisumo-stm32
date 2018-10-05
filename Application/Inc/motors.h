@@ -15,6 +15,13 @@ extern "C" {
   //#include "gpio.h"
   #include "serial.h"
 
+#define motorRID 2
+#define motorLID 3
+  
+  
+  extern osMessageQId motorLQueueHandle;
+  extern osMessageQId motorRQueueHandle;
+  
   void motorR(void const* argument); //funcion que controla el proceso, esta definida en freertos.c
   void motorL(void const* argument); //funcion que controla el proceso, esta definida en freertos.c
 

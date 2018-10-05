@@ -10,6 +10,10 @@
 stdint.h
 -
 
+../Application/Inc/motors.h
+serial.h
+../Application/Inc/serial.h
+
 ../Application/Inc/serial.h
 FreeRTOS.h
 ../Application/Inc/FreeRTOS.h
@@ -194,6 +198,12 @@ stm32f1xx_hal_def.h
 stdint.h
 -
 
+../Inc/gpio.h
+stm32f1xx_hal.h
+../Inc/stm32f1xx_hal.h
+main.h
+../Inc/main.h
+
 ../Inc/main.h
 
 ../Inc/stm32f1xx_hal_conf.h
@@ -263,6 +273,12 @@ stm32f1xx_hal_pcd.h
 ../Inc/stm32f1xx_hal_pcd.h
 stm32f1xx_hal_hcd.h
 ../Inc/stm32f1xx_hal_hcd.h
+
+../Inc/tim.h
+stm32f1xx_hal.h
+../Inc/stm32f1xx_hal.h
+main.h
+../Inc/main.h
 
 ../Inc/usart.h
 stm32f1xx_hal.h
@@ -456,11 +472,19 @@ task.h
 
 ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
 
-/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/serial.c
-serial.h
-/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/serial.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/motors.c
+motors.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/motors.h
+cmsis_os.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/cmsis_os.h
+gpio.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/gpio.h
+tim.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/tim.h
 usart.h
 /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/usart.h
 message.h
 /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/message.h
+stdint.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/stdint.h
 

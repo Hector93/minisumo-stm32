@@ -3,9 +3,6 @@ GTAGS
 GRTAGS
 GPATH
 
-# Ignore All
-*
-
 # Unignore all with extensions
 !*.*
 

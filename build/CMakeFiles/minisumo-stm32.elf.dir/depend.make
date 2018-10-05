@@ -59,6 +59,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o: ../Middlewares/Thi
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o: ../Application/Src/motors.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o: ../Application/Inc/message.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o: ../Application/Inc/motors.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o: ../Application/Inc/serial.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h

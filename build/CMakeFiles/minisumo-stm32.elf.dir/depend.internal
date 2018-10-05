@@ -60,6 +60,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o
  /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/motors.c
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o
  ../Application/Inc/message.h
+ ../Application/Inc/motors.h
  ../Application/Inc/serial.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h

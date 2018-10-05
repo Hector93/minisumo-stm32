@@ -13,8 +13,14 @@ extern "C" {
 
 #include "FreeRTOS.h"
 #include "cmsis_os.h"
+
+#define aceptSERIAL serialID
+#define aceptMOTORR
+#define aceptMOTORL 
+
+#define serialID  1
   
- 
+  //extern const uint8_t serialID;
   extern  osMessageQId serialQueueHandle;
   //void serial(void const* argument);
 
