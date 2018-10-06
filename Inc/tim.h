@@ -74,7 +74,7 @@ void MX_TIM1_Init(void);
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
                     
 /* USER CODE BEGIN Prototypes */
-
+   void HAL_TIM_SetPWM(uint16_t pulse, uint8_t channel);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

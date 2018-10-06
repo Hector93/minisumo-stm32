@@ -18,7 +18,7 @@ void serial(void const* argument){
   rx.mws.syncChar = tx.mws.syncChar = '\n';
   
   xSemaphoreGive(serialSemTxHandle);
-  HAL_UART_Transmit(&huart1,"serial process active\r\n",22,100);
+  HAL_UART_Transmit(&huart1,"serial process active\r\n",22,200);
 
   //  HAL_UART_Transmit(&huart1,sizeof(message)/sizeof(uint8_t),2,100);
   HAL_UART_Receive_DMA(&huart1,rx.data,sizeof(serialPkt) - 1);
@@ -35,6 +35,7 @@ void serial(void const* argument){
     if(pdPASS == (xSemaphoreTake(serialSemRxHandle,0))){
       processMessage(rx.mws.msg);//TODO enviar el mensaje al destino correspondiente;
       //HAL_UART_Transmit(&huart1,rx.data,sizeof(serialPkt),100);
+      //HAL_UART_Transmit(&huart1,"hola serial\r\n",13,100);
       HAL_UART_Receive_DMA(&huart1,rx.data,sizeof(serialPkt) - 1);
     }
     portYIELD();

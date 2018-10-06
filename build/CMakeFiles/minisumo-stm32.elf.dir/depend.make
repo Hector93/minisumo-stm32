@@ -1050,6 +1050,8 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o: ../Inc/main.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o: ../Inc/stm32f1xx_hal_conf.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o: ../Src/system_stm32f1xx.c
 
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Application/Inc/motors.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Application/Inc/serial.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
@@ -1078,9 +1080,23 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Drivers/STM32F1xx_HAL_Driver/I
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Inc/FreeRTOSConfig.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Inc/main.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Inc/stm32f1xx_hal_conf.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Inc/tim.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Src/tim.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h

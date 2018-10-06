@@ -51,6 +51,8 @@
 #include "tim.h"
 
 /* USER CODE BEGIN 0 */
+#include "stdint.h"
+#include "motors.h"
 
 /* USER CODE END 0 */
 
@@ -107,7 +109,6 @@ void MX_TIM1_Init(void)
   }
 
   sConfigOC.OCMode = TIM_OCMODE_PWM2;
-  sConfigOC.Pulse = 320;
   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
@@ -200,7 +201,26 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
 } 
 
 /* USER CODE BEGIN 1 */
+#include "stm32f1xx_hal_tim.h"
+void HAL_TIM_SetPWM(uint16_t pulse, uint8_t channel){
+  switch(channel){
+  case motorRID:
+    __HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_2,pulse);
+    break;
+  case motorLID:
+    __HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_3,pulse);
+    break;
 
+  }
+
+  /*if (HAL_TIMEx_ConfigBreakDeadTime(&htim1, &sBreakDeadTimeConfig) != HAL_OK)
+    {
+      _Error_Handler(__FILE__, __LINE__);
+    }
+
+  HAL_TIM_MspPostInit(&htim1);
+  */
+}
 /* USER CODE END 1 */
 
 /**

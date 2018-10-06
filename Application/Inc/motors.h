@@ -17,6 +17,17 @@ extern "C" {
 
 #define motorRID 2
 #define motorLID 3
+
+  //type definitions
+#define motorError   0
+#define stopHard     1
+#define stopFree     2
+#define startMotor   3
+#define setDirection 4
+#define setSpeed     5
+#define getStatus    6
+#define getSpeed     7
+#define test         8
   
   
   extern osMessageQId motorLQueueHandle;
