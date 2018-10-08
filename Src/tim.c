@@ -97,7 +97,7 @@ void MX_TIM1_Init(void)
   }
 
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 161;
+  sConfigOC.Pulse = 0;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
@@ -109,13 +109,13 @@ void MX_TIM1_Init(void)
   }
 
   sConfigOC.OCMode = TIM_OCMODE_PWM2;
+  sConfigOC.OCNPolarity = TIM_OCNPOLARITY_LOW;
   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
 
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
@@ -210,9 +210,8 @@ void HAL_TIM_SetPWM(uint16_t pulse, uint8_t channel){
   case motorLID:
     __HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_3,pulse);
     break;
-
   }
-
+  
   /*if (HAL_TIMEx_ConfigBreakDeadTime(&htim1, &sBreakDeadTimeConfig) != HAL_OK)
     {
       _Error_Handler(__FILE__, __LINE__);
@@ -220,6 +219,10 @@ void HAL_TIM_SetPWM(uint16_t pulse, uint8_t channel){
 
   HAL_TIM_MspPostInit(&htim1);
   */
+}
+
+uint16_t HAL_TIM_GetPWM(uint8_t channel){
+  return  __HAL_TIM_GET_COMPARE(&htim1,channel);
 }
 /* USER CODE END 1 */
 

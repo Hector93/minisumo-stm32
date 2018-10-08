@@ -13,6 +13,8 @@ stdint.h
 ../Application/Inc/motors.h
 serial.h
 ../Application/Inc/serial.h
+stdint.h
+../Application/Inc/stdint.h
 
 ../Application/Inc/serial.h
 FreeRTOS.h
@@ -487,4 +489,24 @@ message.h
 /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/message.h
 stdint.h
 /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/stdint.h
+
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/serial.c
+serial.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/serial.h
+usart.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/usart.h
+message.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/message.h
+motors.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/motors.h
+
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/tim.c
+tim.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/tim.h
+stdint.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/stdint.h
+motors.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/motors.h
+stm32f1xx_hal_tim.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_hal_tim.h
 

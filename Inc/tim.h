@@ -75,6 +75,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
                     
 /* USER CODE BEGIN Prototypes */
    void HAL_TIM_SetPWM(uint16_t pulse, uint8_t channel);
+   uint16_t HAL_TIM_GetPWM(uint8_t channel);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
