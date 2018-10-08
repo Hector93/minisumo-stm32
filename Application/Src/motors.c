@@ -9,8 +9,8 @@
 
 motorInternalData motorProcessMessage(message msg,motorInternalData data);
 motorInternalData motorUpdate(motorInternalData newData, motorInternalData prevData);
-void motorDirection(motorInternalData data);
-void motorSpeed(motorInternalData data);
+void motorDirectionInternal(motorInternalData data);
+void motorSpeedInternal(motorInternalData data);
 
 void motorR(const void* argument){
   //  HAL_UART_Transmit(&huart1,"motorD process active\r\n",22,100);
@@ -19,7 +19,7 @@ void motorR(const void* argument){
   message rx;
   rx = createMessage(15,2,5,0);
   
-  status.motorOpt.velocity = 100;
+  status.motorOpt.speed = 100;
   status.motorOpt.direction = FORWARD;
   status.motorOpt.channel = motorRID;
   
@@ -48,7 +48,7 @@ void motorL(const void* argument){
   message rx;
   rx = createMessage(15,2,5,0);
   
-  status.motorOpt.velocity = 100;
+  status.motorOpt.speed = 100;
   status.motorOpt.direction = FORWARD;
   status.motorOpt.channel = motorLID;
   
@@ -69,12 +69,12 @@ void motorL(const void* argument){
       
     }
 }
-uint16_t map(uint8_t velocity){
-  return (uint16_t)velocity*(uint16_t)3.21;
+uint16_t map(uint8_t speed){
+  return (uint16_t)speed*(uint16_t)3.21;
 }
 
-uint8_t unMap(uint16_t velocity){
-  return velocity/3.21;
+uint8_t unMap(uint16_t speed){
+  return speed/3.21;
 }
 
 motorInternalData motorProcessMessage(message msg,motorInternalData data){
@@ -85,10 +85,10 @@ motorInternalData motorProcessMessage(message msg,motorInternalData data){
     return data;
   case stopHard:     // poner pwm de canal a 100% y poner en cero los dos pines del motor
     data.motorOpt.direction = STOPEDHARD;
-    data.motorOpt.velocity = STOPEDHARD;
+    data.motorOpt.speed = STOPEDHARD;
     return data;
   case stopFree:     //poner pwm de canal en 0;
-    data.motorOpt.velocity = STOPED;
+    data.motorOpt.speed = STOPED;
     return data;
   case startMotor:
     data.motorData = msg.messageUser.data;
@@ -99,7 +99,7 @@ motorInternalData motorProcessMessage(message msg,motorInternalData data){
     return data;
   case setSpeed:
     aux.motorData = msg.messageUser.data;
-    data.motorOpt.velocity = aux.motorOpt.velocity;
+    data.motorOpt.speed = aux.motorOpt.speed;
     return data;
   case getStatus:
     //enviar mensaje de estado
@@ -116,11 +116,11 @@ motorInternalData motorProcessMessage(message msg,motorInternalData data){
 
 motorInternalData motorUpdate(motorInternalData newData, motorInternalData prevData){
   if(newData.motorOpt.channel == prevData.motorOpt.channel){
-    if (newData.motorOpt.velocity != prevData.motorOpt.velocity){
-      motorSpeed(newData);
+    if (newData.motorOpt.speed != prevData.motorOpt.speed){
+      motorSpeedInternal(newData);
     }
     if(newData.motorOpt.direction != prevData.motorOpt.direction){
-      motorDirection(newData);
+      motorDirectionInternal(newData);
     }
     return newData;
   }else{
@@ -128,15 +128,15 @@ motorInternalData motorUpdate(motorInternalData newData, motorInternalData prevD
   }
 }
 
-void motorSpeed(motorInternalData data){
-  if(data.motorOpt.velocity > 0x63){
+void motorSpeedInternal(motorInternalData data){
+  if(data.motorOpt.speed > 0x63){
     HAL_TIM_SetPWM(321,data.motorOpt.channel);
   }else{
-    HAL_TIM_SetPWM(map(data.motorOpt.velocity),data.motorOpt.channel);
+    HAL_TIM_SetPWM(map(data.motorOpt.speed),data.motorOpt.channel);
   }    
 }
 
-void motorDirection(motorInternalData data){
+void motorDirectionInternal(motorInternalData data){
   switch(data.motorOpt.direction){
   case FORWARD:
     if(data.motorOpt.channel == motorRID){
@@ -167,5 +167,18 @@ void motorDirection(motorInternalData data){
     }
     break;
   }
+}
+
+uint16_t createMotorData(uint8_t speed,uint8_t direction){
+  motorInternalData aux;
+  aux.motorOpt.speed = speed;
+  aux.motorOpt.direction = direction;
+  return aux.motorData;
+}
+uint16_t motorSpeed(uint8_t speed){
+  return createMotorData(speed,0);
+}
+uint16_t motorDirection(uint8_t direction){
+  return createMotorData(0,direction);
 }
 
