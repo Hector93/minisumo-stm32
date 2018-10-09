@@ -16,9 +16,13 @@ extern "C" {
 
 #define aceptSERIAL serialID
 #define aceptMOTORR
-#define aceptMOTORL 
+#define aceptMOTORL
+#define syncError
 
 #define serialID  1
+#define serialSyncError  -1
+
+#define SYNCCHAR '\n'
   
   //extern const uint8_t serialID;
   extern  osMessageQId serialQueueHandle;

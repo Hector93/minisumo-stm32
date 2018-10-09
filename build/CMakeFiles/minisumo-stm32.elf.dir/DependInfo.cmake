@@ -33,6 +33,8 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
 set(CMAKE_DEPENDS_CHECK_C
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/message.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/motors.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o"
+  "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/sensorsDist.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o"
+  "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/sensorsFloor.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/serial.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.o"

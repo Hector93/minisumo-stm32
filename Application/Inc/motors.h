@@ -26,15 +26,16 @@ extern "C" {
 #define BACKWARDS  3
   
   //type definitions
-#define motorError   0
+#define motorError   0 //partial(only responds 0)
 #define stopHard     1 //complete
 #define stopFree     2 //complete
 #define startMotor   3 //complete
 #define setDirection 4 //complete
 #define setSpeed     5 //complete
-#define getStatus    6 //faltaleer la direccion
+#define getStatus    6 //complete
 #define getSpeed     7 //complete
-#define test         8
+#define getDirection 8 //complete
+#define test         9
   
   typedef union{
     uint16_t motorData;

@@ -203,6 +203,60 @@ Application/Src/motors.c.s:
 	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.s
 .PHONY : Application/Src/motors.c.s
 
+Application/Src/sensorsDist.o: Application/Src/sensorsDist.c.o
+
+.PHONY : Application/Src/sensorsDist.o
+
+# target to build an object file
+Application/Src/sensorsDist.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o
+.PHONY : Application/Src/sensorsDist.c.o
+
+Application/Src/sensorsDist.i: Application/Src/sensorsDist.c.i
+
+.PHONY : Application/Src/sensorsDist.i
+
+# target to preprocess a source file
+Application/Src/sensorsDist.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.i
+.PHONY : Application/Src/sensorsDist.c.i
+
+Application/Src/sensorsDist.s: Application/Src/sensorsDist.c.s
+
+.PHONY : Application/Src/sensorsDist.s
+
+# target to generate assembly for a file
+Application/Src/sensorsDist.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.s
+.PHONY : Application/Src/sensorsDist.c.s
+
+Application/Src/sensorsFloor.o: Application/Src/sensorsFloor.c.o
+
+.PHONY : Application/Src/sensorsFloor.o
+
+# target to build an object file
+Application/Src/sensorsFloor.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o
+.PHONY : Application/Src/sensorsFloor.c.o
+
+Application/Src/sensorsFloor.i: Application/Src/sensorsFloor.c.i
+
+.PHONY : Application/Src/sensorsFloor.i
+
+# target to preprocess a source file
+Application/Src/sensorsFloor.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.i
+.PHONY : Application/Src/sensorsFloor.c.i
+
+Application/Src/sensorsFloor.s: Application/Src/sensorsFloor.c.s
+
+.PHONY : Application/Src/sensorsFloor.s
+
+# target to generate assembly for a file
+Application/Src/sensorsFloor.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.s
+.PHONY : Application/Src/sensorsFloor.c.s
+
 Application/Src/serial.o: Application/Src/serial.c.o
 
 .PHONY : Application/Src/serial.o
@@ -1228,6 +1282,12 @@ help:
 	@echo "... Application/Src/motors.o"
 	@echo "... Application/Src/motors.i"
 	@echo "... Application/Src/motors.s"
+	@echo "... Application/Src/sensorsDist.o"
+	@echo "... Application/Src/sensorsDist.i"
+	@echo "... Application/Src/sensorsDist.s"
+	@echo "... Application/Src/sensorsFloor.o"
+	@echo "... Application/Src/sensorsFloor.i"
+	@echo "... Application/Src/sensorsFloor.s"
 	@echo "... Application/Src/serial.o"
 	@echo "... Application/Src/serial.i"
 	@echo "... Application/Src/serial.s"

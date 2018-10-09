@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o"
+  "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o"
+  "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.o"

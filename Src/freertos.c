@@ -90,6 +90,12 @@ osStaticThreadDef_t motorIControlBlock;
 osThreadId usartHandle;
 uint32_t usartBuffer[ 64 ];
 osStaticThreadDef_t usartControlBlock;
+osThreadId sensorFloorHandle;
+uint32_t floorSensorsBuffer[ 64 ];
+osStaticThreadDef_t floorSensorsControlBlock;
+osThreadId sensorDistHandle;
+uint32_t distanciaBuffer[ 64 ];
+osStaticThreadDef_t distanciaControlBlock;
 osMessageQId serialQueueHandle;
 uint8_t serialQueueBuffer[ 10 * sizeof( message ) ];
 osStaticMessageQDef_t serialQueueControlBlock;
@@ -99,6 +105,12 @@ osStaticMessageQDef_t motorRQueueControlBlock;
 osMessageQId motorLQueueHandle;
 uint8_t motorLQueueBuffer[ 5 * sizeof( message ) ];
 osStaticMessageQDef_t motorLQueueControlBlock;
+osMessageQId sensorsDistQueueHandle;
+uint8_t sensorsDistQueueBuffer[ 5 * sizeof( message ) ];
+osStaticMessageQDef_t sensorsDistQueueControlBlock;
+osMessageQId sensorsFloorQueueHandle;
+uint8_t sensorsFloorQueueBuffer[ 5 * sizeof( message ) ];
+osStaticMessageQDef_t sensorsFloorQueueControlBlock;
 osSemaphoreId serialSemTxHandle;
 osStaticSemaphoreDef_t serialSemTxControlBlock;
 osSemaphoreId serialSemRxHandle;
@@ -113,6 +125,8 @@ void StartDefaultTask(void const * argument);
 extern void motorR(void const * argument);
 extern void motorL(void const * argument);
 extern void serial(void const * argument);
+extern void sensorsFloor(void const * argument);
+extern void sensorsDist(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -169,16 +183,24 @@ void MX_FREERTOS_Init(void) {
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of motorD */
-  osThreadStaticDef(motorD, motorR, osPriorityNormal, 0, 64, motorDBuffer, &motorDControlBlock);
+  osThreadStaticDef(motorD, motorR, osPriorityRealtime, 0, 64, motorDBuffer, &motorDControlBlock);
   motorDHandle = osThreadCreate(osThread(motorD), NULL);
 
   /* definition and creation of motorI */
-  osThreadStaticDef(motorI, motorL, osPriorityNormal, 0, 64, motorIBuffer, &motorIControlBlock);
+  osThreadStaticDef(motorI, motorL, osPriorityRealtime, 0, 64, motorIBuffer, &motorIControlBlock);
   motorIHandle = osThreadCreate(osThread(motorI), NULL);
 
   /* definition and creation of usart */
   osThreadStaticDef(usart, serial, osPriorityNormal, 0, 64, usartBuffer, &usartControlBlock);
   usartHandle = osThreadCreate(osThread(usart), NULL);
+
+  /* definition and creation of sensorFloor */
+  osThreadStaticDef(sensorFloor, sensorsFloor, osPriorityNormal, 0, 64, floorSensorsBuffer, &floorSensorsControlBlock);
+  sensorFloorHandle = osThreadCreate(osThread(sensorFloor), NULL);
+
+  /* definition and creation of sensorDist */
+  osThreadStaticDef(sensorDist, sensorsDist, osPriorityNormal, 0, 64, distanciaBuffer, &distanciaControlBlock);
+  sensorDistHandle = osThreadCreate(osThread(sensorDist), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -196,6 +218,14 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of motorLQueue */
   osMessageQStaticDef(motorLQueue, 5, message, motorLQueueBuffer, &motorLQueueControlBlock);
   motorLQueueHandle = osMessageCreate(osMessageQ(motorLQueue), NULL);
+
+  /* definition and creation of sensorsDistQueue */
+  osMessageQStaticDef(sensorsDistQueue, 5, message, sensorsDistQueueBuffer, &sensorsDistQueueControlBlock);
+  sensorsDistQueueHandle = osMessageCreate(osMessageQ(sensorsDistQueue), NULL);
+
+  /* definition and creation of sensorsFloorQueue */
+  osMessageQStaticDef(sensorsFloorQueue, 5, message, sensorsFloorQueueBuffer, &sensorsFloorQueueControlBlock);
+  sensorsFloorQueueHandle = osMessageCreate(osMessageQ(sensorsFloorQueue), NULL);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */

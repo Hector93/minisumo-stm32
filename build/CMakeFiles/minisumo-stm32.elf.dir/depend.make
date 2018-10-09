@@ -58,6 +58,44 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o: ../Middlewares/Thi
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o: ../Application/Src/motors.c
 
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Application/Inc/message.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Application/Inc/sensorsDist.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Application/Inc/serial.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Inc/FreeRTOSConfig.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Application/Src/sensorsDist.c
+
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Application/Inc/message.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Application/Inc/sensorsFloor.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Application/Inc/serial.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Inc/FreeRTOSConfig.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Application/Src/sensorsFloor.c
+
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o: ../Application/Inc/message.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o: ../Application/Inc/motors.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o: ../Application/Inc/serial.h

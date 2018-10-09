@@ -23,9 +23,12 @@ typedef union {
 }serialPkt;
 
 #define externalControllerID 15
+//type of message
 #define ERROR                255
+//data
 #define UNKNOWNDEST          1
 #define NOTIMPLEM            2
+#define SYNCERROR            3
 
 message createMessage(uint8_t IdpO, uint8_t IdpD, uint8_t type, uint16_t data);
 

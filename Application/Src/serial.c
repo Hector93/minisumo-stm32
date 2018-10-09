@@ -15,7 +15,7 @@ void serial(void const* argument){
   serialPkt rx;
   //  rx.mws.syncChar = '\n';
   serialPkt tx;
-  rx.mws.syncChar = tx.mws.syncChar = '\n';
+  rx.mws.syncChar = tx.mws.syncChar = SYNCCHAR;
   
   xSemaphoreGive(serialSemTxHandle);
   HAL_UART_Transmit(&huart1,"serial process active\r\n",22,200);
@@ -33,7 +33,12 @@ void serial(void const* argument){
       }
     }
     if(pdPASS == (xSemaphoreTake(serialSemRxHandle,0))){
-      processMessage(rx.mws.msg);//TODO enviar el mensaje al destino correspondiente;
+      if(rx.mws.syncChar == SYNCCHAR){
+	processMessage(rx.mws.msg);	
+      }else{
+	rx.mws.msg.messageUser.IdpD = serialSyncError;
+	processMessage(rx.mws.msg);
+      }
       //HAL_UART_Transmit(&huart1,rx.data,sizeof(serialPkt),100);
       //HAL_UART_Transmit(&huart1,"hola serial\r\n",13,100);
       HAL_UART_Receive_DMA(&huart1,rx.data,sizeof(serialPkt) - 1);
@@ -68,12 +73,17 @@ void processMessage(message msg){
       xQueueSend(motorLQueueHandle,&aux,100);
       break;
 #endif
+#ifdef syncError
+    case serialSyncError:
+      HAL_UART_Transmit(&huart1,"syncError messg\r\n",17,1000);
+      aux = createMessage(serialID,externalControllerID,ERROR,SYNCERROR);
+#endif
     default :
       HAL_UART_Transmit(&huart1,"unknown package\r\n",17,1000);
       aux = createMessage(serialID,externalControllerID,ERROR,UNKNOWNDEST);
     }
   }else{
     //TODO responder paquete invalido?
-    HAL_UART_Transmit(&huart1,"entro\r\n",6,100);
+    HAL_UART_Transmit(&huart1,"invalido\r\n",10,100);
   }
 }
