@@ -67,8 +67,6 @@
 #define led2_GPIO_Port GPIOC
 #define ledRGB_Pin GPIO_PIN_0
 #define ledRGB_GPIO_Port GPIOD
-#define estado_Pin GPIO_PIN_1
-#define estado_GPIO_Port GPIOD
 #define ird_LD_Pin GPIO_PIN_0
 #define ird_LD_GPIO_Port GPIOA
 #define ird_LI_Pin GPIO_PIN_1
@@ -109,6 +107,8 @@
 #define TX_GPIO_Port GPIOA
 #define RX_Pin GPIO_PIN_10
 #define RX_GPIO_Port GPIOA
+#define intAcel_Pin GPIO_PIN_15
+#define intAcel_GPIO_Port GPIOA
 #define ird_enFI_Pin GPIO_PIN_3
 #define ird_enFI_GPIO_Port GPIOB
 #define ird_enFC_Pin GPIO_PIN_4

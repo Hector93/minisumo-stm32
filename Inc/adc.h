@@ -58,7 +58,7 @@
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "cmsis_os.h"
 /* USER CODE END Includes */
 
 extern ADC_HandleTypeDef hadc1;

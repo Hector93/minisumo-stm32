@@ -24,7 +24,7 @@ typedef union {
 
 #define externalControllerID 15
 //type of message
-#define ERROR                255
+#define MSG_ERROR                255
 //data
 #define UNKNOWNDEST          1
 #define NOTIMPLEM            2

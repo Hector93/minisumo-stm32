@@ -123,7 +123,7 @@ int main(void)
   MX_I2C1_Init();
   MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
-
+  
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
@@ -221,6 +221,7 @@ void _Error_Handler(char *file, int line)
   /* User can add his own implementation to report the HAL error return state */
   while(1)
   {
+    HAL_UART_Transmit(&huart1,(uint8_t*)"ERRORHANDLER",12,1000); 
   }
   /* USER CODE END Error_Handler_Debug */
 }

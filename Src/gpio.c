@@ -107,12 +107,6 @@ void MX_GPIO_Init(void)
   HAL_GPIO_Init(ledRGB_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = estado_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(estado_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = boton1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -134,6 +128,12 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(BT_START_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = intAcel_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(intAcel_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure peripheral I/O remapping */
   __HAL_AFIO_REMAP_PD01_ENABLE();

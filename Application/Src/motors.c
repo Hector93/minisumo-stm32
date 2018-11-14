@@ -9,7 +9,7 @@
 
 motorInternalData motorProcessMessage(message msg,motorInternalData data);
 motorInternalData motorUpdate(motorInternalData newData, motorInternalData prevData);
-volatile void motorDirectionInternal(motorInternalData data);
+void motorDirectionInternal(motorInternalData data);
 void motorSpeedInternal(motorInternalData data);
 
 void motorR(const void* argument){
@@ -139,10 +139,10 @@ void motorSpeedInternal(motorInternalData data){
   }    
 }
 
-volatile void motorDirectionInternal(motorInternalData data){
+void motorDirectionInternal(motorInternalData data){
   switch(data.motorOpt.direction){
   case FORWARD:
-    HAL_UART_Transmit(&huart1,"proc motorR\r\n",13,10);
+    //    HAL_UART_Transmit(&huart1,"proc motorR\r\n",13,10);
     if(data.motorOpt.channel == motorRID){
       HAL_GPIO_WritePin(ph_1A_GPIO_Port,ph_1A_Pin,GPIO_PIN_SET);
       HAL_GPIO_WritePin(ph_1B_GPIO_Port,ph_1B_Pin,GPIO_PIN_RESET);
@@ -152,7 +152,7 @@ volatile void motorDirectionInternal(motorInternalData data){
     }
     break;
   case BACKWARDS:
-    HAL_UART_Transmit(&huart1,"backwards motor \r\n",13,10);
+    //    HAL_UART_Transmit(&huart1,"backwards motor \r\n",13,10);
     if(data.motorOpt.channel == motorRID){
       HAL_GPIO_WritePin(ph_1A_GPIO_Port,ph_1A_Pin,GPIO_PIN_RESET);
       HAL_GPIO_WritePin(ph_1B_GPIO_Port,ph_1B_Pin,GPIO_PIN_SET);

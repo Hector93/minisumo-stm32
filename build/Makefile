@@ -149,6 +149,60 @@ minisumo-stm32.hex/fast:
 	$(MAKE) -f CMakeFiles/minisumo-stm32.hex.dir/build.make CMakeFiles/minisumo-stm32.hex.dir/build
 .PHONY : minisumo-stm32.hex/fast
 
+Application/Src/imu.o: Application/Src/imu.c.o
+
+.PHONY : Application/Src/imu.o
+
+# target to build an object file
+Application/Src/imu.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o
+.PHONY : Application/Src/imu.c.o
+
+Application/Src/imu.i: Application/Src/imu.c.i
+
+.PHONY : Application/Src/imu.i
+
+# target to preprocess a source file
+Application/Src/imu.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.i
+.PHONY : Application/Src/imu.c.i
+
+Application/Src/imu.s: Application/Src/imu.c.s
+
+.PHONY : Application/Src/imu.s
+
+# target to generate assembly for a file
+Application/Src/imu.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.s
+.PHONY : Application/Src/imu.c.s
+
+Application/Src/irReceiver.o: Application/Src/irReceiver.c.o
+
+.PHONY : Application/Src/irReceiver.o
+
+# target to build an object file
+Application/Src/irReceiver.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/irReceiver.c.o
+.PHONY : Application/Src/irReceiver.c.o
+
+Application/Src/irReceiver.i: Application/Src/irReceiver.c.i
+
+.PHONY : Application/Src/irReceiver.i
+
+# target to preprocess a source file
+Application/Src/irReceiver.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/irReceiver.c.i
+.PHONY : Application/Src/irReceiver.c.i
+
+Application/Src/irReceiver.s: Application/Src/irReceiver.c.s
+
+.PHONY : Application/Src/irReceiver.s
+
+# target to generate assembly for a file
+Application/Src/irReceiver.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/irReceiver.c.s
+.PHONY : Application/Src/irReceiver.c.s
+
 Application/Src/message.o: Application/Src/message.c.o
 
 .PHONY : Application/Src/message.o
@@ -959,6 +1013,384 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.c.s:
 	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
 
+Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.o: Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.o
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.o
+
+# target to build an object file
+Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.o
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.o
+
+Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.i: Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.i
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.i
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.i
+
+Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.s: Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.s
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.s
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.s
+
+Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.o: Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.o
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.o
+
+# target to build an object file
+Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.o
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.o
+
+Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.i: Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.i
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.i
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.i
+
+Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.s: Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.s
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.s
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.s
+
+Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.o: Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.o
+
+# target to build an object file
+Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o
+
+Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.i: Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.i
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.i
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.i
+
+Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.s: Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.s
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.s
+.PHONY : Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.s
+
+Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.o: Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.o
+
+# target to build an object file
+Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o
+.PHONY : Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o
+
+Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.i: Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.i
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.i
+.PHONY : Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.i
+
+Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.s: Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.s
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.s
+.PHONY : Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.s
+
+Middlewares/Third_Party/InvenSense/core/mllite/data_builder.o: Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.o
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/data_builder.o
+
+# target to build an object file
+Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.o
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.o
+
+Middlewares/Third_Party/InvenSense/core/mllite/data_builder.i: Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.i
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/data_builder.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.i
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.i
+
+Middlewares/Third_Party/InvenSense/core/mllite/data_builder.s: Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.s
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/data_builder.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.s
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.s
+
+Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.o: Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.o
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.o
+
+# target to build an object file
+Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.o
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.o
+
+Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.i: Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.i
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.i
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.i
+
+Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.s: Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.s
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.s
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.s
+
+Middlewares/Third_Party/InvenSense/core/mllite/message_layer.o: Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.o
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/message_layer.o
+
+# target to build an object file
+Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.o
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.o
+
+Middlewares/Third_Party/InvenSense/core/mllite/message_layer.i: Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.i
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/message_layer.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.i
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.i
+
+Middlewares/Third_Party/InvenSense/core/mllite/message_layer.s: Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.s
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/message_layer.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.s
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.s
+
+Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.o: Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.o
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.o
+
+# target to build an object file
+Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.o
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.o
+
+Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.i: Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.i
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.i
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.i
+
+Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.s: Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.s
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.s
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.s
+
+Middlewares/Third_Party/InvenSense/core/mllite/mlmath.o: Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.o
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/mlmath.o
+
+# target to build an object file
+Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.o
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.o
+
+Middlewares/Third_Party/InvenSense/core/mllite/mlmath.i: Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.i
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/mlmath.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.i
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.i
+
+Middlewares/Third_Party/InvenSense/core/mllite/mlmath.s: Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.s
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/mlmath.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.s
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.s
+
+Middlewares/Third_Party/InvenSense/core/mllite/mpl.o: Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.o
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/mpl.o
+
+# target to build an object file
+Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.o
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.o
+
+Middlewares/Third_Party/InvenSense/core/mllite/mpl.i: Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.i
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/mpl.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.i
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.i
+
+Middlewares/Third_Party/InvenSense/core/mllite/mpl.s: Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.s
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/mpl.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.s
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.s
+
+Middlewares/Third_Party/InvenSense/core/mllite/results_holder.o: Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.o
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/results_holder.o
+
+# target to build an object file
+Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.o
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.o
+
+Middlewares/Third_Party/InvenSense/core/mllite/results_holder.i: Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.i
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/results_holder.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.i
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.i
+
+Middlewares/Third_Party/InvenSense/core/mllite/results_holder.s: Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.s
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/results_holder.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.s
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.s
+
+Middlewares/Third_Party/InvenSense/core/mllite/start_manager.o: Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.o
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/start_manager.o
+
+# target to build an object file
+Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.o
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.o
+
+Middlewares/Third_Party/InvenSense/core/mllite/start_manager.i: Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.i
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/start_manager.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.i
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.i
+
+Middlewares/Third_Party/InvenSense/core/mllite/start_manager.s: Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.s
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/start_manager.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.s
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.s
+
+Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.o: Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.o
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.o
+
+# target to build an object file
+Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.o
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.o
+
+Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.i: Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.i
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.i
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.i
+
+Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.s: Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.s
+
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.s
+.PHONY : Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.s
+
+Middlewares/Third_Party/InvenSense/uart.o: Middlewares/Third_Party/InvenSense/uart.c.o
+
+.PHONY : Middlewares/Third_Party/InvenSense/uart.o
+
+# target to build an object file
+Middlewares/Third_Party/InvenSense/uart.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/uart.c.o
+.PHONY : Middlewares/Third_Party/InvenSense/uart.c.o
+
+Middlewares/Third_Party/InvenSense/uart.i: Middlewares/Third_Party/InvenSense/uart.c.i
+
+.PHONY : Middlewares/Third_Party/InvenSense/uart.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/InvenSense/uart.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/uart.c.i
+.PHONY : Middlewares/Third_Party/InvenSense/uart.c.i
+
+Middlewares/Third_Party/InvenSense/uart.s: Middlewares/Third_Party/InvenSense/uart.c.s
+
+.PHONY : Middlewares/Third_Party/InvenSense/uart.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/InvenSense/uart.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/uart.c.s
+.PHONY : Middlewares/Third_Party/InvenSense/uart.c.s
+
 Src/adc.o: Src/adc.c.o
 
 .PHONY : Src/adc.o
@@ -985,6 +1417,33 @@ Src/adc.s: Src/adc.c.s
 Src/adc.c.s:
 	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.s
 .PHONY : Src/adc.c.s
+
+Src/board-st_discovery.o: Src/board-st_discovery.c.o
+
+.PHONY : Src/board-st_discovery.o
+
+# target to build an object file
+Src/board-st_discovery.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.o
+.PHONY : Src/board-st_discovery.c.o
+
+Src/board-st_discovery.i: Src/board-st_discovery.c.i
+
+.PHONY : Src/board-st_discovery.i
+
+# target to preprocess a source file
+Src/board-st_discovery.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.i
+.PHONY : Src/board-st_discovery.c.i
+
+Src/board-st_discovery.s: Src/board-st_discovery.c.s
+
+.PHONY : Src/board-st_discovery.s
+
+# target to generate assembly for a file
+Src/board-st_discovery.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.s
+.PHONY : Src/board-st_discovery.c.s
 
 Src/dma.o: Src/dma.c.o
 
@@ -1276,6 +1735,12 @@ help:
 	@echo "... minisumo-stm32.bin"
 	@echo "... minisumo-stm32.elf"
 	@echo "... minisumo-stm32.hex"
+	@echo "... Application/Src/imu.o"
+	@echo "... Application/Src/imu.i"
+	@echo "... Application/Src/imu.s"
+	@echo "... Application/Src/irReceiver.o"
+	@echo "... Application/Src/irReceiver.i"
+	@echo "... Application/Src/irReceiver.s"
 	@echo "... Application/Src/message.o"
 	@echo "... Application/Src/message.i"
 	@echo "... Application/Src/message.s"
@@ -1366,9 +1831,54 @@ help:
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/timers.o"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/timers.i"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/timers.s"
+	@echo "... Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.o"
+	@echo "... Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.i"
+	@echo "... Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.s"
+	@echo "... Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.o"
+	@echo "... Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.i"
+	@echo "... Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.s"
+	@echo "... Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.o"
+	@echo "... Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.i"
+	@echo "... Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.s"
+	@echo "... Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.o"
+	@echo "... Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.i"
+	@echo "... Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.s"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/data_builder.o"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/data_builder.i"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/data_builder.s"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.o"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.i"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.s"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/message_layer.o"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/message_layer.i"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/message_layer.s"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.o"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.i"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.s"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/mlmath.o"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/mlmath.i"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/mlmath.s"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/mpl.o"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/mpl.i"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/mpl.s"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/results_holder.o"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/results_holder.i"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/results_holder.s"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/start_manager.o"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/start_manager.i"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/start_manager.s"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.o"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.i"
+	@echo "... Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.s"
+	@echo "... Middlewares/Third_Party/InvenSense/uart.o"
+	@echo "... Middlewares/Third_Party/InvenSense/uart.i"
+	@echo "... Middlewares/Third_Party/InvenSense/uart.s"
 	@echo "... Src/adc.o"
 	@echo "... Src/adc.i"
 	@echo "... Src/adc.s"
+	@echo "... Src/board-st_discovery.o"
+	@echo "... Src/board-st_discovery.i"
+	@echo "... Src/board-st_discovery.s"
 	@echo "... Src/dma.o"
 	@echo "... Src/dma.i"
 	@echo "... Src/dma.s"

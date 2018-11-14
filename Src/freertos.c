@@ -96,6 +96,12 @@ osStaticThreadDef_t floorSensorsControlBlock;
 osThreadId sensorDistHandle;
 uint32_t distanciaBuffer[ 64 ];
 osStaticThreadDef_t distanciaControlBlock;
+osThreadId ircontrolHandle;
+uint32_t ircontrolBuffer[ 64 ];
+osStaticThreadDef_t ircontrolControlBlock;
+osThreadId acelerometroHandle;
+uint32_t acelerometroBuffer[ 64 ];
+osStaticThreadDef_t acelerometroControlBlock;
 osMessageQId serialQueueHandle;
 uint8_t serialQueueBuffer[ 10 * sizeof( message ) ];
 osStaticMessageQDef_t serialQueueControlBlock;
@@ -111,10 +117,19 @@ osStaticMessageQDef_t sensorsDistQueueControlBlock;
 osMessageQId sensorsFloorQueueHandle;
 uint8_t sensorsFloorQueueBuffer[ 5 * sizeof( message ) ];
 osStaticMessageQDef_t sensorsFloorQueueControlBlock;
+osMessageQId imuQueueHandle;
+uint8_t imuQueueBuffer[ 5 * sizeof( message ) ];
+osStaticMessageQDef_t imuQueueControlBlock;
 osSemaphoreId serialSemTxHandle;
 osStaticSemaphoreDef_t serialSemTxControlBlock;
 osSemaphoreId serialSemRxHandle;
 osStaticSemaphoreDef_t serialSemRxControlBlock;
+osSemaphoreId irdistHandle;
+osStaticSemaphoreDef_t irdistControlBlock;
+osSemaphoreId I2cSemTxHandle;
+osStaticSemaphoreDef_t i2cSemTxControlBlock;
+osSemaphoreId I2cSemRxHandle;
+osStaticSemaphoreDef_t I2cSemRxControlBlock;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -127,6 +142,8 @@ extern void motorL(void const * argument);
 extern void serial(void const * argument);
 extern void sensorsFloor(void const * argument);
 extern void sensorsDist(void const * argument);
+extern void irReceiver(void const * argument);
+extern void imu(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -169,6 +186,18 @@ void MX_FREERTOS_Init(void) {
   osSemaphoreStaticDef(serialSemRx, &serialSemRxControlBlock);
   serialSemRxHandle = osSemaphoreCreate(osSemaphore(serialSemRx), 1);
 
+  /* definition and creation of irdist */
+  osSemaphoreStaticDef(irdist, &irdistControlBlock);
+  irdistHandle = osSemaphoreCreate(osSemaphore(irdist), 1);
+
+  /* definition and creation of I2cSemTx */
+  osSemaphoreStaticDef(I2cSemTx, &i2cSemTxControlBlock);
+  I2cSemTxHandle = osSemaphoreCreate(osSemaphore(I2cSemTx), 1);
+
+  /* definition and creation of I2cSemRx */
+  osSemaphoreStaticDef(I2cSemRx, &I2cSemRxControlBlock);
+  I2cSemRxHandle = osSemaphoreCreate(osSemaphore(I2cSemRx), 1);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -202,6 +231,14 @@ void MX_FREERTOS_Init(void) {
   osThreadStaticDef(sensorDist, sensorsDist, osPriorityNormal, 0, 64, distanciaBuffer, &distanciaControlBlock);
   sensorDistHandle = osThreadCreate(osThread(sensorDist), NULL);
 
+  /* definition and creation of ircontrol */
+  osThreadStaticDef(ircontrol, irReceiver, osPriorityIdle, 0, 64, ircontrolBuffer, &ircontrolControlBlock);
+  ircontrolHandle = osThreadCreate(osThread(ircontrol), NULL);
+
+  /* definition and creation of acelerometro */
+  osThreadStaticDef(acelerometro, imu, osPriorityNormal, 0, 64, acelerometroBuffer, &acelerometroControlBlock);
+  acelerometroHandle = osThreadCreate(osThread(acelerometro), NULL);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -226,6 +263,10 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of sensorsFloorQueue */
   osMessageQStaticDef(sensorsFloorQueue, 5, message, sensorsFloorQueueBuffer, &sensorsFloorQueueControlBlock);
   sensorsFloorQueueHandle = osMessageCreate(osMessageQ(sensorsFloorQueue), NULL);
+
+  /* definition and creation of imuQueue */
+  osMessageQStaticDef(imuQueue, 5, message, imuQueueBuffer, &imuQueueControlBlock);
+  imuQueueHandle = osMessageCreate(osMessageQ(imuQueue), NULL);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */

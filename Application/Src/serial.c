@@ -6,6 +6,11 @@
 #include "motors.h"
 
 //const uint8_t serialID = 1;
+/*
+ *
+ * las ISR estan definidas en usart.h
+ *
+ */
 
 void processMessage(message msg);
 
@@ -18,7 +23,7 @@ void serial(void const* argument){
   rx.mws.syncChar = tx.mws.syncChar = SYNCCHAR;
   
   xSemaphoreGive(serialSemTxHandle);
-  HAL_UART_Transmit(&huart1,"serial process active\r\n",22,200);
+  HAL_UART_Transmit(&huart1,(uint8_t *)"serial process active\r\n",22,200);
 
   //  HAL_UART_Transmit(&huart1,sizeof(message)/sizeof(uint8_t),2,100);
   HAL_UART_Receive_DMA(&huart1,rx.data,sizeof(serialPkt) - 1);
@@ -54,36 +59,36 @@ void processMessage(message msg){
     switch(msg.messageUser.IdpD){
 #ifdef aceptSERIAL
     case serialID:
-      HAL_UART_Transmit(&huart1,"serial package\r\n",15,1000);
-      aux = createMessage(serialID,externalControllerID,ERROR,NOTIMPLEM);
+      HAL_UART_Transmit(&huart1,(uint8_t*)"serial package\r\n",15,1000);
+      aux = createMessage(serialID,externalControllerID,MSG_ERROR,NOTIMPLEM);
       //TODO porcesar mensaje para proceso serial
       break;
 #endif
 #ifdef aceptMOTORR
     case motorRID:
-      HAL_UART_Transmit(&huart1,"motorR package\r\n",15,1000);
+      HAL_UART_Transmit(&huart1,(uint8_t*)"motorR package\r\n",15,1000);
       aux = createMessage(externalControllerID,motorRID,msg.messageUser.type,msg.messageUser.data);
       xQueueSend(motorRQueueHandle,&aux,100);
       break;
 #endif
 #ifdef aceptMOTORL
     case motorLID:
-      HAL_UART_Transmit(&huart1,"motorL package\r\n",15,1000);
+      HAL_UART_Transmit(&huart1,(uint8_t*)"motorL package\r\n",15,1000);
       aux = createMessage(externalControllerID,motorLID,msg.messageUser.type,msg.messageUser.data);
       xQueueSend(motorLQueueHandle,&aux,100);
       break;
 #endif
 #ifdef syncError
     case serialSyncError:
-      HAL_UART_Transmit(&huart1,"syncError messg\r\n",17,1000);
-      aux = createMessage(serialID,externalControllerID,ERROR,SYNCERROR);
+      HAL_UART_Transmit(&huart1,(uint8_t*)"syncError messg\r\n",17,1000);
+      aux = createMessage(serialID,externalControllerID,MSG_ERROR,SYNCERROR);
 #endif
     default :
-      HAL_UART_Transmit(&huart1,"unknown package\r\n",17,1000);
-      aux = createMessage(serialID,externalControllerID,ERROR,UNKNOWNDEST);
+      HAL_UART_Transmit(&huart1,(uint8_t*)"unknown package\r\n",17,1000);
+      aux = createMessage(serialID,externalControllerID,MSG_ERROR,UNKNOWNDEST);
     }
   }else{
     //TODO responder paquete invalido?
-    HAL_UART_Transmit(&huart1,"invalido\r\n",10,100);
+    HAL_UART_Transmit(&huart1,(uint8_t*)"invalido\r\n",10,100);
   }
 }

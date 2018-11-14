@@ -182,8 +182,6 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 extern osSemaphoreId serialSemTxHandle;
 extern osSemaphoreId serialSemRxHandle;
 
-
-
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
   if(pdPASS == (xSemaphoreGiveFromISR(serialSemTxHandle,&xHigherPriorityTaskWoken))){
