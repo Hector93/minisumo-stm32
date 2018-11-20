@@ -7,7 +7,8 @@
 #ifndef INV_MESSAGE_LAYER_H__
 #define INV_MESSAGE_LAYER_H__
 
-#include "mltypes.h"
+//#include "mltypes.h"
+#include "../driver/include/mltypes.h"
 
 #ifdef __cplusplus
 extern "C" {

@@ -22,12 +22,14 @@
 
 #include "ml_math_func.h"
 #include "data_builder.h"
-#include "mlmath.h"
+//#include "mlmath.h"
+#include "../driver/include/mlmath.h"
 #include "storage_manager.h"
 #include "message_layer.h"
 #include "results_holder.h"
 
-#include "log.h"
+//#include "log.h"
+#include "../driver/include/log.h"
 #undef MPL_LOG_TAG
 #define MPL_LOG_TAG "MPL"
 

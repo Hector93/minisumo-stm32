@@ -759,9 +759,22 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.s"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_hal_msp.c -o CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.s
 
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Src/stm32f1xx_hal_timebase_TIM.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o   -c /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_hal_timebase_TIM.c
+
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.i"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_hal_timebase_TIM.c > CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.i
+
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.s"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_hal_timebase_TIM.c -o CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.s
+
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o: ../Src/stm32f1xx_it.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o   -c /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_it.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.i: cmake_force
@@ -774,7 +787,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o: ../Src/system_stm32f1xx.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o   -c /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/system_stm32f1xx.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.i: cmake_force
@@ -787,7 +800,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Src/tim.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o   -c /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/tim.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.i: cmake_force
@@ -800,7 +813,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o: ../Src/usart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o   -c /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/usart.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.i: cmake_force
@@ -813,7 +826,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o: ../startup/startup_stm32f103xb.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building ASM object CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building ASM object CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o"
 	arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o -c /home/hector/Documentos/Robotica/firmware/minisumo-stm32/startup/startup_stm32f103xb.s
 
 # Object files for target minisumo-stm32.elf
@@ -872,6 +885,7 @@ minisumo__stm32_elf_OBJECTS = \
 "CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o" \
+"CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o" \
@@ -935,6 +949,7 @@ minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Src/gpio.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o
+minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o
@@ -943,7 +958,7 @@ minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103x
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/build.make
 minisumo-stm32.elf: ../Middlewares/Third_Party/InvenSense/core/mpl/libmpllib.a
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Linking C executable minisumo-stm32.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Linking C executable minisumo-stm32.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/minisumo-stm32.elf.dir/link.txt --verbose=$(VERBOSE)
 	arm-none-eabi-size minisumo-stm32.elf
 

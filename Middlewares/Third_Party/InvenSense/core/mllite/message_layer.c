@@ -14,7 +14,8 @@
  *       @brief Holds Low Occurance Messages.
  */
 #include "message_layer.h"
-#include "log.h"
+//#include "log.h"
+#include "../driver/include/log.h"
 
 struct message_holder_t {
     long message;

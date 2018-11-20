@@ -21,7 +21,8 @@
 #ifndef __PACKET_H__
 #define __PACKET_H__
 
-#include "mltypes.h"
+//#include "mltypes.h"
+#include "../include/mltypes.h"
 
 typedef enum {
     PACKET_DATA_ACCEL = 0,

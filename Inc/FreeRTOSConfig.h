@@ -101,12 +101,13 @@
 #define configTICK_RATE_HZ                       ((TickType_t)1000)
 #define configMAX_PRIORITIES                     ( 7 )
 #define configMINIMAL_STACK_SIZE                 ((uint16_t)64)
-#define configTOTAL_HEAP_SIZE                    ((size_t)3072)
+#define configTOTAL_HEAP_SIZE                    ((size_t)10000)
 #define configMAX_TASK_NAME_LEN                  ( 16 )
 #define configUSE_16_BIT_TICKS                   0
-#define configUSE_MUTEXES                        1
 #define configQUEUE_REGISTRY_SIZE                8
+#define configENABLE_BACKWARD_COMPATIBILITY      0
 #define configUSE_PORT_OPTIMISED_TASK_SELECTION  1
+#define configUSE_TASK_NOTIFICATIONS             0
 
 /* Co-routine definitions. */
 #define configUSE_CO_ROUTINES                    0
@@ -114,9 +115,9 @@
 
 /* Set the following definitions to 1 to include the API function, or zero
 to exclude the API function. */
-#define INCLUDE_vTaskPrioritySet            1
-#define INCLUDE_uxTaskPriorityGet           1
-#define INCLUDE_vTaskDelete                 1
+#define INCLUDE_vTaskPrioritySet            0
+#define INCLUDE_uxTaskPriorityGet           0
+#define INCLUDE_vTaskDelete                 0
 #define INCLUDE_vTaskCleanUpResources       0
 #define INCLUDE_vTaskSuspend                1
 #define INCLUDE_vTaskDelayUntil             0

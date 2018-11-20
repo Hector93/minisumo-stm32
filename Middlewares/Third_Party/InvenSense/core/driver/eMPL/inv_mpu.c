@@ -23,7 +23,8 @@
 #include <string.h>
 #include <math.h>
 #include "inv_mpu.h"
-#include "imu.h"
+//#include "imu.h"
+#include "../../../../Application/Inc/imu.h"
 
 /* The following functions must be defined for this platform:
  * i2c_write(unsigned char slave_addr, unsigned char reg_addr,
@@ -40,7 +41,8 @@
 #if defined EMPL_TARGET_STM32F4
 #include "i2c.h"   
 #include "main.h"
-#include "log.h"
+//#include "log.h"
+#include "../include/log.h"
 //#include "board-st_discovery.h"
    
 #define i2c_write   Sensors_I2C_WriteRegister

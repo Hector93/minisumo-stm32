@@ -15,7 +15,7 @@ void motorSpeedInternal(motorInternalData data);
 void motorR(const void* argument){
   //  HAL_UART_Transmit(&huart1,"motorD process active\r\n",22,100);
   motorInternalData status;
-  message tx;
+  //  message tx;
   message rx;
   rx = createMessage(15,2,5,0);
   
@@ -33,14 +33,14 @@ void motorR(const void* argument){
       if(pdPASS ==(xQueueReceive(motorRQueueHandle,&rx,10))){
 	status = motorUpdate(motorProcessMessage(rx,status),status);
       }
-      osDelay(100);
+      vTaskDelay(100);
     }
 }
 
 void motorL(const void* argument){
   //  HAL_UART_Transmit(&huart1,"motorD process active\r\n",22,100);
   motorInternalData status;
-  message tx;
+  //message tx;
   message rx;
   rx = createMessage(15,3,5,0);
   

@@ -35,7 +35,8 @@
 #if defined EMPL_TARGET_STM32F4
 #include "i2c.h"   
 #include "main.h"
-#include "imu.h"
+//#include "imu.h"
+#include "../../../../Application/Inc/imu.h"
 //#include "board-st_discovery.h"
    
 #define i2c_write   Sensors_I2C_WriteRegister

@@ -11,9 +11,16 @@ set(CMAKE_ASM_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_ASM
+  "EMPL"
+  "EMPL_TARGET_STM32F4"
   "IS_STM32=1"
+  "MPL_LOG_NDEBUG=1"
+  "MPU6050"
+  "REMOVE_LOGGING"
   "STM32F103xB"
+  "USE_DMP"
   "USE_HAL_DRIVER"
+  "USE_STDPERIPH_DRIVER"
   "__packed=__attribute__((__packed__))"
   "__weak=__attribute__((weak))"
   )
@@ -92,6 +99,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/i2c.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/main.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_hal_msp.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o"
+  "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_hal_timebase_TIM.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_it.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/system_stm32f1xx.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/tim.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o"
@@ -101,9 +109,16 @@ set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
+  "EMPL"
+  "EMPL_TARGET_STM32F4"
   "IS_STM32=1"
+  "MPL_LOG_NDEBUG=1"
+  "MPU6050"
+  "REMOVE_LOGGING"
   "STM32F103xB"
+  "USE_DMP"
   "USE_HAL_DRIVER"
+  "USE_STDPERIPH_DRIVER"
   "__packed=__attribute__((__packed__))"
   "__weak=__attribute__((weak))"
   )

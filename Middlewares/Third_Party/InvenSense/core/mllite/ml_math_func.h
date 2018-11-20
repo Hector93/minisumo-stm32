@@ -7,7 +7,8 @@
 #ifndef INVENSENSE_INV_MATH_FUNC_H__
 #define INVENSENSE_INV_MATH_FUNC_H__
 
-#include "mltypes.h"
+//#include "mltypes.h"
+#include "../driver/include/mltypes.h"
 
 #define GYRO_MAG_SQR_SHIFT 6
 #define NUM_ROTATION_MATRIX_ELEMENTS (9)

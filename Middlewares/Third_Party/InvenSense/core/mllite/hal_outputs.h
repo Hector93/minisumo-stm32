@@ -4,7 +4,8 @@
     See included License.txt for License information.
  $
  */
-#include "mltypes.h"
+//#include "mltypes.h"
+#include "../driver/include/mltypes.h"
 
 #ifndef INV_HAL_OUTPUTS_H__
 #define INV_HAL_OUTPUTS_H__

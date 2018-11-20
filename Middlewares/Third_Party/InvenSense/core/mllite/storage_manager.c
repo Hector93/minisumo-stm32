@@ -18,9 +18,11 @@
 #include <string.h>
 
 #include "storage_manager.h"
-#include "log.h"
+//#include "log.h"
+#include "../driver/include/log.h"
 #include "ml_math_func.h"
-#include "mlmath.h"
+//#include "mlmath.h"
+#include "../driver/include/mlmath.h"
 
 /* Must be changed if the format of storage changes */
 #define DEFAULT_KEY 29681

@@ -1607,6 +1607,33 @@ Src/stm32f1xx_hal_msp.c.s:
 	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.s
 .PHONY : Src/stm32f1xx_hal_msp.c.s
 
+Src/stm32f1xx_hal_timebase_TIM.o: Src/stm32f1xx_hal_timebase_TIM.c.o
+
+.PHONY : Src/stm32f1xx_hal_timebase_TIM.o
+
+# target to build an object file
+Src/stm32f1xx_hal_timebase_TIM.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o
+.PHONY : Src/stm32f1xx_hal_timebase_TIM.c.o
+
+Src/stm32f1xx_hal_timebase_TIM.i: Src/stm32f1xx_hal_timebase_TIM.c.i
+
+.PHONY : Src/stm32f1xx_hal_timebase_TIM.i
+
+# target to preprocess a source file
+Src/stm32f1xx_hal_timebase_TIM.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.i
+.PHONY : Src/stm32f1xx_hal_timebase_TIM.c.i
+
+Src/stm32f1xx_hal_timebase_TIM.s: Src/stm32f1xx_hal_timebase_TIM.c.s
+
+.PHONY : Src/stm32f1xx_hal_timebase_TIM.s
+
+# target to generate assembly for a file
+Src/stm32f1xx_hal_timebase_TIM.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.s
+.PHONY : Src/stm32f1xx_hal_timebase_TIM.c.s
+
 Src/stm32f1xx_it.o: Src/stm32f1xx_it.c.o
 
 .PHONY : Src/stm32f1xx_it.o
@@ -1897,6 +1924,9 @@ help:
 	@echo "... Src/stm32f1xx_hal_msp.o"
 	@echo "... Src/stm32f1xx_hal_msp.i"
 	@echo "... Src/stm32f1xx_hal_msp.s"
+	@echo "... Src/stm32f1xx_hal_timebase_TIM.o"
+	@echo "... Src/stm32f1xx_hal_timebase_TIM.i"
+	@echo "... Src/stm32f1xx_hal_timebase_TIM.s"
 	@echo "... Src/stm32f1xx_it.o"
 	@echo "... Src/stm32f1xx_it.i"
 	@echo "... Src/stm32f1xx_it.s"

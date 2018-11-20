@@ -18,9 +18,11 @@
 #include <string.h>
 
 #include "hal_outputs.h"
-#include "log.h"
+//#include "log.h"
+#include "../driver/include/log.h"
 #include "ml_math_func.h"
-#include "mlmath.h"
+//#include "mlmath.h"
+#include "../driver/include/mlmath.h"
 #include "start_manager.h"
 #include "data_builder.h"
 #include "results_holder.h"

@@ -53,6 +53,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o"
+  "CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o"

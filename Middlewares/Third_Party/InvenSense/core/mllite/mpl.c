@@ -15,12 +15,14 @@
  */
 
 #include "storage_manager.h"
-#include "log.h"
+//#include "log.h"
+#include "../driver/include/log.h"
 #include "mpl.h"
 #include "start_manager.h"
 #include "data_builder.h"
 #include "results_holder.h"
-#include "mlinclude.h"
+//#include "mlinclude.h"
+#include "../driver/include/mlinclude.h"
 
 /**
  * @brief  Initializes the MPL. Should be called first and once 

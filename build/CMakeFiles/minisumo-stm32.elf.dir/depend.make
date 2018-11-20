@@ -950,6 +950,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/log.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/log.h
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.o: ../Application/Inc/imu.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
@@ -1037,19 +1038,19 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/log.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/mltypes.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/stdint_invensense.h
-CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/InvenSense/uart.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/stm32L/packet.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/InvenSense/uart.h
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/mlmath.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/mltypes.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/stdint_invensense.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o: ../Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o: ../Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o: ../Middlewares/Third_Party/InvenSense/core/mllite/data_builder.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o: ../Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o: ../Middlewares/Third_Party/InvenSense/core/mllite/results_holder.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o: ../Middlewares/Third_Party/InvenSense/core/mllite/start_manager.h
-CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o: ../Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c
-CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o: ../Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.h
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/log.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/mlmath.h
@@ -1287,7 +1288,6 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.o: ../Inc/main.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.o: ../Inc/stm32f1xx_hal_conf.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.o: ../Src/dma.c
 
-CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o: ../Application/Inc/message.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o: ../Inc/FreeRTOSConfig.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o: ../Inc/main.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
@@ -1303,6 +1303,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o: ../Middlewares/Third_Party/F
 CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o: ../Application/Inc/message.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o: ../Src/freertos.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/gpio.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
@@ -1456,6 +1457,38 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o: ../Inc/main.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o: ../Inc/stm32f1xx_hal_conf.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o: ../Src/stm32f1xx_hal_msp.c
 
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/CMSIS/Include/cmsis_gcc.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/CMSIS/Include/core_cm3.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/CMSIS/Include/core_cmFunc.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/CMSIS/Include/core_cmInstr.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Inc/main.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Inc/stm32f1xx_hal_conf.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_TIM.c.o: ../Src/stm32f1xx_hal_timebase_TIM.c
+
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
@@ -1535,8 +1568,6 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o: ../Inc/main.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o: ../Inc/stm32f1xx_hal_conf.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o: ../Src/system_stm32f1xx.c
 
-CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Application/Inc/motors.h
-CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Application/Inc/serial.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
@@ -1582,6 +1613,8 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRT
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Application/Inc/motors.h
+CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Application/Inc/serial.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Src/tim.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h

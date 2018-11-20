@@ -21,9 +21,11 @@
  *       @brief Math Functions.
  */
 
-#include "mlmath.h"
+//#include "mlmath.h"
+#include "../driver/include/mlmath.h"
 #include "ml_math_func.h"
-#include "mlinclude.h"
+//#include "mlinclude.h"
+#include "../driver/include/mlinclude.h"
 #include <string.h>
 
 #ifdef EMPL

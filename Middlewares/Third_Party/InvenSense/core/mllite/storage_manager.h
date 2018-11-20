@@ -4,7 +4,8 @@
     See included License.txt for License information.
  $
  */
-#include "mltypes.h"
+//#include "mltypes.h"
+#include "../driver/include/mltypes.h"
 
 #ifndef INV_STORAGE_MANAGER_H__
 #define INV_STORAGE_MANAGER_H__

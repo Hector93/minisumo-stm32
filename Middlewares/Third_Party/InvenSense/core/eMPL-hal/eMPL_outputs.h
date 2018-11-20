@@ -16,7 +16,8 @@
 #ifndef _EMPL_OUTPUTS_H_
 #define _EMPL_OUTPUTS_H_
 
-#include "mltypes.h"
+//#include "mltypes.h"
+#include "../driver/include/mltypes.h"
 
 #ifdef __cplusplus
 extern "C" {

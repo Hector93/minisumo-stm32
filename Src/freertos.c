@@ -56,7 +56,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
-#include "message.h"
+//#include "message.h"
+#include "../Application/Inc/message.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -79,57 +80,22 @@
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
-uint32_t defaultTaskBuffer[ 64 ];
-osStaticThreadDef_t defaultTaskControlBlock;
 osThreadId motorDHandle;
-uint32_t motorDBuffer[ 64 ];
-osStaticThreadDef_t motorDControlBlock;
 osThreadId motorIHandle;
-uint32_t motorIBuffer[ 64 ];
-osStaticThreadDef_t motorIControlBlock;
 osThreadId usartHandle;
-uint32_t usartBuffer[ 64 ];
-osStaticThreadDef_t usartControlBlock;
 osThreadId sensorFloorHandle;
-uint32_t floorSensorsBuffer[ 64 ];
-osStaticThreadDef_t floorSensorsControlBlock;
 osThreadId sensorDistHandle;
-uint32_t distanciaBuffer[ 64 ];
-osStaticThreadDef_t distanciaControlBlock;
 osThreadId ircontrolHandle;
-uint32_t ircontrolBuffer[ 64 ];
-osStaticThreadDef_t ircontrolControlBlock;
 osThreadId acelerometroHandle;
-uint32_t acelerometroBuffer[ 64 ];
-osStaticThreadDef_t acelerometroControlBlock;
 osMessageQId serialQueueHandle;
-uint8_t serialQueueBuffer[ 10 * sizeof( message ) ];
-osStaticMessageQDef_t serialQueueControlBlock;
 osMessageQId motorRQueueHandle;
-uint8_t motorRQueueBuffer[ 5 * sizeof( message ) ];
-osStaticMessageQDef_t motorRQueueControlBlock;
 osMessageQId motorLQueueHandle;
-uint8_t motorLQueueBuffer[ 5 * sizeof( message ) ];
-osStaticMessageQDef_t motorLQueueControlBlock;
 osMessageQId sensorsDistQueueHandle;
-uint8_t sensorsDistQueueBuffer[ 5 * sizeof( message ) ];
-osStaticMessageQDef_t sensorsDistQueueControlBlock;
 osMessageQId sensorsFloorQueueHandle;
-uint8_t sensorsFloorQueueBuffer[ 5 * sizeof( message ) ];
-osStaticMessageQDef_t sensorsFloorQueueControlBlock;
 osMessageQId imuQueueHandle;
-uint8_t imuQueueBuffer[ 5 * sizeof( message ) ];
-osStaticMessageQDef_t imuQueueControlBlock;
 osSemaphoreId serialSemTxHandle;
-osStaticSemaphoreDef_t serialSemTxControlBlock;
 osSemaphoreId serialSemRxHandle;
-osStaticSemaphoreDef_t serialSemRxControlBlock;
 osSemaphoreId irdistHandle;
-osStaticSemaphoreDef_t irdistControlBlock;
-osSemaphoreId I2cSemTxHandle;
-osStaticSemaphoreDef_t i2cSemTxControlBlock;
-osSemaphoreId I2cSemRxHandle;
-osStaticSemaphoreDef_t I2cSemRxControlBlock;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -179,24 +145,16 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the semaphores(s) */
   /* definition and creation of serialSemTx */
-  osSemaphoreStaticDef(serialSemTx, &serialSemTxControlBlock);
+  osSemaphoreDef(serialSemTx);
   serialSemTxHandle = osSemaphoreCreate(osSemaphore(serialSemTx), 1);
 
   /* definition and creation of serialSemRx */
-  osSemaphoreStaticDef(serialSemRx, &serialSemRxControlBlock);
+  osSemaphoreDef(serialSemRx);
   serialSemRxHandle = osSemaphoreCreate(osSemaphore(serialSemRx), 1);
 
   /* definition and creation of irdist */
-  osSemaphoreStaticDef(irdist, &irdistControlBlock);
+  osSemaphoreDef(irdist);
   irdistHandle = osSemaphoreCreate(osSemaphore(irdist), 1);
-
-  /* definition and creation of I2cSemTx */
-  osSemaphoreStaticDef(I2cSemTx, &i2cSemTxControlBlock);
-  I2cSemTxHandle = osSemaphoreCreate(osSemaphore(I2cSemTx), 1);
-
-  /* definition and creation of I2cSemRx */
-  osSemaphoreStaticDef(I2cSemRx, &I2cSemRxControlBlock);
-  I2cSemRxHandle = osSemaphoreCreate(osSemaphore(I2cSemRx), 1);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -208,35 +166,35 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadStaticDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 64, defaultTaskBuffer, &defaultTaskControlBlock);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 64);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of motorD */
-  osThreadStaticDef(motorD, motorR, osPriorityRealtime, 0, 64, motorDBuffer, &motorDControlBlock);
+  osThreadDef(motorD, motorR, osPriorityRealtime, 0, 64);
   motorDHandle = osThreadCreate(osThread(motorD), NULL);
 
   /* definition and creation of motorI */
-  osThreadStaticDef(motorI, motorL, osPriorityRealtime, 0, 64, motorIBuffer, &motorIControlBlock);
+  osThreadDef(motorI, motorL, osPriorityRealtime, 0, 64);
   motorIHandle = osThreadCreate(osThread(motorI), NULL);
 
   /* definition and creation of usart */
-  osThreadStaticDef(usart, serial, osPriorityNormal, 0, 64, usartBuffer, &usartControlBlock);
+  osThreadDef(usart, serial, osPriorityNormal, 0, 64);
   usartHandle = osThreadCreate(osThread(usart), NULL);
 
   /* definition and creation of sensorFloor */
-  osThreadStaticDef(sensorFloor, sensorsFloor, osPriorityNormal, 0, 64, floorSensorsBuffer, &floorSensorsControlBlock);
+  osThreadDef(sensorFloor, sensorsFloor, osPriorityNormal, 0, 64);
   sensorFloorHandle = osThreadCreate(osThread(sensorFloor), NULL);
 
   /* definition and creation of sensorDist */
-  osThreadStaticDef(sensorDist, sensorsDist, osPriorityNormal, 0, 64, distanciaBuffer, &distanciaControlBlock);
+  osThreadDef(sensorDist, sensorsDist, osPriorityNormal, 0, 64);
   sensorDistHandle = osThreadCreate(osThread(sensorDist), NULL);
 
   /* definition and creation of ircontrol */
-  osThreadStaticDef(ircontrol, irReceiver, osPriorityIdle, 0, 64, ircontrolBuffer, &ircontrolControlBlock);
+  osThreadDef(ircontrol, irReceiver, osPriorityIdle, 0, 64);
   ircontrolHandle = osThreadCreate(osThread(ircontrol), NULL);
 
   /* definition and creation of acelerometro */
-  osThreadStaticDef(acelerometro, imu, osPriorityNormal, 0, 64, acelerometroBuffer, &acelerometroControlBlock);
+  osThreadDef(acelerometro, imu, osPriorityNormal, 0, 64);
   acelerometroHandle = osThreadCreate(osThread(acelerometro), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -245,27 +203,33 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the queue(s) */
   /* definition and creation of serialQueue */
-  osMessageQStaticDef(serialQueue, 10, message, serialQueueBuffer, &serialQueueControlBlock);
+/* what about the sizeof here??? cd native code */
+  osMessageQDef(serialQueue, 2, message);
   serialQueueHandle = osMessageCreate(osMessageQ(serialQueue), NULL);
 
   /* definition and creation of motorRQueue */
-  osMessageQStaticDef(motorRQueue, 5, message, motorRQueueBuffer, &motorRQueueControlBlock);
+/* what about the sizeof here??? cd native code */
+  osMessageQDef(motorRQueue, 1, message);
   motorRQueueHandle = osMessageCreate(osMessageQ(motorRQueue), NULL);
 
   /* definition and creation of motorLQueue */
-  osMessageQStaticDef(motorLQueue, 5, message, motorLQueueBuffer, &motorLQueueControlBlock);
+/* what about the sizeof here??? cd native code */
+  osMessageQDef(motorLQueue, 1, message);
   motorLQueueHandle = osMessageCreate(osMessageQ(motorLQueue), NULL);
 
   /* definition and creation of sensorsDistQueue */
-  osMessageQStaticDef(sensorsDistQueue, 5, message, sensorsDistQueueBuffer, &sensorsDistQueueControlBlock);
+/* what about the sizeof here??? cd native code */
+  osMessageQDef(sensorsDistQueue, 1, message);
   sensorsDistQueueHandle = osMessageCreate(osMessageQ(sensorsDistQueue), NULL);
 
   /* definition and creation of sensorsFloorQueue */
-  osMessageQStaticDef(sensorsFloorQueue, 5, message, sensorsFloorQueueBuffer, &sensorsFloorQueueControlBlock);
+/* what about the sizeof here??? cd native code */
+  osMessageQDef(sensorsFloorQueue, 1, message);
   sensorsFloorQueueHandle = osMessageCreate(osMessageQ(sensorsFloorQueue), NULL);
 
   /* definition and creation of imuQueue */
-  osMessageQStaticDef(imuQueue, 5, message, imuQueueBuffer, &imuQueueControlBlock);
+/* what about the sizeof here??? cd native code */
+  osMessageQDef(imuQueue, 1, message);
   imuQueueHandle = osMessageCreate(osMessageQ(imuQueue), NULL);
 
   /* USER CODE BEGIN RTOS_QUEUES */

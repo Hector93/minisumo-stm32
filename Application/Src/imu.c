@@ -638,8 +638,9 @@ void gyro_data_ready_cb(void)
 //----------------------------------------------------------------------------------------------------------
 
 
-extern osSemaphoreId I2cSemTxHandle;
-extern osSemaphoreId I2cSemRxHandle;
+//extern osSemaphoreId I2cSemHandle;
+//extern osSemaphoreId I2cSemRxHandle;
+
 
 
 
@@ -649,13 +650,18 @@ void imu(void const * argument){
   unsigned char accel_fsr,  new_temp = 0;
   unsigned short gyro_rate, gyro_fsr;
   unsigned long timestamp;
+#ifdef COMPASS_ENABLED
+  unsigned char new_compass = 0;
+  unsigned short compass_fsr;
+#endif
 
-  xSemaphoreGive(I2cSemRxHandle);
-  xSemaphoreGive(I2cSemTxHandle);
+  //  xSemaphoreGive(I2cSemHandle);
+  //xSemaphoreGive(I2cSemTxHandle);
 
-  //board_init(); 
-  //  result = mpu_init(&int_param);
-  if (mpu_init(&int_param)) {
+ 
+  HAL_GPIO_TogglePin(led_GPIO_Port,led_Pin);
+  result = mpu_init(&int_param);
+  if (result) {
     MPL_LOGE("Could not initialize gyro.\n");
   }
   result = inv_init_mpl();
@@ -663,57 +669,136 @@ void imu(void const * argument){
     MPL_LOGE("Could not initialize MPL.\n");
   }
   inv_enable_quaternion();
-  //  inv_enable_9x_sensor_fusion();
-  for(;;){
+  inv_enable_9x_sensor_fusion();
+  inv_enable_fast_nomot();
+  inv_enable_gyro_tc();
+#ifdef COMPASS_ENABLED
+  /* Compass calibration algorithms. */
+  inv_enable_vector_compass_cal();
+  inv_enable_magnetic_disturbance();
+#endif
+  /* Allows use of the MPL APIs in read_from_mpl. */
+  inv_enable_eMPL_outputs();
+  result = inv_start_mpl();
+  if (result == INV_ERROR_NOT_AUTHORIZED) {
+    while (1) {
+      MPL_LOGE("Not authorized.\n");
+    }
+  }
+  if (result) {
+    MPL_LOGE("Could not start the MPL.\n");
+  }
+#ifdef COMPASS_ENABLED
+  mpu_set_sensors(INV_XYZ_GYRO | INV_XYZ_ACCEL | INV_XYZ_COMPASS);
+#else
+  mpu_set_sensors(INV_XYZ_GYRO | INV_XYZ_ACCEL);
+#endif
+  /* Push both gyro and accel data into the FIFO. */
+  mpu_configure_fifo(INV_XYZ_GYRO | INV_XYZ_ACCEL);
+  mpu_set_sample_rate(DEFAULT_MPU_HZ);
+#ifdef COMPASS_ENABLED
+  /* The compass sampling rate can be less than the gyro/accel sampling rate.
+   * Use this function for proper power management.
+   */
+  mpu_set_compass_sample_rate(1000 / COMPASS_READ_MS);
+#endif
+  mpu_get_sample_rate(&gyro_rate);
+  mpu_get_gyro_fsr(&gyro_fsr);
+  mpu_get_accel_fsr(&accel_fsr);
+#ifdef COMPASS_ENABLED
+  mpu_get_compass_fsr(&compass_fsr);
+#endif
+  /* Sync driver configuration with MPL. */
+  /* Sample rate expected in microseconds. */
+  inv_set_gyro_sample_rate(1000000L / gyro_rate);
+  inv_set_accel_sample_rate(1000000L / gyro_rate);
+#ifdef COMPASS_ENABLED
+  /* The compass rate is independent of the gyro and accel rates. As long as
+   * inv_set_compass_sample_rate is called with the correct value, the 9-axis
+   * fusion algorithm's compass correction gain will work properly.
+   */
+  inv_set_compass_sample_rate(COMPASS_READ_MS * 1000L);
+#endif
+  /* Set chip-to-body orientation matrix.
+   * Set hardware units to dps/g's/degrees scaling factor.
+   */
+  inv_set_gyro_orientation_and_scale(
+				     inv_orientation_matrix_to_scalar(gyro_pdata.orientation),
+				     (long)gyro_fsr<<15);
+  inv_set_accel_orientation_and_scale(
+				      inv_orientation_matrix_to_scalar(gyro_pdata.orientation),
+				      (long)accel_fsr<<15);
+#ifdef COMPASS_ENABLED
+  inv_set_compass_orientation_and_scale(
+					inv_orientation_matrix_to_scalar(compass_pdata.orientation),
+					(long)compass_fsr<<15);
+#endif
+#ifdef COMPASS_ENABLED
+  hal.sensors = ACCEL_ON | GYRO_ON | COMPASS_ON;
+#else
+  hal.sensors = ACCEL_ON | GYRO_ON;
+#endif
+  hal.dmp_on = 0;
+  hal.report = 0;
+  hal.rx.cmd = 0;
+  hal.next_pedo_ms = 0;
+  hal.next_compass_ms = 0;
+  hal.next_temp_ms = 0;
+  /* Compass reads are handled by scheduler. */
+  get_tick_count(&timestamp);
+ 
+  //cargo dmp
+  dmp_load_motion_driver_firmware();
+  HAL_GPIO_TogglePin(led_GPIO_Port,led_Pin);
+  dmp_set_orientation(
+		      inv_orientation_matrix_to_scalar(gyro_pdata.orientation));
+  dmp_register_tap_cb(tap_cb);
+  dmp_register_android_orient_cb(android_orient_cb);
+  /*
+   * Known Bug -
+   * DMP when enabled will sample sensor data at 200Hz and output to FIFO at the rate
+   * specified in the dmp_set_fifo_rate API. The DMP will then sent an interrupt once
+   * a sample has been put into the FIFO. Therefore if the dmp_set_fifo_rate is at 25Hz
+   * there will be a 25Hz interrupt from the MPU device.
+   *
+   * There is a known issue in which if you do not enable DMP_FEATURE_TAP
+   * then the interrupts will be at 200Hz even if fifo rate
+   * is set at a different rate. To avoid this issue include the DMP_FEATURE_TAP
+   *
+   * DMP sensor fusion works only with gyro at +-2000dps and accel +-2G
+   */
+  hal.dmp_features = DMP_FEATURE_6X_LP_QUAT | DMP_FEATURE_TAP |
+    DMP_FEATURE_ANDROID_ORIENT | DMP_FEATURE_SEND_RAW_ACCEL | DMP_FEATURE_SEND_CAL_GYRO |
+    DMP_FEATURE_GYRO_CAL;
+  dmp_enable_feature(hal.dmp_features);
+  dmp_set_fifo_rate(DEFAULT_MPU_HZ);
+  mpu_set_dmp_state(1);
+  hal.dmp_on = 1;
 
+  for(;;){
+    vTaskDelay(100);
   }
 }
 
 
 uint8_t Sensors_I2C_WriteRegister(unsigned char slave_addr, unsigned char reg_addr, unsigned char length, unsigned char *data){
-  if(pdPASS == (xSemaphoreTake(I2cSemTxHandle,portMAX_DELAY))){
-    unsigned char* aux;
-    aux = malloc(length + 1);
-    aux[0] = reg_addr;
-    memcpy(aux+1,data,length);
-    HAL_I2C_Master_Transmit_IT(&hi2c1,slave_addr << 1,aux,length +1);
-    free(aux);
-  }
-  return 0;
+  return (HAL_OK == HAL_I2C_Mem_Write(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000) ? 0 : 1);
 }
 
 uint8_t Sensors_I2C_ReadRegister(unsigned char slave_addr, unsigned char reg_addr, unsigned char length, unsigned char *data){
-  if(pdPASS == (xSemaphoreTake(I2cSemRxHandle,portMAX_DELAY))){
-    unsigned char* aux;
-    aux = malloc(length + 1);
-    aux[0] = reg_addr;
-    memcpy(aux+1,data,length);
-    HAL_I2C_Master_Receive_IT(&hi2c1,slave_addr<<1,aux,length+1);
-    free(aux);
-  }
-  return 0;
+  //HAL_I2C_Mem_Read(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000);
+  //HAL_I2C_Mem_Read_DMA(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length);
+
+  return (HAL_OK == HAL_I2C_Mem_Read(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000)? 0 : 1);
 }
 
-void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c){
-  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  if(pdPASS == (xSemaphoreGiveFromISR(I2cSemTxHandle,&xHigherPriorityTaskWoken))){
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-  }
-}
-
-void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c){
-  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  if(pdPASS == (xSemaphoreGiveFromISR(I2cSemRxHandle, &xHigherPriorityTaskWoken))){
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-  }
-}
-
-void HAL_I2C_ErrorCallback(I2C_HandleTypeDef* hi2c){
+/*
+  void HAL_I2C_ErrorCallback(I2C_HandleTypeDef* hi2c){
   while(1){
-    
-  }
-}
 
+  }
+  }
+*/
 void mdelay(unsigned long nTime){
   vTaskDelay(pdMS_TO_TICKS(nTime));
 }
