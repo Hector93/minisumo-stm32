@@ -15,7 +15,7 @@
 #include "packet.h"
 
 #include <string.h>
-
+unsigned char *dmp_memory;
 
 /* Private typedef -----------------------------------------------------------*/
 /* Data read from MPL. */
@@ -748,6 +748,16 @@ void imu(void const * argument){
   get_tick_count(&timestamp);
  
   //cargo dmp
+  dmp_memory = malloc(sizeof(unsigned char) * 3062);
+  dmp_memory[0]=0;
+  //if(HAL_OK == (HAL_I2C_IsDeviceReady(&hi2c1,0x50 << 1,15,1000))){
+  Sensors_I2C_WriteRegister(0x50,0,1,dmp_memory);
+  //    HAL_I2C_Mem_Write(&hi2c1,0x50 << 1,0,sizeof(uint8_t),dmp_memory,1,10000);
+  //}
+  //if(HAL_OK == (HAL_I2C_IsDeviceReady(&hi2c1,0x50 << 1,15,1000))){
+  Sensors_I2C_ReadRegister(0x50,0,(unsigned int)3062,dmp_memory);
+  //  HAL_I2C_Mem_Read(&hi2c1,0x50 << 1,0,sizeof(uint8_t),dmp_memory,3062,1000);
+  //}  
   dmp_load_motion_driver_firmware();
   HAL_GPIO_TogglePin(led_GPIO_Port,led_Pin);
   dmp_set_orientation(

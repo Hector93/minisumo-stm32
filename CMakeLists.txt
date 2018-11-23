@@ -41,7 +41,8 @@ cmake_minimum_required (VERSION 2.6)
 #USER CUSTOM SETTINGS
 #You can change values here. It's not recommended to change whole script
 set(OPT "-Os")
-#set(USER_LINKER_FLAGS "-u _printf_float")
+#set(USER_LINKER_FLAGS "-u _printf_float --specasass=nano.specs")
+set(USER_LINKER_FLAGS "--specs=nano.specs")
 
 set(USER_CFLAGS "-Wall -fmessage-length=0 -DUSE_STDPERIPH_DRIVER -DEMPL -DUSE_DMP -DMPU6050 -DREMOVE_LOGGING -DMPL_LOG_NDEBUG=1 -DEMPL_TARGET_STM32F4 -I\"Middlewares/Third_Party/InvenSense/core/driver/include\" -I\"Middlewares/Third_Party/InvenSense/core/driver/eMPL\" -I\"Middlewares/Third_Party/InvenSense/core/driver/stm32L\" -I\"Middlewares/Third_Party/InvenSense/core/mpl\" -I\"Middlewares/Third_Party/InvenSense/core/mllite\"")
 set(USER_COMPILER "GNU") # "Clang" or "GNU"
