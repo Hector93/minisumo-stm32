@@ -104,7 +104,6 @@ void HAL_I2C_MspInit(I2C_HandleTypeDef* i2cHandle)
     __HAL_RCC_I2C1_FORCE_RESET();
     HAL_Delay(2);
     __HAL_RCC_I2C1_RELEASE_RESET();
-
     /* I2C1 interrupt Init */
     HAL_NVIC_SetPriority(I2C1_EV_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(I2C1_EV_IRQn);

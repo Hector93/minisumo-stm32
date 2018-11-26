@@ -806,6 +806,7 @@ void imu(void const * argument){
   //  handle_input('8');
   // handle_input('9');
   handle_input('5');
+  handle_input('.');
   for(;;){
     unsigned long sensor_timestamp;
     int new_data = 0;
@@ -825,7 +826,7 @@ void imu(void const * argument){
     /* We're not using a data ready interrupt for the compass, so we'll
      * make our compass reads timer-based instead.
      */
-  if ((timestamp > hal.next_compass_ms) && !hal.lp_accel_mode &&
+    if ((timestamp > hal.next_compass_ms) && !hal.lp_accel_mode &&
 	hal.new_gyro && (hal.sensors & COMPASS_ON)) {
       hal.next_compass_ms = timestamp + COMPASS_READ_MS;
       new_compass = 1;
@@ -977,7 +978,7 @@ void imu(void const * argument){
        */
       read_from_mpl();
     }
-    vTaskDelay(100);
+    //vTaskDelay(100);
   }
 }
 
