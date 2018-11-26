@@ -197,6 +197,19 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
   }  
 }
+
+int fputcI(int ch )
+{
+  //* Place your implementation of fputc here 
+  //* e.g. write a character to the USART 
+  //USART_SendData(USARTx, (uint8_t) ch);
+
+  //* Loop until the end of transmission 
+  //while (USART_GetFlagStatus(USARTx, USART_FLAG_TC) == RESET)
+  //  {}
+  //HAL_GPIO_TogglePin(led_GPIO_Port, led_Pin);
+  return  HAL_UART_Transmit(&huart1,(uint8_t*)ch,1,1000);
+}
 /* USER CODE END 1 */
 
 /**

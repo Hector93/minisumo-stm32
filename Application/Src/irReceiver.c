@@ -4,6 +4,6 @@
 
 void irReceiver(void const* argument){
   for(;;){
-    
+    vTaskDelay(100);
   }
 }

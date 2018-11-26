@@ -5,6 +5,7 @@ CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o
  /home/hector/Documentos/Robotica/firmware/minisumo-stm32/startup/startup_stm32f103xb.s
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o
  ../Application/Inc/imu.h
+ ../Application/Inc/message.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
@@ -1034,8 +1035,23 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+ ../Inc/FreeRTOSConfig.h
  ../Inc/main.h
  ../Inc/stm32f1xx_hal_conf.h
+ ../Inc/usart.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
  /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/driver/include/log.h
  /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/driver/include/mltypes.h
  /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/driver/include/stdint_invensense.h

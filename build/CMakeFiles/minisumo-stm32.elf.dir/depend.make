@@ -4,6 +4,7 @@
 CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o: ../startup/startup_stm32f103xb.s
 
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o: ../Application/Inc/imu.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o: ../Application/Inc/message.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
@@ -1033,8 +1034,23 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Inc/FreeRTOSConfig.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Inc/main.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Inc/stm32f1xx_hal_conf.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Inc/usart.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/log.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/mltypes.h
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/stdint_invensense.h

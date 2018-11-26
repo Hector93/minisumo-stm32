@@ -30,7 +30,7 @@
 #include "stm32f1xx.h"
 //#include "uart.h"
 #include "../../../uart.h"
-
+#include "usart.h"
 #define BUF_SIZE        (256)
 #define PACKET_LENGTH   (23)
 
@@ -133,10 +133,12 @@ void eMPL_send_quat(long *quat)
     out[18] = (char)quat[3];
     out[21] = '\r';
     out[22] = '\n';
-    
-    for (i=0; i<PACKET_LENGTH; i++) {
-      fputcI(out[i]);
-    }
+
+    HAL_UART_Transmit(&huart1, out, PACKET_LENGTH, 100);
+    //    for (i=0; i<PACKET_LENGTH; i++) {
+      
+    //      fputcI(out[i]);
+    // }
 }
 
 void eMPL_send_data(unsigned char type, long *data)
@@ -207,9 +209,10 @@ void eMPL_send_data(unsigned char type, long *data)
     default:
         return;
     }
-    for (i=0; i<PACKET_LENGTH; i++) {
-      fputcI(out[i]);
-    }
+    HAL_UART_Transmit(&huart1, out, PACKET_LENGTH, 100);
+    //    for (i=0; i<PACKET_LENGTH; i++) {
+    //    fputcI(out[i]);
+    //}
 }
 
 /**

@@ -15,6 +15,7 @@
 #include "packet.h"
 
 #include <string.h>
+#include "message.h"
 unsigned char *dmp_memory;
 
 /* Private typedef -----------------------------------------------------------*/
@@ -386,12 +387,11 @@ static inline void run_self_test(void)
 
 }
 
-static void handle_input(void)
+static void handle_input(char opt)
 {
   
-  char c = USART_ReceiveData(USART2);
 
-  switch (c) {
+  switch (opt) {
     /* These commands turn off individual sensors. */
   case '8':
     hal.sensors ^= ACCEL_ON;
@@ -641,7 +641,7 @@ void gyro_data_ready_cb(void)
 //extern osSemaphoreId I2cSemHandle;
 //extern osSemaphoreId I2cSemRxHandle;
 
-
+extern osMessageQId imuQueueHandle;
 
 
 void imu(void const * argument){
@@ -661,17 +661,26 @@ void imu(void const * argument){
  
   HAL_GPIO_TogglePin(led_GPIO_Port,led_Pin);
   result = mpu_init(&int_param);
-  if (result) {
+  if (result != 0) {
     MPL_LOGE("Could not initialize gyro.\n");
   }
   result = inv_init_mpl();
-  if (result) {
+  if (result != INV_SUCCESS) {
     MPL_LOGE("Could not initialize MPL.\n");
   }
-  inv_enable_quaternion();
-  inv_enable_9x_sensor_fusion();
-  inv_enable_fast_nomot();
-  inv_enable_gyro_tc();
+  if(inv_enable_quaternion() != INV_SUCCESS){
+    MPL_LOGE("Could not quaternion.\n");
+  }
+  if(inv_enable_9x_sensor_fusion() != INV_SUCCESS){
+    MPL_LOGE("Could not enable 9x sensor fusion.\n");
+  }
+  if(inv_enable_fast_nomot() != INV_SUCCESS){
+    MPL_LOGE("Could not enable fast nomot.\n");
+  }
+  if(inv_enable_gyro_tc() != INV_SUCCESS){
+    MPL_LOGE("Could not enable gyro tc.\n");
+  }  
+  
 #ifdef COMPASS_ENABLED
   /* Compass calibration algorithms. */
   inv_enable_vector_compass_cal();
@@ -755,15 +764,25 @@ void imu(void const * argument){
   //    HAL_I2C_Mem_Write(&hi2c1,0x50 << 1,0,sizeof(uint8_t),dmp_memory,1,10000);
   //}
   //if(HAL_OK == (HAL_I2C_IsDeviceReady(&hi2c1,0x50 << 1,15,1000))){
-  Sensors_I2C_ReadRegister(0x50,0,(unsigned int)3062,dmp_memory);
-  //  HAL_I2C_Mem_Read(&hi2c1,0x50 << 1,0,sizeof(uint8_t),dmp_memory,3062,1000);
-  //}  
-  dmp_load_motion_driver_firmware();
-  HAL_GPIO_TogglePin(led_GPIO_Port,led_Pin);
-  dmp_set_orientation(
-		      inv_orientation_matrix_to_scalar(gyro_pdata.orientation));
-  dmp_register_tap_cb(tap_cb);
-  dmp_register_android_orient_cb(android_orient_cb);
+  //  Sensors_I2C_ReadRegister(0x50,0,(unsigned int)3062,dmp_memory);
+  //  HAL_I2C_Mem_Read(&hi2c1,0x50 << 1,0,sizeof(uint8_t),dmp_memory,3062,100000);
+  HAL_I2C_Master_Receive(&hi2c1, 0x50 << 1, dmp_memory, 3062, 1000000);
+  //}
+  
+  if(!dmp_load_motion_driver_firmware()){
+    HAL_GPIO_TogglePin(led_GPIO_Port,led_Pin);
+  }
+  free(dmp_memory);
+  if(!dmp_set_orientation(inv_orientation_matrix_to_scalar(gyro_pdata.orientation))){
+    HAL_GPIO_TogglePin(led_GPIO_Port,led_Pin);
+  }
+  if(!dmp_register_tap_cb(tap_cb)){
+    HAL_GPIO_TogglePin(led_GPIO_Port,led_Pin); 
+  }
+  if(!dmp_register_android_orient_cb(android_orient_cb)){
+    HAL_GPIO_TogglePin(led_GPIO_Port,led_Pin);  
+  }
+  
   /*
    * Known Bug -
    * DMP when enabled will sample sensor data at 200Hz and output to FIFO at the rate
@@ -784,8 +803,180 @@ void imu(void const * argument){
   dmp_set_fifo_rate(DEFAULT_MPU_HZ);
   mpu_set_dmp_state(1);
   hal.dmp_on = 1;
-
+  //  handle_input('8');
+  // handle_input('9');
+  handle_input('5');
   for(;;){
+    unsigned long sensor_timestamp;
+    int new_data = 0;
+    message rx;
+    //    if (USART_GetITStatus(USART2, USART_IT_RXNE)) {
+    if(pdPASS == (xQueueReceive(imuQueueHandle, &rx, 10))){
+      /* A byte has been received via USART. See handle_input for a list of
+       * valid commands.
+       */
+      //USART_ClearITPendingBit(USART2, USART_IT_RXNE);
+      handle_input(rx.messageUser.type);
+    }
+    get_tick_count(&timestamp);
+    //    HAL_UART_Transmit(&huart1, "hola mundo\n", 11, 100);
+	
+#ifdef COMPASS_ENABLED
+    /* We're not using a data ready interrupt for the compass, so we'll
+     * make our compass reads timer-based instead.
+     */
+  if ((timestamp > hal.next_compass_ms) && !hal.lp_accel_mode &&
+	hal.new_gyro && (hal.sensors & COMPASS_ON)) {
+      hal.next_compass_ms = timestamp + COMPASS_READ_MS;
+      new_compass = 1;
+    }
+#endif
+    /* Temperature data doesn't need to be read with every gyro sample.
+     * Let's make them timer-based like the compass reads.
+     */
+    if (timestamp > hal.next_temp_ms) {
+      hal.next_temp_ms = timestamp + TEMP_READ_MS;
+      new_temp = 1;
+    }
+
+    if (hal.motion_int_mode) {
+      /* Enable motion interrupt. */
+      mpu_lp_motion_interrupt(500, 1, 5);
+      /* Notify the MPL that contiguity was broken. */
+      inv_accel_was_turned_off();
+      inv_gyro_was_turned_off();
+      inv_compass_was_turned_off();
+      inv_quaternion_sensor_was_turned_off();
+      /* Wait for the MPU interrupt. */
+      while (!hal.new_gyro) {}
+      /* Restore the previous sensor configuration. */
+      mpu_lp_motion_interrupt(0, 0, 0);
+      hal.motion_int_mode = 0;
+    }
+
+    if (!hal.sensors || !hal.new_gyro) {
+      continue;
+    }    
+
+    if (hal.new_gyro && hal.lp_accel_mode) {
+      short accel_short[3];
+      long accel[3];
+      mpu_get_accel_reg(accel_short, &sensor_timestamp);
+      accel[0] = (long)accel_short[0];
+      accel[1] = (long)accel_short[1];
+      accel[2] = (long)accel_short[2];
+      inv_build_accel(accel, 0, sensor_timestamp);
+      new_data = 1;
+      hal.new_gyro = 0;
+    } else if (hal.new_gyro && hal.dmp_on) {
+      short gyro[3], accel_short[3], sensors;
+      unsigned char more;
+      long accel[3], quat[4], temperature;
+      /* This function gets new data from the FIFO when the DMP is in
+       * use. The FIFO can contain any combination of gyro, accel,
+       * quaternion, and gesture data. The sensors parameter tells the
+       * caller which data fields were actually populated with new data.
+       * For example, if sensors == (INV_XYZ_GYRO | INV_WXYZ_QUAT), then
+       * the FIFO isn't being filled with accel data.
+       * The driver parses the gesture data to determine if a gesture
+       * event has occurred; on an event, the application will be notified
+       * via a callback (assuming that a callback function was properly
+       * registered). The more parameter is non-zero if there are
+       * leftover packets in the FIFO.
+       */
+      dmp_read_fifo(gyro, accel_short, quat, &sensor_timestamp, &sensors, &more);
+      if (!more)
+	hal.new_gyro = 0;
+      if (sensors & INV_XYZ_GYRO) {
+	/* Push the new data to the MPL. */
+	inv_build_gyro(gyro, sensor_timestamp);
+	new_data = 1;
+	if (new_temp) {
+	  new_temp = 0;
+	  /* Temperature only used for gyro temp comp. */
+	  mpu_get_temperature(&temperature, &sensor_timestamp);
+	  inv_build_temp(temperature, sensor_timestamp);
+	}
+      }
+      if (sensors & INV_XYZ_ACCEL) {
+	accel[0] = (long)accel_short[0];
+	accel[1] = (long)accel_short[1];
+	accel[2] = (long)accel_short[2];
+	inv_build_accel(accel, 0, sensor_timestamp);
+	new_data = 1;
+      }
+      if (sensors & INV_WXYZ_QUAT) {
+	inv_build_quat(quat, 0, sensor_timestamp);
+	new_data = 1;
+      }
+    } else if (hal.new_gyro) {
+      short gyro[3], accel_short[3];
+      unsigned char sensors, more;
+      long accel[3], temperature;
+      /* This function gets new data from the FIFO. The FIFO can contain
+       * gyro, accel, both, or neither. The sensors parameter tells the
+       * caller which data fields were actually populated with new data.
+       * For example, if sensors == INV_XYZ_GYRO, then the FIFO isn't
+       * being filled with accel data. The more parameter is non-zero if
+       * there are leftover packets in the FIFO. The HAL can use this
+       * information to increase the frequency at which this function is
+       * called.
+       */
+      hal.new_gyro = 0;
+      mpu_read_fifo(gyro, accel_short, &sensor_timestamp,
+		    &sensors, &more);
+      if (more)
+	hal.new_gyro = 1;
+      if (sensors & INV_XYZ_GYRO) {
+	/* Push the new data to the MPL. */
+	inv_build_gyro(gyro, sensor_timestamp);
+	new_data = 1;
+	if (new_temp) {
+	  new_temp = 0;
+	  /* Temperature only used for gyro temp comp. */
+	  mpu_get_temperature(&temperature, &sensor_timestamp);
+	  inv_build_temp(temperature, sensor_timestamp);
+	}
+      }
+      if (sensors & INV_XYZ_ACCEL) {
+	accel[0] = (long)accel_short[0];
+	accel[1] = (long)accel_short[1];
+	accel[2] = (long)accel_short[2];
+	inv_build_accel(accel, 0, sensor_timestamp);
+	new_data = 1;
+      }
+    }
+#ifdef COMPASS_ENABLED
+    if (new_compass) {
+      short compass_short[3];
+      long compass[3];
+      new_compass = 0;
+      /* For any MPU device with an AKM on the auxiliary I2C bus, the raw
+       * magnetometer registers are copied to special gyro registers.
+       */
+      if (!mpu_get_compass_reg(compass_short, &sensor_timestamp)) {
+	compass[0] = (long)compass_short[0];
+	compass[1] = (long)compass_short[1];
+	compass[2] = (long)compass_short[2];
+	/* NOTE: If using a third-party compass calibration library,
+	 * pass in the compass data in uT * 2^16 and set the second
+	 * parameter to INV_CALIBRATED | acc, where acc is the
+	 * accuracy from 0 to 3.
+	 */
+	inv_build_compass(compass, 0, sensor_timestamp);
+      }
+      new_data = 1;
+    }
+#endif
+    if (new_data) {
+      inv_execute_on_data();
+      /* This function reads bias-compensated sensor data and sensor
+       * fusion outputs from the MPL. The outputs are formatted as seen
+       * in eMPL_outputs.c. This function only needs to be called at the
+       * rate requested by the host.
+       */
+      read_from_mpl();
+    }
     vTaskDelay(100);
   }
 }
@@ -798,8 +989,7 @@ uint8_t Sensors_I2C_WriteRegister(unsigned char slave_addr, unsigned char reg_ad
 uint8_t Sensors_I2C_ReadRegister(unsigned char slave_addr, unsigned char reg_addr, unsigned char length, unsigned char *data){
   //HAL_I2C_Mem_Read(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000);
   //HAL_I2C_Mem_Read_DMA(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length);
-
-  return (HAL_OK == HAL_I2C_Mem_Read(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000)? 0 : 1);
+  return (HAL_OK == HAL_I2C_Mem_Read(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,100000)? 0 : 1);
 }
 
 /*
@@ -817,3 +1007,7 @@ uint32_t get_tick_count(){
   return xTaskGetTickCount();
 }
 
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  gyro_data_ready_cb();
+}

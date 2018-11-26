@@ -41,9 +41,9 @@ void USART_Config(void)
 {
  
 }
-
-int fputcI(int ch )
-{
+/*
+  int fputcI(int ch )
+  {
   //* Place your implementation of fputc here 
   //* e.g. write a character to the USART 
   //USART_SendData(USARTx, (uint8_t) ch);
@@ -51,6 +51,7 @@ int fputcI(int ch )
   //* Loop until the end of transmission 
   //while (USART_GetFlagStatus(USARTx, USART_FLAG_TC) == RESET)
   //  {}
-  return  HAL_UART_Transmit(&huart1,(uint8_t*)ch,2,200);
-}
-
+  //HAL_GPIO_TogglePin(led_GPIO_Port, led_Pin);
+  return  HAL_UART_Transmit(&huart1,(uint8_t*)ch,1,1000);
+  }
+*/
