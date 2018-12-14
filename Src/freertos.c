@@ -203,32 +203,26 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the queue(s) */
   /* definition and creation of serialQueue */
-/* what about the sizeof here??? cd native code */
   osMessageQDef(serialQueue, 2, message);
   serialQueueHandle = osMessageCreate(osMessageQ(serialQueue), NULL);
 
   /* definition and creation of motorRQueue */
-/* what about the sizeof here??? cd native code */
   osMessageQDef(motorRQueue, 1, message);
   motorRQueueHandle = osMessageCreate(osMessageQ(motorRQueue), NULL);
 
   /* definition and creation of motorLQueue */
-/* what about the sizeof here??? cd native code */
   osMessageQDef(motorLQueue, 1, message);
   motorLQueueHandle = osMessageCreate(osMessageQ(motorLQueue), NULL);
 
   /* definition and creation of sensorsDistQueue */
-/* what about the sizeof here??? cd native code */
   osMessageQDef(sensorsDistQueue, 1, message);
   sensorsDistQueueHandle = osMessageCreate(osMessageQ(sensorsDistQueue), NULL);
 
   /* definition and creation of sensorsFloorQueue */
-/* what about the sizeof here??? cd native code */
   osMessageQDef(sensorsFloorQueue, 1, message);
   sensorsFloorQueueHandle = osMessageCreate(osMessageQ(sensorsFloorQueue), NULL);
 
   /* definition and creation of imuQueue */
-/* what about the sizeof here??? cd native code */
   osMessageQDef(imuQueue, 1, message);
   imuQueueHandle = osMessageCreate(osMessageQ(imuQueue), NULL);
 

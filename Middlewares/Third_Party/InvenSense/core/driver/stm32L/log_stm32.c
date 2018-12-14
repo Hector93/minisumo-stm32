@@ -95,9 +95,11 @@ int _MLPrintLog (int priority, const char* tag, const char* fmt, ...)
         this_length = min(length-ii, PACKET_LENGTH-5);
         memset(out+3, 0, 18);
         memcpy(out+3, buf+ii, this_length);
-        for (i=0; i<PACKET_LENGTH; i++) {
-          fputcI(out[i]);
+	HAL_UART_Transmit(&huart1, out, PACKET_LENGTH, 1000);
+	/*        for (i=0; i<PACKET_LENGTH; i++) {
+		  fputcI(out[i]);
         }
+	*/
     }
     
             
@@ -134,7 +136,7 @@ void eMPL_send_quat(long *quat)
     out[21] = '\r';
     out[22] = '\n';
 
-    HAL_UART_Transmit(&huart1, out, PACKET_LENGTH, 100);
+    HAL_UART_Transmit(&huart1, out, PACKET_LENGTH, 1000);
     //    for (i=0; i<PACKET_LENGTH; i++) {
       
     //      fputcI(out[i]);
@@ -209,7 +211,7 @@ void eMPL_send_data(unsigned char type, long *data)
     default:
         return;
     }
-    HAL_UART_Transmit(&huart1, out, PACKET_LENGTH, 100);
+    HAL_UART_Transmit(&huart1, out, PACKET_LENGTH, 1000);
     //    for (i=0; i<PACKET_LENGTH; i++) {
     //    fputcI(out[i]);
     //}

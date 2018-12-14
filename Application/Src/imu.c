@@ -208,15 +208,15 @@ static void read_from_mpl(void)
    * be notified. For this example, we use an LED to represent the current
    * motion state.
    */
-  msg = inv_get_message_level_0(INV_MSG_MOTION_EVENT |
-				INV_MSG_NO_MOTION_EVENT);
-  if (msg) {
-    if (msg & INV_MSG_MOTION_EVENT) {
-      MPL_LOGI("Motion!\n");
-    } else if (msg & INV_MSG_NO_MOTION_EVENT) {
-      MPL_LOGI("No motion!\n");
-    }
-  }
+   msg = inv_get_message_level_0(INV_MSG_MOTION_EVENT |
+				 INV_MSG_NO_MOTION_EVENT);
+   /*  if (msg) {
+       if (msg & INV_MSG_MOTION_EVENT) {
+       MPL_LOGI("Motion!\n");
+       } else if (msg & INV_MSG_NO_MOTION_EVENT) {
+       MPL_LOGI("No motion!\n");
+       }
+       }*/
 }
 
 #ifdef COMPASS_ENABLED
@@ -389,8 +389,6 @@ static inline void run_self_test(void)
 
 static void handle_input(char opt)
 {
-  
-
   switch (opt) {
     /* These commands turn off individual sensors. */
   case '8':
@@ -757,7 +755,8 @@ void imu(void const * argument){
   get_tick_count(&timestamp);
  
   //cargo dmp
-  dmp_memory = malloc(sizeof(unsigned char) * 3062);
+  //  dmp_memory = malloc(sizeof(unsigned char) * 3062);
+  dmp_memory = pvPortMalloc(sizeof(unsigned char) * 3062);
   dmp_memory[0]=0;
   //if(HAL_OK == (HAL_I2C_IsDeviceReady(&hi2c1,0x50 << 1,15,1000))){
   Sensors_I2C_WriteRegister(0x50,0,1,dmp_memory);
@@ -772,7 +771,8 @@ void imu(void const * argument){
   if(!dmp_load_motion_driver_firmware()){
     HAL_GPIO_TogglePin(led_GPIO_Port,led_Pin);
   }
-  free(dmp_memory);
+  vPortFree(dmp_memory);
+  //  free(dmp_memory);
   if(!dmp_set_orientation(inv_orientation_matrix_to_scalar(gyro_pdata.orientation))){
     HAL_GPIO_TogglePin(led_GPIO_Port,led_Pin);
   }
@@ -803,8 +803,8 @@ void imu(void const * argument){
   dmp_set_fifo_rate(DEFAULT_MPU_HZ);
   mpu_set_dmp_state(1);
   hal.dmp_on = 1;
-  //  handle_input('8');
-  // handle_input('9');
+  //handle_input('8');
+  //handle_input('9');
   handle_input('5');
   handle_input('.');
   for(;;){
@@ -812,15 +812,15 @@ void imu(void const * argument){
     int new_data = 0;
     message rx;
     //    if (USART_GetITStatus(USART2, USART_IT_RXNE)) {
-    if(pdPASS == (xQueueReceive(imuQueueHandle, &rx, 10))){
-      /* A byte has been received via USART. See handle_input for a list of
-       * valid commands.
-       */
-      //USART_ClearITPendingBit(USART2, USART_IT_RXNE);
-      handle_input(rx.messageUser.type);
-    }
+    /// if(pdPASS == (xQueueReceive(imuQueueHandle, &rx, 10))){
+    /* A byte has been received via USART. See handle_input for a list of
+     * valid commands.
+     */
+    //USART_ClearITPendingBit(USART2, USART_IT_RXNE);
+    //handle_input(rx.messageUser.type);
+    //}
     get_tick_count(&timestamp);
-    //    HAL_UART_Transmit(&huart1, "hola mundo\n", 11, 100);
+    //HAL_UART_Transmit(&huart1, "hola mundo\n", 11, 100);
 	
 #ifdef COMPASS_ENABLED
     /* We're not using a data ready interrupt for the compass, so we'll
@@ -993,13 +993,13 @@ uint8_t Sensors_I2C_ReadRegister(unsigned char slave_addr, unsigned char reg_add
   return (HAL_OK == HAL_I2C_Mem_Read(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,100000)? 0 : 1);
 }
 
-/*
-  void HAL_I2C_ErrorCallback(I2C_HandleTypeDef* hi2c){
+
+void HAL_I2C_ErrorCallback(I2C_HandleTypeDef* hi2c){
   while(1){
 
   }
-  }
-*/
+}
+
 void mdelay(unsigned long nTime){
   vTaskDelay(pdMS_TO_TICKS(nTime));
 }
