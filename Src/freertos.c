@@ -96,6 +96,7 @@ osMessageQId imuQueueHandle;
 osSemaphoreId serialSemTxHandle;
 osSemaphoreId serialSemRxHandle;
 osSemaphoreId irdistHandle;
+osSemaphoreId imuSemHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -155,6 +156,10 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of irdist */
   osSemaphoreDef(irdist);
   irdistHandle = osSemaphoreCreate(osSemaphore(irdist), 1);
+
+  /* definition and creation of imuSem */
+  osSemaphoreDef(imuSem);
+  imuSemHandle = osSemaphoreCreate(osSemaphore(imuSem), 1);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */

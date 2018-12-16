@@ -88,14 +88,16 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define led_Pin GPIO_PIN_13
-#define led_GPIO_Port GPIOC
-#define led1_Pin GPIO_PIN_14
-#define led1_GPIO_Port GPIOC
-#define led2_Pin GPIO_PIN_15
-#define led2_GPIO_Port GPIOC
-#define ledRGB_Pin GPIO_PIN_0
-#define ledRGB_GPIO_Port GPIOD
+#define BT_START_Pin GPIO_PIN_13
+#define BT_START_GPIO_Port GPIOC
+#define bt_estado_Pin GPIO_PIN_14
+#define bt_estado_GPIO_Port GPIOC
+#define go_mini_Pin GPIO_PIN_15
+#define go_mini_GPIO_Port GPIOC
+#define motorSpeed1_Pin GPIO_PIN_0
+#define motorSpeed1_GPIO_Port GPIOD
+#define motorSpeed2_Pin GPIO_PIN_1
+#define motorSpeed2_GPIO_Port GPIOD
 #define ird_LD_Pin GPIO_PIN_0
 #define ird_LD_GPIO_Port GPIOA
 #define ird_LI_Pin GPIO_PIN_1
@@ -116,8 +118,6 @@ void Error_Handler(void);
 #define irp_AC_GPIO_Port GPIOB
 #define irp_AD_Pin GPIO_PIN_1
 #define irp_AD_GPIO_Port GPIOB
-#define boton1_Pin GPIO_PIN_2
-#define boton1_GPIO_Port GPIOB
 #define ph_1A_Pin GPIO_PIN_10
 #define ph_1A_GPIO_Port GPIOB
 #define ph_1B_Pin GPIO_PIN_11
@@ -130,12 +130,16 @@ void Error_Handler(void);
 #define PH_ENA_GPIO_Port GPIOB
 #define PH_ENB_Pin GPIO_PIN_15
 #define PH_ENB_GPIO_Port GPIOB
-#define BT_START_Pin GPIO_PIN_8
-#define BT_START_GPIO_Port GPIOA
+#define buzzer_Pin GPIO_PIN_8
+#define buzzer_GPIO_Port GPIOA
 #define TX_Pin GPIO_PIN_9
 #define TX_GPIO_Port GPIOA
 #define RX_Pin GPIO_PIN_10
 #define RX_GPIO_Port GPIOA
+#define ir_receiver_Pin GPIO_PIN_11
+#define ir_receiver_GPIO_Port GPIOA
+#define led_Pin GPIO_PIN_12
+#define led_GPIO_Port GPIOA
 #define intAcel_Pin GPIO_PIN_15
 #define intAcel_GPIO_Port GPIOA
 #define intAcel_EXTI_IRQn EXTI15_10_IRQn

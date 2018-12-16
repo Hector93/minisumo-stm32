@@ -14,6 +14,7 @@
 #include "log.h"
 #include "packet.h"
 
+#include <stdio.h>
 #include <string.h>
 #include "message.h"
 unsigned char *dmp_memory;
@@ -181,7 +182,7 @@ static void read_from_mpl(void)
   }
   if (hal.report & PRINT_LINEAR_ACCEL) {
     if (inv_get_sensor_type_linear_acceleration(float_data, &accuracy, (inv_time_t*)&timestamp)) {
-      MPL_LOGI("Linear Accel: %7.5f %7.5f %7.5f\r\n",
+      MPL_LOGI("Linear Accel: %7.5f,%7.5f,%7.5f\r\n",
 	       float_data[0], float_data[1], float_data[2]);                                        
     }
   }
@@ -267,21 +268,27 @@ static void tap_cb(unsigned char direction, unsigned char count)
 {
   switch (direction) {
   case TAP_X_UP:
+    //    HAL_UART_Transmit(&huart1, "Tap X+", 6, 100);
     MPL_LOGI("Tap X+ ");
     break;
   case TAP_X_DOWN:
+    //HAL_UART_Transmit(&huart1, "Tap X-", 6, 100);
     MPL_LOGI("Tap X- ");
     break;
   case TAP_Y_UP:
+    //HAL_UART_Transmit(&huart1, "Tap Y+", 6, 100);
     MPL_LOGI("Tap Y+ ");
     break;
   case TAP_Y_DOWN:
+    //HAL_UART_Transmit(&huart1, "Tap Y-", 6, 100);
     MPL_LOGI("Tap Y- ");
     break;
   case TAP_Z_UP:
+    //HAL_UART_Transmit(&huart1, "Tap Z+", 6, 100);
     MPL_LOGI("Tap Z+ ");
     break;
   case TAP_Z_DOWN:
+    //HAL_UART_Transmit(&huart1, "Tap Z-", 6, 100);
     MPL_LOGI("Tap Z- ");
     break;
   default:
@@ -636,11 +643,8 @@ void gyro_data_ready_cb(void)
 //----------------------------------------------------------------------------------------------------------
 
 
-//extern osSemaphoreId I2cSemHandle;
-//extern osSemaphoreId I2cSemRxHandle;
-
 extern osMessageQId imuQueueHandle;
-
+extern osSemaphoreId imuSemHandle;
 
 void imu(void const * argument){
   struct int_param_s int_param;
@@ -652,10 +656,8 @@ void imu(void const * argument){
   unsigned char new_compass = 0;
   unsigned short compass_fsr;
 #endif
-
-  //  xSemaphoreGive(I2cSemHandle);
-  //xSemaphoreGive(I2cSemTxHandle);
-
+  
+  xSemaphoreGive(imuSemHandle);
  
   HAL_GPIO_TogglePin(led_GPIO_Port,led_Pin);
   result = mpu_init(&int_param);
@@ -807,17 +809,20 @@ void imu(void const * argument){
   //handle_input('9');
   handle_input('5');
   handle_input('.');
+  //handle_input('h');
+  //handle_input('q');
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
   for(;;){
     unsigned long sensor_timestamp;
     int new_data = 0;
     message rx;
     //    if (USART_GetITStatus(USART2, USART_IT_RXNE)) {
-    /// if(pdPASS == (xQueueReceive(imuQueueHandle, &rx, 10))){
+    //if(pdPASS == (xQueueReceive(imuQueueHandle, &rx, 10))){
     /* A byte has been received via USART. See handle_input for a list of
      * valid commands.
      */
     //USART_ClearITPendingBit(USART2, USART_IT_RXNE);
-    //handle_input(rx.messageUser.type);
+    // handle_input(rx.messageUser.type);
     //}
     get_tick_count(&timestamp);
     //HAL_UART_Transmit(&huart1, "hola mundo\n", 11, 100);
@@ -849,7 +854,14 @@ void imu(void const * argument){
       inv_compass_was_turned_off();
       inv_quaternion_sensor_was_turned_off();
       /* Wait for the MPU interrupt. */
-      while (!hal.new_gyro) {}
+      while (!hal.new_gyro) {
+	if(pdPASS == (xSemaphoreTake(imuSemHandle, portMAX_DELAY))){//espero interrupcion de imu
+	  
+	}else{
+	  vTaskDelay(10);
+	  //TODO checar que no se quede atorado el programa en esta seccion
+	}
+      }
       /* Restore the previous sensor configuration. */
       mpu_lp_motion_interrupt(0, 0, 0);
       hal.motion_int_mode = 0;
@@ -1008,7 +1020,10 @@ uint32_t get_tick_count(){
   return xTaskGetTickCount();
 }
 
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
   gyro_data_ready_cb();
+  if(pdPASS == (xSemaphoreGiveFromISR(imuSemHandle,&xHigherPriorityTaskWoken))){
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+  }
 }

@@ -47,7 +47,7 @@
   ******************************************************************************
   */
 /* USER CODE END Header */
-#pragma GCC poison malloc
+
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
@@ -139,7 +139,7 @@ int main(void)
   MX_I2C1_Init();
   MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
-  
+  HAL_NVIC_DisableIRQ(EXTI15_10_IRQn);
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

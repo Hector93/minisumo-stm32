@@ -58,7 +58,7 @@
 int _MLPrintLog (int priority, const char* tag, const char* fmt, ...)
 {
     va_list args;
-    int length, ii, i;
+    int length, ii;
     char buf[BUF_SIZE], out[PACKET_LENGTH], this_length;
 
     /* This can be modified to exit for unsupported priorities. */
@@ -92,11 +92,11 @@ int _MLPrintLog (int priority, const char* tag, const char* fmt, ...)
     out[22] = '\n';
     for (ii = 0; ii < length; ii += (PACKET_LENGTH-5)) {
 #define min(a,b) ((a < b) ? a : b)
-        this_length = min(length-ii, PACKET_LENGTH-5);
-        memset(out+3, 0, 18);
-        memcpy(out+3, buf+ii, this_length);
-	HAL_UART_Transmit(&huart1, out, PACKET_LENGTH, 1000);
-	/*        for (i=0; i<PACKET_LENGTH; i++) {
+      this_length = min(length-ii, PACKET_LENGTH-5);
+      memset(out+3, 0, 18);
+      memcpy(out+3, buf+ii, this_length);
+      HAL_UART_Transmit(&huart1,(unsigned char*) out, 21, 10000);
+      /*        for (i=0; i<PACKET_LENGTH; i++) {
 		  fputcI(out[i]);
         }
 	*/
@@ -111,7 +111,7 @@ int _MLPrintLog (int priority, const char* tag, const char* fmt, ...)
 void eMPL_send_quat(long *quat)
 {
     char out[PACKET_LENGTH];
-    int i;
+    //int i;
     if (!quat)
         return;
     memset(out, 0, PACKET_LENGTH);
@@ -136,7 +136,7 @@ void eMPL_send_quat(long *quat)
     out[21] = '\r';
     out[22] = '\n';
 
-    HAL_UART_Transmit(&huart1, out, PACKET_LENGTH, 1000);
+    HAL_UART_Transmit(&huart1, (unsigned char*)out, PACKET_LENGTH, 1000);
     //    for (i=0; i<PACKET_LENGTH; i++) {
       
     //      fputcI(out[i]);
@@ -146,7 +146,7 @@ void eMPL_send_quat(long *quat)
 void eMPL_send_data(unsigned char type, long *data)
 {
     char out[PACKET_LENGTH];
-    int i;
+    //    int i;
     if (!data)
         return;
     memset(out, 0, PACKET_LENGTH);
@@ -211,7 +211,7 @@ void eMPL_send_data(unsigned char type, long *data)
     default:
         return;
     }
-    HAL_UART_Transmit(&huart1, out, PACKET_LENGTH, 1000);
+    HAL_UART_Transmit(&huart1, (unsigned char*)out, PACKET_LENGTH, 1000);
     //    for (i=0; i<PACKET_LENGTH; i++) {
     //    fputcI(out[i]);
     //}
