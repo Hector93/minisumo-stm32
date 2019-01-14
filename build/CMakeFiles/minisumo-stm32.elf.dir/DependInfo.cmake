@@ -41,6 +41,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/imu.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/irReceiver.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/irReceiver.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/message.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.o"
+  "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/mini.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/motors.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/sensorsDist.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/sensorsFloor.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o"

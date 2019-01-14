@@ -17,6 +17,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "message.h"
+#include "mini.h"
 unsigned char *dmp_memory;
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,6 +50,9 @@ volatile uint32_t hal_timestamp = 0;
 #define PEDO_READ_MS    (1000)
 #define TEMP_READ_MS    (500)
 #define COMPASS_READ_MS (100)
+
+extern osMessageQId miniQueueHandle;
+
 struct rx_s {
   unsigned char header[3];
   unsigned char cmd;
@@ -129,25 +133,44 @@ static struct platform_data_s compass_pdata = {
  * TODO: Add return values to the inv_get_sensor_type_xxx APIs to differentiate
  * between new and stale data.
  */
+long data[9];
 static void read_from_mpl(void)
 {
-  long msg, data[9];
+#ifdef PRINT_IMU_QUAT
+  long msg;
+  float float_data[3] = {0};
+#endif
   int8_t accuracy;
   unsigned long timestamp;
-  float float_data[3] = {0};
+
+
 
   if (inv_get_sensor_type_quat(data, &accuracy, (inv_time_t*)&timestamp)) {
     /* Sends a quaternion packet to the PC. Since this is used by the Python
      * test app to visually represent a 3D quaternion, it's sent each time
      * the MPL has new data.
      */
+#ifdef PRINT_IMU_QUAT
     eMPL_send_quat(data);
-
     /* Specific data packets can be sent or suppressed using USB commands. */
     if (hal.report & PRINT_QUAT)
       eMPL_send_data(PACKET_DATA_QUAT, data);
+#endif
+  }
+#ifndef PRINT_IMU_QUAT
+  if (hal.report & PRINT_HEADING) {
+    if (inv_get_sensor_type_heading(data, &accuracy, (inv_time_t*)&timestamp)){
+      //  message rx;
+      // rx = createMessage(imuId, miniId, HEADING, 10);
+      //xQueueSend(miniQueueHandle, &rx, 10);
+      extern volatile long imuHeading;
+      imuHeading = data[0] * 1.0 / (1<<16);
+    }
   }
 
+#endif
+  
+#ifdef PRINT_IMU_DATA
   if (hal.report & PRINT_ACCEL) {
     if (inv_get_sensor_type_accel(data, &accuracy,
 				  (inv_time_t*)&timestamp))
@@ -211,12 +234,13 @@ static void read_from_mpl(void)
    */
   msg = inv_get_message_level_0(INV_MSG_MOTION_EVENT | INV_MSG_NO_MOTION_EVENT);
   if (msg) {
-       if (msg & INV_MSG_MOTION_EVENT) {
-       MPL_LOGI("Motion!\n");
-       } else if (msg & INV_MSG_NO_MOTION_EVENT) {
-       MPL_LOGI("No motion!\n");
-       }
+    if (msg & INV_MSG_MOTION_EVENT) {
+      MPL_LOGI("Motion!\n");
+    } else if (msg & INV_MSG_NO_MOTION_EVENT) {
+      MPL_LOGI("No motion!\n");
+    }
   }
+  #endif
 }
 
 #ifdef COMPASS_ENABLED
@@ -263,54 +287,68 @@ static void setup_gyro(void)
   }
 }
 
-static void tap_cb(unsigned char direction, unsigned char count)
-{
+static void tap_cb(unsigned char direction, unsigned char count){
+  message tx;
   switch (direction) {
   case TAP_X_UP:
-    //    HAL_UART_Transmit(&huart1, "Tap X+", 6, 100);
-    MPL_LOGI("Tap X+ ");
+    //    MPL_LOGI("Tap X+ ");
+    tx = createMessage(imuId, miniId, TAP_X_U, 10);
+    xQueueSend(miniQueueHandle, &tx, 10);
     break;
   case TAP_X_DOWN:
-    //HAL_UART_Transmit(&huart1, "Tap X-", 6, 100);
-    MPL_LOGI("Tap X- ");
+    tx = createMessage(imuId, miniId, TAP_X_D, 10);
+    xQueueSend(miniQueueHandle, &tx, 10);
+    //    MPL_LOGI("Tap X- ");
     break;
   case TAP_Y_UP:
-    //HAL_UART_Transmit(&huart1, "Tap Y+", 6, 100);
-    MPL_LOGI("Tap Y+ ");
+    tx = createMessage(imuId, miniId, TAP_Y_U, 10);
+    xQueueSend(miniQueueHandle, &tx, 10);
+    //    MPL_LOGI("Tap Y+ ");
     break;
   case TAP_Y_DOWN:
-    //HAL_UART_Transmit(&huart1, "Tap Y-", 6, 100);
-    MPL_LOGI("Tap Y- ");
+    tx = createMessage(imuId, miniId, TAP_Y_D, 10);
+    xQueueSend(miniQueueHandle, &tx, 10);
+    //    MPL_LOGI("Tap Y- ");
     break;
   case TAP_Z_UP:
-    //HAL_UART_Transmit(&huart1, "Tap Z+", 6, 100);
-    MPL_LOGI("Tap Z+ ");
+    tx = createMessage(imuId, miniId, TAP_Z_U, 10);
+    xQueueSend(miniQueueHandle, &tx, 10);
+    //    MPL_LOGI("Tap Z+ ");
     break;
   case TAP_Z_DOWN:
-    //HAL_UART_Transmit(&huart1, "Tap Z-", 6, 100);
-    MPL_LOGI("Tap Z- ");
+    tx = createMessage(imuId, miniId, TAP_Z_D, 10);
+    xQueueSend(miniQueueHandle, &tx, 10);
+    //    MPL_LOGI("Tap Z- ");
     break;
   default:
     return;
   }
-  MPL_LOGI("x%d\n", count);
+  //  MPL_LOGI("x%d\n", count);
   return;
 }
 
-static void android_orient_cb(unsigned char orientation)
-{
+static void android_orient_cb(unsigned char orientation){
+  message tx;
   switch (orientation) {
   case ANDROID_ORIENT_PORTRAIT:
-    MPL_LOGI("Portrait\n");
+    //      MPL_LOGI("Portrait\n");
+    tx = createMessage(imuId, miniId, PORTRAIT, 10);
+    xQueueSend(miniQueueHandle, &tx, 0);
     break;
   case ANDROID_ORIENT_LANDSCAPE:
-    MPL_LOGI("Landscape\n");
+    //      MPL_LOGI("Landscape\n");
+    tx = createMessage(imuId, miniId, LANDSCAPE, 10);
+    xQueueSend(miniQueueHandle, &tx, 0);
     break;
   case ANDROID_ORIENT_REVERSE_PORTRAIT:
-    MPL_LOGI("Reverse Portrait\n");
+    //      MPL_LOGI("Reverse Portrait\n");
+    tx = createMessage(imuId, miniId, REV_PORTRAIT, 10);
+    xQueueSend(miniQueueHandle, &tx, 0);
     break;
   case ANDROID_ORIENT_REVERSE_LANDSCAPE:
-    MPL_LOGI("Reverse Landscape\n");
+    //      MPL_LOGI("Reverse Landscape\n");
+    tx = createMessage(imuId, miniId, REV_LANDSCAPE, 10);
+    xQueueSend(miniQueueHandle, &tx, 0);
     break;
   default:
     return;
@@ -807,12 +845,15 @@ int imuInit(){
   dmp_set_fifo_rate(DEFAULT_MPU_HZ);
   mpu_set_dmp_state(1);
   hal.dmp_on = 1;
+  //opciones
   //handle_input('8');
   handle_input('5');
   handle_input('.');
-  //  handle_input('a');
+  //handle_input('a');
   // handle_input('g');
   //handle_input('q');
+  //handle_input('r');
+  handle_input('h');
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
   return 0;
 }
@@ -923,13 +964,13 @@ void imu(void const * argument){
 
   
   for(;;){
-    //message rx;
-    //    if(pdPASS == (xQueueReceive(imuQueueHandle, &rx, 10))){
+    //    message rx;
+    //    if(pdPASS == (xQueueReceive(imuQueueHandle, &rx, 0))){
     /* A byte has been received via USART. See handle_input for a list of
-     * valid commands.
-     */
-    // handle_input(rx.messageUser.type);
-    //}
+	   * valid commands.
+	   */
+      //handle_input(rx.messageUser.type);
+    // }
     if(imuInvProcessData()){
       /* This function reads bias-compensated sensor data and sensor
        * fusion outputs from the MPL. The outputs are formatted as seen
@@ -938,6 +979,7 @@ void imu(void const * argument){
        */
       read_from_mpl();      
     }
+
     //vTaskDelay(100);
   }
 }
@@ -956,7 +998,7 @@ uint8_t Sensors_I2C_ReadRegister(unsigned char slave_addr, unsigned char reg_add
 
 void HAL_I2C_ErrorCallback(I2C_HandleTypeDef* hi2c){
   while(1){
-
+    
   }
 }
 

@@ -87,16 +87,19 @@ osThreadId sensorFloorHandle;
 osThreadId sensorDistHandle;
 osThreadId ircontrolHandle;
 osThreadId acelerometroHandle;
+osThreadId minisumoHandle;
 osMessageQId serialQueueHandle;
 osMessageQId motorRQueueHandle;
 osMessageQId motorLQueueHandle;
 osMessageQId sensorsDistQueueHandle;
 osMessageQId sensorsFloorQueueHandle;
 osMessageQId imuQueueHandle;
+osMessageQId miniQueueHandle;
 osSemaphoreId serialSemTxHandle;
 osSemaphoreId serialSemRxHandle;
 osSemaphoreId irdistHandle;
 osSemaphoreId imuSemHandle;
+osSemaphoreId miniSemHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -111,6 +114,7 @@ extern void sensorsFloor(void const * argument);
 extern void sensorsDist(void const * argument);
 extern void irReceiver(void const * argument);
 extern void imu(void const * argument);
+extern void mini(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -161,6 +165,10 @@ void MX_FREERTOS_Init(void) {
   osSemaphoreDef(imuSem);
   imuSemHandle = osSemaphoreCreate(osSemaphore(imuSem), 1);
 
+  /* definition and creation of miniSem */
+  osSemaphoreDef(miniSem);
+  miniSemHandle = osSemaphoreCreate(osSemaphore(miniSem), 1);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -202,6 +210,10 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(acelerometro, imu, osPriorityNormal, 0, 64);
   acelerometroHandle = osThreadCreate(osThread(acelerometro), NULL);
 
+  /* definition and creation of minisumo */
+  osThreadDef(minisumo, mini, osPriorityNormal, 0, 64);
+  minisumoHandle = osThreadCreate(osThread(minisumo), NULL);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -230,6 +242,10 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of imuQueue */
   osMessageQDef(imuQueue, 1, message);
   imuQueueHandle = osMessageCreate(osMessageQ(imuQueue), NULL);
+
+  /* definition and creation of miniQueue */
+  osMessageQDef(miniQueue, 3, message);
+  miniQueueHandle = osMessageCreate(osMessageQ(miniQueue), NULL);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */

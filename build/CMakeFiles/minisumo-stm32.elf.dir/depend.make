@@ -5,6 +5,7 @@ CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o: ../startup/st
 
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o: ../Application/Inc/imu.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o: ../Application/Inc/message.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o: ../Application/Inc/mini.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
@@ -104,6 +105,59 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/irReceiver.c.o: ../Application
 
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.o: ../Application/Inc/message.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.o: ../Application/Src/message.c
+
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Application/Inc/imu.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Application/Inc/message.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Application/Inc/mini.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/CMSIS/Include/cmsis_gcc.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/CMSIS/Include/core_cm3.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/CMSIS/Include/core_cmFunc.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/CMSIS/Include/core_cmInstr.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Inc/FreeRTOSConfig.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Inc/main.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Inc/stm32f1xx_hal_conf.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Inc/usart.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/mltypes.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/stdint_invensense.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/stm32L/packet.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Application/Src/mini.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o: ../Application/Inc/message.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o: ../Application/Inc/motors.h

@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/irReceiver.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.o"
+  "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o"

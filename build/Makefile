@@ -230,6 +230,33 @@ Application/Src/message.c.s:
 	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.s
 .PHONY : Application/Src/message.c.s
 
+Application/Src/mini.o: Application/Src/mini.c.o
+
+.PHONY : Application/Src/mini.o
+
+# target to build an object file
+Application/Src/mini.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o
+.PHONY : Application/Src/mini.c.o
+
+Application/Src/mini.i: Application/Src/mini.c.i
+
+.PHONY : Application/Src/mini.i
+
+# target to preprocess a source file
+Application/Src/mini.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.i
+.PHONY : Application/Src/mini.c.i
+
+Application/Src/mini.s: Application/Src/mini.c.s
+
+.PHONY : Application/Src/mini.s
+
+# target to generate assembly for a file
+Application/Src/mini.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.s
+.PHONY : Application/Src/mini.c.s
+
 Application/Src/motors.o: Application/Src/motors.c.o
 
 .PHONY : Application/Src/motors.o
@@ -1798,6 +1825,9 @@ help:
 	@echo "... Application/Src/message.o"
 	@echo "... Application/Src/message.i"
 	@echo "... Application/Src/message.s"
+	@echo "... Application/Src/mini.o"
+	@echo "... Application/Src/mini.i"
+	@echo "... Application/Src/mini.s"
 	@echo "... Application/Src/motors.o"
 	@echo "... Application/Src/motors.i"
 	@echo "... Application/Src/motors.s"

@@ -20,7 +20,7 @@ extern "C" {
 #define syncError
 
 #define serialID  1
-#define serialSyncError  -1
+#define serialSyncError  0
 
 #define SYNCCHAR '\n'
   
