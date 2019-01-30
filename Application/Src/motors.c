@@ -19,7 +19,7 @@ void motorR(const void* argument){
   message rx;
   rx = createMessage(15,2,5,0);
   
-  status.motorOpt.speed = 100;
+  status.motorOpt.speed = 200;
   status.motorOpt.direction = STOPEDHARD;
   status.motorOpt.channel = motorRID;
   
@@ -33,7 +33,6 @@ void motorR(const void* argument){
       if(pdPASS ==(xQueueReceive(motorRQueueHandle,&rx,10))){
 	status = motorUpdate(motorProcessMessage(rx,status),status);
       }
-      vTaskDelay(100);
     }
 }
 
@@ -46,6 +45,7 @@ void motorL(const void* argument){
   
   status.motorOpt.speed = 100;
   status.motorOpt.direction = STOPEDHARD;
+
   status.motorOpt.channel = motorLID;
   
   HAL_TIMEx_PWMN_Start(&htim1,TIM_CHANNEL_3);
@@ -59,17 +59,11 @@ void motorL(const void* argument){
       if(pdPASS ==(xQueueReceive(motorLQueueHandle,&rx,10))){
 	status = motorUpdate(motorProcessMessage(rx,status),status);
       }
-      osDelay(100);
+      
       
     }
 }
-uint16_t map(uint8_t speed){
-  return (uint16_t)speed*(uint16_t)3.21;
-}
 
-uint8_t unMap(uint16_t speed){
-  return speed/3.21;
-}
 
 motorInternalData motorProcessMessage(message msg,motorInternalData data){
   motorInternalData aux;
@@ -92,7 +86,7 @@ motorInternalData motorProcessMessage(message msg,motorInternalData data){
     return data;
   case setDirection:
     aux.motorData = msg.messageUser.data;
-    data.motorOpt.direction = map(aux.motorOpt.direction);
+    data.motorOpt.direction = aux.motorOpt.direction;
     return data;
   case setSpeed:
     aux.motorData = msg.messageUser.data;
@@ -132,12 +126,10 @@ motorInternalData motorUpdate(motorInternalData newData, motorInternalData prevD
 }
 
 void motorSpeedInternal(motorInternalData data){
-  if(data.motorOpt.speed > 0x63){
-    HAL_TIM_SetPWM(321,data.motorOpt.channel);
-  }else{
-    HAL_TIM_SetPWM(map(data.motorOpt.speed),data.motorOpt.channel);
-  }    
-}
+ 
+  HAL_TIM_SetPWM(data.motorOpt.speed,data.motorOpt.channel);
+}    
+
 
 void motorDirectionInternal(motorInternalData data){
   switch(data.motorOpt.direction){
