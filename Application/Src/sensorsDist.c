@@ -15,7 +15,7 @@ sensorDistData findOponent();
 void irSensorsIoController();
 void SensorDistProcessMessage(message msg);
 void processAdc();
-uint8_t map(uint16_t x, uint16_t in_min, uint16_t in_max, uint16_t out_min, uint16_t out_max);
+uint8_t map(uint32_t x, uint32_t in_min, uint32_t in_max, uint32_t out_min, uint32_t out_max);
 
 void sensorsDist(void const* argument){
   //extern osSemaphoreId irdistHandle;
@@ -130,12 +130,9 @@ void processAdc(){
     distSensorData.distData.Fd = 0;
   }else{
     distSensorData.distData.Fd = map(sensorData[FDPOS], 0, 4095, 0, 7);      
-    }
-  
-
+    } 
 }
 
-uint8_t map(uint16_t x, uint16_t in_min, uint16_t in_max, uint16_t out_min, uint16_t out_max)
-{
+uint8_t map(uint32_t x, uint32_t in_min, uint32_t in_max, uint32_t out_min, uint32_t out_max){
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
