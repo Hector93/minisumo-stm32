@@ -20,23 +20,29 @@
 #define FDID 8
 #define LDID 16
 
+#define LIPOS 0
+#define FIPOS 1
+#define FCPOS 2
+#define FDPOS 3
+#define LDPOS 4
+
 //type definitions
-#define getSensor      1
-#define getAllSensors  2
-#define setReading     3
+//#define getSensor      1
+//#define getAllSensors  2
+//#define setReading     3
 #define setSensor      4
 #define getStatus      5
-#define SENSDISTERROR  0
+#define SENSDISTERROR  1
 
 typedef union{
   uint16_t distDataRaw;
   struct{
-    uint8_t binDir : 4;
-    uint8_t LI : 4;
-    uint8_t FI : 4;
-    uint8_t FC : 4;
-    uint8_t FD : 4;
-    uint8_t LD : 4;
+    uint8_t EnemyPresence : 1;
+    uint8_t Li : 3;
+    uint8_t Fi : 3;
+    uint8_t Fc : 3;
+    uint8_t Fd : 3;
+    uint8_t Ld : 3;
   }distData;
 }sensorDistData;
 

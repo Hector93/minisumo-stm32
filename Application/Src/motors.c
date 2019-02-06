@@ -7,6 +7,8 @@
 #include "message.h"
 #include "stdint.h"
 
+//F3 3 20 2 orgien destino type speed direction
+
 motorInternalData motorProcessMessage(message msg,motorInternalData data);
 motorInternalData motorUpdate(motorInternalData newData, motorInternalData prevData);
 void motorDirectionInternal(motorInternalData data);

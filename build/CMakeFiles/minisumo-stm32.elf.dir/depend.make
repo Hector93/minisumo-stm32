@@ -211,6 +211,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o: ../Middlewares/Thi
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o: ../Application/Src/motors.c
 
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Application/Inc/imu.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Application/Inc/message.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Application/Inc/sensorsDist.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Application/Inc/serial.h
@@ -246,6 +247,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Inc/FreeRT
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Inc/adc.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Inc/main.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Inc/stm32f1xx_hal_conf.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Inc/usart.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h

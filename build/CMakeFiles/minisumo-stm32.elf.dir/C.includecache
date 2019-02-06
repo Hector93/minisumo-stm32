@@ -6,15 +6,19 @@
 
 #IncludeRegexTransform: 
 
+../Application/Inc/imu.h
+cmsis_os.h
+../Application/Inc/cmsis_os.h
+
 ../Application/Inc/message.h
 stdint.h
 -
 
-../Application/Inc/motors.h
-serial.h
-../Application/Inc/serial.h
-stdint.h
-../Application/Inc/stdint.h
+../Application/Inc/sensorsDist.h
+FreeRTOS.h
+../Application/Inc/FreeRTOS.h
+cmsis_os.h
+../Application/Inc/cmsis_os.h
 
 ../Application/Inc/serial.h
 FreeRTOS.h
@@ -200,9 +204,11 @@ stm32f1xx_hal_def.h
 stdint.h
 -
 
-../Inc/gpio.h
+../Inc/adc.h
 main.h
 ../Inc/main.h
+cmsis_os.h
+../Inc/cmsis_os.h
 
 ../Inc/main.h
 stm32f1xx_hal.h
@@ -273,10 +279,6 @@ stm32f1xx_hal_pcd.h
 ../Inc/stm32f1xx_hal_pcd.h
 stm32f1xx_hal_hcd.h
 ../Inc/stm32f1xx_hal_hcd.h
-
-../Inc/tim.h
-main.h
-../Inc/main.h
 
 ../Inc/usart.h
 main.h
@@ -468,19 +470,21 @@ task.h
 
 ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
 
-/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/motors.c
-motors.h
-/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/motors.h
-cmsis_os.h
-/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/cmsis_os.h
-gpio.h
-/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/gpio.h
-tim.h
-/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/tim.h
-usart.h
-/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/usart.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/sensorsDist.c
+serial.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/serial.h
 message.h
 /home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/message.h
-stdint.h
-/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/stdint.h
+sensorsDist.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/sensorsDist.h
+adc.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/adc.h
+imu.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/imu.h
+serial.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/serial.h
+usart.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/usart.h
+queue.h
+/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Application/Src/queue.h
 
