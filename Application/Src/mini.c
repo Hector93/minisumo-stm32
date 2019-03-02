@@ -5,29 +5,40 @@
 #include "usart.h"
 #include "imu.h"
 #include "packet.h"
+#include "sensorsDist.h"
 
-extern osMessageQId miniQueueHandle;
-extern osSemaphoreId miniSemHandle;
+//extern osMessageQId miniQueueHandle;
+//extern osSemaphoreId miniSemHandle;
 volatile long imuHeading = 0;
+sensorDistData distSensorData;
 
 typedef struct {
   long heading;
   uint16_t LMotorSpeed;
   uint16_t RMotorSpeed;
   uint8_t irFloor;
-  uint16_t irDist;
+  sensorDistData irDist;
 }miniStatus;
 
 void miniprocessMessage(const message *rx);
 
 char testmini[5];
+miniStatus status;
+
 void mini(void const * argument){
   message rx;
+  xSemaphoreGive(miniSemHandle);
   for(;;){
-    if(pdPASS == (xQueueReceive(miniQueueHandle, &rx, portMAX_DELAY))){
+    if(pdPASS == (xQueueReceive(miniQueueHandle, &rx, 0))){
       miniprocessMessage(&rx);
     }
-    //    osDelay(100);
+    //actualizando estado
+    status.heading = imuHeading;
+    if(pdPASS == (xSemaphoreTake(miniSemHandle, 0))){//intenta leer region critica, si no puede se salta la actualizacion
+      status.irDist = distSensorData;
+      xSemaphoreGive(miniSemHandle);// falta validar que no falle en todos los casos
+    }
+    
   }  
 }
 

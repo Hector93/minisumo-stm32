@@ -6,9 +6,11 @@
 #include "serial.h"
 #include "usart.h"
 #include "queue.h"
-uint8_t sensorDistStatus;
-sensorDistData distSensorData;
+#include "mini.h"
 
+uint8_t sensorDistStatus;
+extern sensorDistData distSensorData;
+sensorDistData distSensorDataInternal;
 uint32_t sensorData[5];
 
 sensorDistData findOponent();
@@ -18,27 +20,23 @@ void processAdc();
 uint8_t map(uint32_t x, uint32_t in_min, uint32_t in_max, uint32_t out_min, uint32_t out_max);
 
 void sensorsDist(void const* argument){
-  //extern osSemaphoreId irdistHandle;
-  //  extern ADC_HandleTypeDef hadc1;
-
   message rx;
-  sensorDistStatus = 31; //by default all sensors are stoped
+  sensorDistStatus = 31; //by default all sensors are started
   HAL_ADCEx_Calibration_Start(&hadc1);
   HAL_ADC_Start_DMA(&hadc1,sensorData,4);
   xSemaphoreGive(irdistHandle);
-  //  sensorDistStatus = FCID;
+
   for(;;){
     if(pdPASS == (xQueueReceive(sensorsDistQueueHandle,&rx,10))){
       SensorDistProcessMessage(rx);
     }
     if(pdPASS == (xSemaphoreTake(irdistHandle,10))){
       //procesar la informacion antes de volver a leer el adc
+      if(pdPASS == (xSemaphoreTake(miniSemHandle, 10))){
+	distSensorData = distSensorDataInternal;
+	xSemaphoreGive(miniSemHandle);
+      }
       processAdc();
-      //      HAL_UART_Transmit(&huart1,(uint8_t*)"leo adc y proc\r\n",15,1000);
-      uint8_t test = distSensorData.distData.Fc;
-      HAL_UART_Transmit(&huart1,&test,2,1000);
-      //      HAL_UART_Transmit(&huart1,(uint8_t*)"\r\n",2,1000);
-      osDelay(30);
       HAL_ADC_Start_DMA(&hadc1,sensorData,5);
     }
   }
@@ -77,7 +75,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
   }
 }
- 
+//TODO detectar si hay un oponente en los sensores de distancia
 sensorDistData findOponent(){
   sensorDistData aux;  
   aux.distDataRaw = 0;
@@ -86,51 +84,51 @@ sensorDistData findOponent(){
 
 void irSensorsIoController(){  
   if((sensorDistStatus & LIID) == LIID){
-    HAL_GPIO_TogglePin(ird_LI_GPIO_Port,ird_LI_Pin);
+    HAL_GPIO_TogglePin(ird_enLI_GPIO_Port,ird_enLI_Pin);
   }else if((sensorDistStatus & FIID) == FIID){
-    HAL_GPIO_TogglePin(ird_FI_GPIO_Port, ird_FI_Pin);
+    HAL_GPIO_TogglePin(ird_enFI_GPIO_Port, ird_enFI_Pin);
   }else if((sensorDistStatus & FCID) == FCID){
-    HAL_GPIO_TogglePin(ird_FC_GPIO_Port, ird_FC_Pin);
+    HAL_GPIO_TogglePin(ird_enFC_GPIO_Port, ird_enFC_Pin);
   }else if((sensorDistStatus & FDID) == FDID){
-    HAL_GPIO_TogglePin(ird_FD_GPIO_Port, ird_FD_Pin);
+    HAL_GPIO_TogglePin(ird_enFD_GPIO_Port, ird_enFD_Pin);
   }else if((sensorDistStatus & LDID) == LDID){
-    HAL_GPIO_TogglePin(ird_LD_GPIO_Port, ird_LD_Pin);
+    HAL_GPIO_TogglePin(ird_enLD_GPIO_Port, ird_enLD_Pin);
   }
 }
 
 void processAdc(){
   if((sensorDistStatus & LIID) == 0){
     sensorData[LIPOS] = 0;
-    distSensorData.distData.Li = 0;
+    distSensorDataInternal.distData.Li = 0;
   }else{
-    distSensorData.distData.Li = map(sensorData[LIPOS], 0, 4095, 0, 7);    
+    distSensorDataInternal.distData.Li = map(sensorData[LIPOS], 0, 4095, 0, 7);    
   }
 
   if((sensorDistStatus & FIID) == 0){
     sensorData[FIPOS] = 0;
-    distSensorData.distData.Fi = 0;
+    distSensorDataInternal.distData.Fi = 0;
   }else{
-    distSensorData.distData.Fi = map(sensorData[FIPOS], 0, 4095, 0, 7);    
+    distSensorDataInternal.distData.Fi = map(sensorData[FIPOS], 0, 4095, 0, 7);    
   }
 
   if((sensorDistStatus & FCID) == 0){
     sensorData[FCPOS] = 0;
-    distSensorData.distData.Fc = 0;
+    distSensorDataInternal.distData.Fc = 0;
   }else{
-    distSensorData.distData.Fc = map(sensorData[FCPOS], 0, 4095, 0, 7);
+    distSensorDataInternal.distData.Fc = map(sensorData[FCPOS], 0, 4095, 0, 7);
   }
   if((sensorDistStatus & LDID) == 0){
     sensorData[LDPOS] = 0;
-    distSensorData.distData.Ld = 0;
+    distSensorDataInternal.distData.Ld = 0;
   }else{
-    distSensorData.distData.Ld = map(sensorData[LDPOS], 0, 4095, 0, 7);    
+    distSensorDataInternal.distData.Ld = map(sensorData[LDPOS], 0, 4095, 0, 7);    
   }
   if((sensorDistStatus & FDID) == 0){
     sensorData[FDPOS] = 0;
-    distSensorData.distData.Fd = 0;
+    distSensorDataInternal.distData.Fd = 0;
   }else{
-    distSensorData.distData.Fd = map(sensorData[FDPOS], 0, 4095, 0, 7);      
-    } 
+    distSensorDataInternal.distData.Fd = map(sensorData[FDPOS], 0, 4095, 0, 7);      
+  } 
 }
 
 uint8_t map(uint32_t x, uint32_t in_min, uint32_t in_max, uint32_t out_min, uint32_t out_max){

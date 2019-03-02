@@ -43,7 +43,9 @@ set(OPT "-Os")
 #set(USER_LINKER_FLAGS "-u _printf_float --specasass=nano.specs")
 set(USER_LINKER_FLAGS "-specs=nano.specs")
 
-set(USER_CFLAGS "-Wall -fmessage-length=0 -DUSE_STDPERIPH_DRIVER -DEMPL -DUSE_DMP -DMPU6050 -DMPL_LOG_NDEBUG=1 -DEMPL_TARGET_STM32F4 -DREMOVE_LOGGING -I\"Middlewares/Third_Party/InvenSense/core/driver/include\" -I\"Middlewares/Third_Party/InvenSense/core/driver/eMPL\" -I\"Middlewares/Third_Party/InvenSense/core/driver/stm32L\" -I\"Middlewares/Third_Party/InvenSense/core/mpl\" -I\"Middlewares/Third_Party/InvenSense/core/mllite\"")
+#Si quieres imprimir quaterniones incluye -DPRINT_IMU_QUAT
+#Si quieres imprimir los demas datos incluye -DPRINT_IMU_DATA solo el primero es obligatorio para usar el programa python de invensense y si se activa debes de asegurarte que ningun otro proceso envie datos por serial de lo contrario se trabara el programa
+set(USER_CFLAGS "-Wall -fmessage-length=0 -DUSE_STDPERIPH_DRIVER -DEMPL -DUSE_DMP -DMPU6050 -DMPL_LOG_NDEBUG=1 -DEMPL_TARGET_STM32F4 -DREMOVE_LOGGING -DPRINT_IMU_QUAT -I\"Middlewares/Third_Party/InvenSense/core/driver/include\" -I\"Middlewares/Third_Party/InvenSense/core/driver/eMPL\" -I\"Middlewares/Third_Party/InvenSense/core/driver/stm32L\" -I\"Middlewares/Third_Party/InvenSense/core/mpl\" -I\"Middlewares/Third_Party/InvenSense/core/mllite\"")
 set(USER_COMPILER "GNU") # "Clang" or "GNU"
 set(USER_DEBUG TRUE) # Or "False"
 

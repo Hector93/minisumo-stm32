@@ -50,7 +50,6 @@ volatile uint32_t hal_timestamp = 0;
 #define PEDO_READ_MS    (1000)
 #define TEMP_READ_MS    (500)
 #define COMPASS_READ_MS (100)
-
 extern osMessageQId miniQueueHandle;
 
 struct rx_s {
@@ -134,12 +133,10 @@ static struct platform_data_s compass_pdata = {
  * between new and stale data.
  */
 long data[9];
-static void read_from_mpl(void)
-{
-#ifdef PRINT_IMU_QUAT
+extern volatile long imuHeading;
+void read_from_mpl(void){
   long msg;
   float float_data[3] = {0};
-#endif
   int8_t accuracy;
   unsigned long timestamp;
 
@@ -150,27 +147,19 @@ static void read_from_mpl(void)
      * test app to visually represent a 3D quaternion, it's sent each time
      * the MPL has new data.
      */
-#ifdef PRINT_IMU_QUAT
     eMPL_send_quat(data);
     /* Specific data packets can be sent or suppressed using USB commands. */
     if (hal.report & PRINT_QUAT)
       eMPL_send_data(PACKET_DATA_QUAT, data);
-#endif
   }
-#ifndef PRINT_IMU_QUAT
+  
   if (hal.report & PRINT_HEADING) {
     if (inv_get_sensor_type_heading(data, &accuracy, (inv_time_t*)&timestamp)){
-      //  message rx;
-      // rx = createMessage(imuId, miniId, HEADING, 10);
-      //xQueueSend(miniQueueHandle, &rx, 10);
-      extern volatile long imuHeading;
+      eMPL_send_data(PACKET_DATA_HEADING, data);
       imuHeading = data[0] * 1.0 / (1<<16);
     }
   }
-
-#endif
   
-#ifdef PRINT_IMU_DATA
   if (hal.report & PRINT_ACCEL) {
     if (inv_get_sensor_type_accel(data, &accuracy,
 				  (inv_time_t*)&timestamp))
@@ -240,7 +229,6 @@ static void read_from_mpl(void)
       MPL_LOGI("No motion!\n");
     }
   }
-  #endif
 }
 
 #ifdef COMPASS_ENABLED
@@ -959,7 +947,7 @@ void imu(void const * argument){
   
   xSemaphoreGive(imuSemHandle);
   if(imuInit() < 0){
-
+    while(1){}
   }
 
   
@@ -977,6 +965,7 @@ void imu(void const * argument){
        * in eMPL_outputs.c. This function only needs to be called at the
        * rate requested by the host.
        */
+      vTaskDelay(1);
       read_from_mpl();      
     }
 

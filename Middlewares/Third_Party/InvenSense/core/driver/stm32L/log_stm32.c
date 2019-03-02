@@ -57,22 +57,22 @@
  */
 int _MLPrintLog (int priority, const char* tag, const char* fmt, ...)
 {
-    va_list args;
-    int length, ii;
-    char buf[BUF_SIZE], out[PACKET_LENGTH], this_length;
+  va_list args;
+  int length, ii;
+  char buf[BUF_SIZE], out[PACKET_LENGTH], this_length;
 
-    /* This can be modified to exit for unsupported priorities. */
-    switch (priority) {
-    case MPL_LOG_UNKNOWN:
-    case MPL_LOG_DEFAULT:
-    case MPL_LOG_VERBOSE:
-    case MPL_LOG_DEBUG:
-    case MPL_LOG_INFO:
-    case MPL_LOG_WARN:
-    case MPL_LOG_ERROR:
-    case MPL_LOG_SILENT:
-        break;
-    default:
+  /* This can be modified to exit for unsupported priorities. */
+  switch (priority) {
+  case MPL_LOG_UNKNOWN:
+  case MPL_LOG_DEFAULT:
+  case MPL_LOG_VERBOSE:
+  case MPL_LOG_DEBUG:
+  case MPL_LOG_INFO:
+  case MPL_LOG_WARN:
+  case MPL_LOG_ERROR:
+  case MPL_LOG_SILENT:
+    break;
+  default:
         return 0;
     }
 
@@ -110,9 +110,10 @@ int _MLPrintLog (int priority, const char* tag, const char* fmt, ...)
 
 void eMPL_send_quat(long *quat)
 {
-    char out[PACKET_LENGTH];
-    //int i;
-    if (!quat)
+#ifdef PRINT_IMU_QUAT
+  char out[PACKET_LENGTH];
+  //int i;
+  if (!quat)
         return;
     memset(out, 0, PACKET_LENGTH);
     out[0] = '$';
@@ -141,13 +142,16 @@ void eMPL_send_quat(long *quat)
       
     //      fputcI(out[i]);
     // }
+#endif
 }
+
 
 void eMPL_send_data(unsigned char type, long *data)
 {
-    char out[PACKET_LENGTH];
-    //    int i;
-    if (!data)
+#ifdef PRINT_IMU_DATA
+  char out[PACKET_LENGTH];
+  //    int i;
+  if (!data)
         return;
     memset(out, 0, PACKET_LENGTH);
     out[0] = '$';
@@ -215,6 +219,7 @@ void eMPL_send_data(unsigned char type, long *data)
     //    for (i=0; i<PACKET_LENGTH; i++) {
     //    fputcI(out[i]);
     //}
+#endif
 }
 
 /**
