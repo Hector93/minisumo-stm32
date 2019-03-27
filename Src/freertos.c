@@ -177,6 +177,40 @@ void MX_FREERTOS_Init(void) {
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
+  /* Create the queue(s) */
+  /* definition and creation of serialQueue */
+  osMessageQDef(serialQueue, 2, message);
+  serialQueueHandle = osMessageCreate(osMessageQ(serialQueue), NULL);
+
+  /* definition and creation of motorRQueue */
+  osMessageQDef(motorRQueue, 1, message);
+  motorRQueueHandle = osMessageCreate(osMessageQ(motorRQueue), NULL);
+
+  /* definition and creation of motorLQueue */
+  osMessageQDef(motorLQueue, 1, message);
+  motorLQueueHandle = osMessageCreate(osMessageQ(motorLQueue), NULL);
+
+  /* definition and creation of sensorsDistQueue */
+  osMessageQDef(sensorsDistQueue, 1, message);
+  sensorsDistQueueHandle = osMessageCreate(osMessageQ(sensorsDistQueue), NULL);
+
+  /* definition and creation of sensorsFloorQueue */
+  osMessageQDef(sensorsFloorQueue, 1, message);
+  sensorsFloorQueueHandle = osMessageCreate(osMessageQ(sensorsFloorQueue), NULL);
+
+  /* definition and creation of imuQueue */
+  osMessageQDef(imuQueue, 1, message);
+  imuQueueHandle = osMessageCreate(osMessageQ(imuQueue), NULL);
+
+  /* definition and creation of miniQueue */
+  osMessageQDef(miniQueue, 3, message);
+  miniQueueHandle = osMessageCreate(osMessageQ(miniQueue), NULL);
+
+  /* USER CODE BEGIN RTOS_QUEUES */
+  /* add queues, ... */
+  // serialQHandle = &serialQueueHandle;
+  /* USER CODE END RTOS_QUEUES */
+
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 64);
@@ -218,39 +252,6 @@ void MX_FREERTOS_Init(void) {
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 
-  /* Create the queue(s) */
-  /* definition and creation of serialQueue */
-  osMessageQDef(serialQueue, 2, message);
-  serialQueueHandle = osMessageCreate(osMessageQ(serialQueue), NULL);
-
-  /* definition and creation of motorRQueue */
-  osMessageQDef(motorRQueue, 1, message);
-  motorRQueueHandle = osMessageCreate(osMessageQ(motorRQueue), NULL);
-
-  /* definition and creation of motorLQueue */
-  osMessageQDef(motorLQueue, 1, message);
-  motorLQueueHandle = osMessageCreate(osMessageQ(motorLQueue), NULL);
-
-  /* definition and creation of sensorsDistQueue */
-  osMessageQDef(sensorsDistQueue, 1, message);
-  sensorsDistQueueHandle = osMessageCreate(osMessageQ(sensorsDistQueue), NULL);
-
-  /* definition and creation of sensorsFloorQueue */
-  osMessageQDef(sensorsFloorQueue, 1, message);
-  sensorsFloorQueueHandle = osMessageCreate(osMessageQ(sensorsFloorQueue), NULL);
-
-  /* definition and creation of imuQueue */
-  osMessageQDef(imuQueue, 1, message);
-  imuQueueHandle = osMessageCreate(osMessageQ(imuQueue), NULL);
-
-  /* definition and creation of miniQueue */
-  osMessageQDef(miniQueue, 3, message);
-  miniQueueHandle = osMessageCreate(osMessageQ(miniQueue), NULL);
-
-  /* USER CODE BEGIN RTOS_QUEUES */
-  /* add queues, ... */
-  // serialQHandle = &serialQueueHandle;
-  /* USER CODE END RTOS_QUEUES */
 }
 
 /* USER CODE BEGIN Header_StartDefaultTask */

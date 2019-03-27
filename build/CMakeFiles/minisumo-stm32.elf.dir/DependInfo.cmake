@@ -95,10 +95,10 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_hal_msp.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_hal_timebase_tim.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_tim.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_it.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o"
+  "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/syscalls.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/syscalls.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/system_stm32f1xx.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/tim.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o"
   "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/Src/usart.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o"
-  "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/syscalls.c" "/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/syscalls.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
