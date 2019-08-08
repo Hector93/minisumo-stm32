@@ -1,5 +1,5 @@
-/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/rebuild_cache.dir
-/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/edit_cache.dir
-/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.bin.dir
-/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir
-/home/hector/Documentos/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.hex.dir
+/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/rebuild_cache.dir
+/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.bin.dir
+/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/edit_cache.dir
+/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir
+/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.hex.dir

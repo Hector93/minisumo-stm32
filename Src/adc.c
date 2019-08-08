@@ -21,7 +21,7 @@
 #include "adc.h"
 
 /* USER CODE BEGIN 0 */
-
+uint32_t ADCsSensorData[ADC_CHANELS];
 /* USER CODE END 0 */
 
 ADC_HandleTypeDef hadc1;
@@ -31,6 +31,7 @@ DMA_HandleTypeDef hdma_adc1;
 /* ADC1 init function */
 void MX_ADC1_Init(void)
 {
+  ADC_MultiModeTypeDef multimode = {0};
   ADC_ChannelConfTypeDef sConfig = {0};
 
   /** Common config 
@@ -43,6 +44,13 @@ void MX_ADC1_Init(void)
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
   hadc1.Init.NbrOfConversion = 5;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** Configure the ADC multi-mode 
+  */
+  multimode.Mode = ADC_DUALMODE_REGSIMULT;
+  if (HAL_ADCEx_MultiModeConfigChannel(&hadc1, &multimode) != HAL_OK)
   {
     Error_Handler();
   }
@@ -111,7 +119,7 @@ void MX_ADC2_Init(void)
   */
   sConfig.Channel = ADC_CHANNEL_5;
   sConfig.Rank = ADC_REGULAR_RANK_1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
+  sConfig.SamplingTime = ADC_SAMPLETIME_13CYCLES_5;
   if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -185,7 +193,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     hdma_adc1.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
     hdma_adc1.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
     hdma_adc1.Init.Mode = DMA_NORMAL;
-    hdma_adc1.Init.Priority = DMA_PRIORITY_LOW;
+    hdma_adc1.Init.Priority = DMA_PRIORITY_HIGH;
     if (HAL_DMA_Init(&hdma_adc1) != HAL_OK)
     {
       Error_Handler();
@@ -306,7 +314,58 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
 } 
 
 /* USER CODE BEGIN 1 */
+extern osSemaphoreId irdistHandle;
+extern osSemaphoreId irflrHandle;
 
+extern void SensorsDistInterrupt(ADC_HandleTypeDef* hadc);
+extern void SensorsFloorInterrupt(ADC_HandleTypeDef* hadc);
+
+extern uint16_t sensorDistDataRaw[ADC_CHANELS];
+extern uint16_t sensorFloorDataRaw[ADC_CHANELS];
+
+void extractRawData(){
+  ADCFilter filter;
+  uint8_t update=1;
+  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+  if(pdFAIL == xSemaphoreTakeFromISR(irdistHandle, &xHigherPriorityTaskWoken)){
+    update |= 1;
+  }else{
+    // while(1);
+  }
+  xHigherPriorityTaskWoken = pdFALSE;
+  if(pdFAIL == xSemaphoreTakeFromISR(irflrHandle, &xHigherPriorityTaskWoken)){
+    update |= 2; 
+  }else{
+    // while(1);// se supone que no entraba aqui D':
+  }    
+     
+  for(uint32_t i = 0; i < ADC_CHANELS; i++){
+    filter.rawADC = ADCsSensorData[i];
+    if( update & 1){
+      sensorDistDataRaw[i] = filter.ADCUnion.ADC_one;
+    }
+
+    if(update & 2){
+      sensorFloorDataRaw[i] = filter.ADCUnion.ADC_two;  
+    }
+    
+  }
+  
+}
+
+HAL_StatusTypeDef ADCs_Start(){
+  return  HAL_ADCEx_MultiModeStart_DMA(&hadc1, ADCsSensorData, 5); 
+}
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
+  extractRawData();
+  if(hadc->Instance == ADC1){
+    SensorsDistInterrupt(hadc);
+    SensorsFloorInterrupt(hadc);
+  }else if(hadc->Instance == ADC2){
+    //    SensorsFloorInterrupt(hadc);
+  }
+}
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

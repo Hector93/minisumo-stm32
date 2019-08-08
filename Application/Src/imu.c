@@ -949,26 +949,27 @@ void imu(void const * argument){
   if(imuInit() < 0){
     while(1){}
   }
-
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
   
   for(;;){
     //    message rx;
     //    if(pdPASS == (xQueueReceive(imuQueueHandle, &rx, 0))){
     /* A byte has been received via USART. See handle_input for a list of
-	   * valid commands.
-	   */
-      //handle_input(rx.messageUser.type);
+     * valid commands.
+     */
+    //handle_input(rx.messageUser.type);
     // }
-    if(imuInvProcessData()){
-      /* This function reads bias-compensated sensor data and sensor
-       * fusion outputs from the MPL. The outputs are formatted as seen
-       * in eMPL_outputs.c. This function only needs to be called at the
-       * rate requested by the host.
-       */
-      vTaskDelay(1);
-      read_from_mpl();      
+    if(pdTRUE == xSemaphoreTake(imuSemHandle, 0)){
+      if(imuInvProcessData()){
+	/* This function reads bias-compensated sensor data and sensor
+	 * fusion outputs from the MPL. The outputs are formatted as seen
+	 * in eMPL_outputs.c. This function only needs to be called at the
+	 * rate requested by the host.
+	 */
+	read_from_mpl();      
+      }
     }
-
+    taskYIELD();
     //vTaskDelay(100);
   }
 }
@@ -979,8 +980,6 @@ uint8_t Sensors_I2C_WriteRegister(unsigned char slave_addr, unsigned char reg_ad
 }
 
 uint8_t Sensors_I2C_ReadRegister(unsigned char slave_addr, unsigned char reg_addr, unsigned char length, unsigned char *data){
-  //HAL_I2C_Mem_Read(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000);
-  //HAL_I2C_Mem_Read_DMA(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length);
   return (HAL_OK == HAL_I2C_Mem_Read(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,100000)? 0 : 1);
 }
 

@@ -13,6 +13,12 @@
 
 #define sensorsFloorID 5
 
+#define sensorsFloorFI 1
+#define sensorsFloorFD 2
+#define sensorsFloorAI 4
+#define sensorsFloorAD 8
+#define sensorsFloorAC 16
 //definir queue del proceso
 extern osThreadId sensorFloorHandle;
+extern osSemaphoreId irflrHandle;
 #endif

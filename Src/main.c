@@ -113,6 +113,7 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
+  
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -139,7 +140,8 @@ int main(void)
   MX_I2C1_Init();
   MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
-  HAL_NVIC_DisableIRQ(EXTI15_10_IRQn);
+  //HAL_NVIC_DisableIRQ(EXTI15_10_IRQn);
+  //  HAL_TIM_Base_Start_IT(&htim3);
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
@@ -227,7 +229,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-
+  if(htim->Instance == TIM3){
+    HAL_GPIO_TogglePin(led_GPIO_Port, led_Pin);
+    //    HAL_TIM_Base_Start_IT(&htim3);
+      }
   /* USER CODE END Callback 1 */
 }
 

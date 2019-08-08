@@ -11,7 +11,7 @@
 uint8_t sensorDistStatus;
 extern sensorDistData distSensorData;
 sensorDistData distSensorDataInternal;
-uint32_t sensorData[5];
+uint16_t sensorDistDataRaw[ADC_CHANELS];
 
 sensorDistData findOponent();
 void irSensorsIoController();
@@ -22,12 +22,17 @@ uint8_t map(uint32_t x, uint32_t in_min, uint32_t in_max, uint32_t out_min, uint
 void sensorsDist(void const* argument){
   message rx;
   sensorDistStatus = 31; //by default all sensors are started
+  HAL_GPIO_WritePin(ird_enFI_GPIO_Port, ird_enFI_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(ird_enFC_GPIO_Port, ird_enFC_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(ird_enFD_GPIO_Port, ird_enFD_Pin, GPIO_PIN_SET);
   HAL_ADCEx_Calibration_Start(&hadc1);
-  HAL_ADC_Start_DMA(&hadc1,sensorData,4);
+  
+  ADCs_Start();//TODO validar el retorno
+  
   xSemaphoreGive(irdistHandle);
 
   for(;;){
-    if(pdPASS == (xQueueReceive(sensorsDistQueueHandle,&rx,10))){
+    if(pdPASS == (xQueueReceive(sensorsDistQueueHandle,&rx,0))){
       SensorDistProcessMessage(rx);
     }
     if(pdPASS == (xSemaphoreTake(irdistHandle,10))){
@@ -37,8 +42,8 @@ void sensorsDist(void const* argument){
 	xSemaphoreGive(miniSemHandle);
       }
       processAdc();
-      HAL_ADC_Start_DMA(&hadc1,sensorData,5);
-    }
+      ADCs_Start();//TODO esperar a que sensores de piso se procesen
+	}
   }
 }
 
@@ -69,12 +74,6 @@ void SensorDistProcessMessage(message msg){
   xQueueSend(imuQueueHandle, &rx, 10);
 }
 
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
-  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  if(pdPASS == (xSemaphoreGiveFromISR(irdistHandle,&xHigherPriorityTaskWoken))){
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-  }
-}
 //TODO detectar si hay un oponente en los sensores de distancia
 sensorDistData findOponent(){
   sensorDistData aux;  
@@ -98,39 +97,46 @@ void irSensorsIoController(){
 
 void processAdc(){
   if((sensorDistStatus & LIID) == 0){
-    sensorData[LIPOS] = 0;
+    sensorDistDataRaw[LIPOS] = 0;
     distSensorDataInternal.distData.Li = 0;
   }else{
-    distSensorDataInternal.distData.Li = map(sensorData[LIPOS], 0, 4095, 0, 7);    
+    distSensorDataInternal.distData.Li = map(sensorDistDataRaw[LIPOS], 0, 4095, 0, 7);    
   }
 
   if((sensorDistStatus & FIID) == 0){
-    sensorData[FIPOS] = 0;
+    sensorDistDataRaw[FIPOS] = 0;
     distSensorDataInternal.distData.Fi = 0;
   }else{
-    distSensorDataInternal.distData.Fi = map(sensorData[FIPOS], 0, 4095, 0, 7);    
+    distSensorDataInternal.distData.Fi = map(sensorDistDataRaw[FIPOS], 0, 4095, 0, 7);    
   }
 
   if((sensorDistStatus & FCID) == 0){
-    sensorData[FCPOS] = 0;
+    sensorDistDataRaw[FCPOS] = 0;
     distSensorDataInternal.distData.Fc = 0;
   }else{
-    distSensorDataInternal.distData.Fc = map(sensorData[FCPOS], 0, 4095, 0, 7);
+    distSensorDataInternal.distData.Fc = map(sensorDistDataRaw[FCPOS], 0, 4095, 0, 7);
   }
   if((sensorDistStatus & LDID) == 0){
-    sensorData[LDPOS] = 0;
+    sensorDistDataRaw[LDPOS] = 0;
     distSensorDataInternal.distData.Ld = 0;
   }else{
-    distSensorDataInternal.distData.Ld = map(sensorData[LDPOS], 0, 4095, 0, 7);    
+    distSensorDataInternal.distData.Ld = map(sensorDistDataRaw[LDPOS], 0, 4095, 0, 7);    
   }
   if((sensorDistStatus & FDID) == 0){
-    sensorData[FDPOS] = 0;
+    sensorDistDataRaw[FDPOS] = 0;
     distSensorDataInternal.distData.Fd = 0;
   }else{
-    distSensorDataInternal.distData.Fd = map(sensorData[FDPOS], 0, 4095, 0, 7);      
+    distSensorDataInternal.distData.Fd = map(sensorDistDataRaw[FDPOS], 0, 4095, 0, 7);      
   } 
 }
 
 uint8_t map(uint32_t x, uint32_t in_min, uint32_t in_max, uint32_t out_min, uint32_t out_max){
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+//ADCCALLBACK
+void SensorsDistInterrupt(ADC_HandleTypeDef* hadc){
+  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+  if(pdPASS == (xSemaphoreGiveFromISR(irdistHandle,&xHigherPriorityTaskWoken))){
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+  }
 }

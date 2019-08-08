@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/irReceiver.c.o"
+  "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/led.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o"
@@ -61,8 +62,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o"
   "CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o"
-  "minisumo-stm32.elf.pdb"
   "minisumo-stm32.elf"
+  "minisumo-stm32.elf.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

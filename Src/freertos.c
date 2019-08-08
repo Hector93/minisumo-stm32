@@ -100,6 +100,7 @@ osSemaphoreId serialSemRxHandle;
 osSemaphoreId irdistHandle;
 osSemaphoreId imuSemHandle;
 osSemaphoreId miniSemHandle;
+osSemaphoreId irflrHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -168,6 +169,10 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of miniSem */
   osSemaphoreDef(miniSem);
   miniSemHandle = osSemaphoreCreate(osSemaphore(miniSem), 1);
+
+  /* definition and creation of irflr */
+  osSemaphoreDef(irflr);
+  irflrHandle = osSemaphoreCreate(osSemaphore(irflr), 1);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -245,7 +250,7 @@ void MX_FREERTOS_Init(void) {
   acelerometroHandle = osThreadCreate(osThread(acelerometro), NULL);
 
   /* definition and creation of minisumo */
-  osThreadDef(minisumo, mini, osPriorityNormal, 0, 64);
+  osThreadDef(minisumo, mini, osPriorityAboveNormal, 0, 64);
   minisumoHandle = osThreadCreate(osThread(minisumo), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */

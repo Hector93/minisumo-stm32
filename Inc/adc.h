@@ -34,14 +34,21 @@ extern ADC_HandleTypeDef hadc1;
 extern ADC_HandleTypeDef hadc2;
 
 /* USER CODE BEGIN Private defines */
-
+#define ADC_CHANELS 6
+   typedef union{
+     uint32_t rawADC;
+     struct {
+       uint16_t ADC_one;
+       uint16_t ADC_two;
+     }ADCUnion;
+   }ADCFilter;
 /* USER CODE END Private defines */
 
 void MX_ADC1_Init(void);
 void MX_ADC2_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+   HAL_StatusTypeDef ADCs_Start();
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

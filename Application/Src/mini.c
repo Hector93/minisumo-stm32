@@ -29,6 +29,7 @@ void mini(void const * argument){
   message rx;
   xSemaphoreGive(miniSemHandle);
   for(;;){
+    //for(;;){    HAL_GPIO_TogglePin(led_GPIO_Port, led_Pin);}
     if(pdPASS == (xQueueReceive(miniQueueHandle, &rx, 0))){
       miniprocessMessage(&rx);
     }
@@ -38,7 +39,7 @@ void mini(void const * argument){
       status.irDist = distSensorData;
       xSemaphoreGive(miniSemHandle);// falta validar que no falle en todos los casos
     }
-    
+    vTaskDelay(10);
   }  
 }
 

@@ -1,0 +1,9 @@
+* minisumo
+*  status
+** acelerometer
+** motors
+** floor sensors
+** distance sensors
+** serial
+** ir receiver
+** minisumo

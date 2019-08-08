@@ -70,7 +70,9 @@ void HAL_I2C_MspInit(I2C_HandleTypeDef* i2cHandle)
 
     /* I2C1 clock enable */
     __HAL_RCC_I2C1_CLK_ENABLE();
-
+    __HAL_RCC_I2C1_FORCE_RESET();
+    HAL_Delay(2);
+    __HAL_RCC_I2C1_RELEASE_RESET();
     /* I2C1 interrupt Init */
     HAL_NVIC_SetPriority(I2C1_EV_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(I2C1_EV_IRQn);
@@ -86,26 +88,26 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* i2cHandle)
 {
 
   if(i2cHandle->Instance==I2C1)
-  {
-  /* USER CODE BEGIN I2C1_MspDeInit 0 */
+    {
+      /* USER CODE BEGIN I2C1_MspDeInit 0 */
 
-  /* USER CODE END I2C1_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_I2C1_CLK_DISABLE();
+      /* USER CODE END I2C1_MspDeInit 0 */
+      /* Peripheral clock disable */
+      __HAL_RCC_I2C1_CLK_DISABLE();
   
-    /**I2C1 GPIO Configuration    
-    PB8     ------> I2C1_SCL
-    PB9     ------> I2C1_SDA 
-    */
-    HAL_GPIO_DeInit(GPIOB, SCL_Pin|SDA_Pin);
+      /**I2C1 GPIO Configuration    
+	 PB8     ------> I2C1_SCL
+	 PB9     ------> I2C1_SDA 
+      */
+      HAL_GPIO_DeInit(GPIOB, SCL_Pin|SDA_Pin);
 
-    /* I2C1 interrupt Deinit */
-    HAL_NVIC_DisableIRQ(I2C1_EV_IRQn);
-    HAL_NVIC_DisableIRQ(I2C1_ER_IRQn);
-  /* USER CODE BEGIN I2C1_MspDeInit 1 */
+      /* I2C1 interrupt Deinit */
+      HAL_NVIC_DisableIRQ(I2C1_EV_IRQn);
+      HAL_NVIC_DisableIRQ(I2C1_ER_IRQn);
+      /* USER CODE BEGIN I2C1_MspDeInit 1 */
 
-  /* USER CODE END I2C1_MspDeInit 1 */
-  }
+      /* USER CODE END I2C1_MspDeInit 1 */
+    }
 } 
 
 /* USER CODE BEGIN 1 */
