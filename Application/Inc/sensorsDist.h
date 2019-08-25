@@ -1,12 +1,12 @@
 /**
 ******************************************************************************
-* File Name          : sensorsFloor.h
-* Description        : function definitions for the floor sensors
+* File Name          : sensorsDist.h
+* Description        : function definitions for the distance sensors
 ******************************************************************************
 **/
 
-#ifndef __SENSORS_FLOOR_H
-#define __SENSORS_FLOOR_H
+#ifndef __SENSORS_DIST_H
+#define __SENSORS_DIST_H
 
 #include "FreeRTOS.h"
 #include "cmsis_os.h"
@@ -28,7 +28,7 @@
 
 //type definitions
 //#define getSensor      1
-//#define getAllSensors  2
+#define GALLSENSORS  2
 //#define setReading     3
 #define setSensor      4
 #define getStatus      5

@@ -11,11 +11,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -24,6 +26,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -84,36 +87,19 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o
  ../Middlewares/Third_Party/InvenSense/core/mpl/no_gyro_fusion.h
  ../Middlewares/Third_Party/InvenSense/core/mpl/quaternion_supervisor.h
  /home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/imu.c
-CMakeFiles/minisumo-stm32.elf.dir/Application/Src/irReceiver.c.o
- ../Application/Inc/irReceiver.h
- ../Application/Inc/message.h
- ../Application/Inc/serial.h
- ../Inc/FreeRTOSConfig.h
- ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
- ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
- /home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/irReceiver.c
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/led.c.o
  ../Application/Inc/led.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -122,6 +108,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/led.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -159,15 +146,18 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o
  ../Application/Inc/message.h
  ../Application/Inc/mini.h
  ../Application/Inc/sensorsDist.h
+ ../Application/Inc/sensorsFloor.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -176,6 +166,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -216,11 +207,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -229,6 +222,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -270,11 +264,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -283,6 +279,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -315,17 +312,20 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o
  /home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/sensorsDist.c
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o
  ../Application/Inc/message.h
+ ../Application/Inc/mini.h
  ../Application/Inc/sensorsFloor.h
  ../Application/Inc/serial.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -334,6 +334,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -371,11 +372,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -384,6 +387,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -418,11 +422,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -431,6 +437,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -449,11 +456,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -462,6 +471,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -480,11 +490,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -493,6 +505,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -511,11 +524,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -524,6 +539,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -542,11 +558,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -555,6 +573,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -568,16 +587,18 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
  ../Inc/stm32f1xx_hal_conf.h
  /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c
-CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.o
+CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -586,6 +607,41 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+ ../Inc/stm32f1xx_hal_conf.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c
+CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.o
+ ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
+ ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+ ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+ ../Drivers/CMSIS/Include/cmsis_armcc.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
+ ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
+ ../Drivers/CMSIS/Include/core_cm3.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -604,11 +660,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -617,6 +675,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -635,11 +694,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -648,6 +709,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -666,11 +728,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -679,6 +743,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -697,11 +762,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -710,6 +777,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -728,11 +796,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -741,6 +811,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -759,11 +830,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -772,6 +845,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -790,11 +864,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -803,6 +879,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -821,11 +898,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -834,6 +913,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -852,11 +932,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -865,6 +947,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -883,11 +966,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -896,6 +981,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -997,15 +1083,27 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
  ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
  /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/FreeRTOS/Source/queue.c
-CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.o
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.o
  ../Inc/FreeRTOSConfig.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/StackMacros.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.o
+ ../Inc/FreeRTOSConfig.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
  ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
@@ -1029,11 +1127,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1042,6 +1142,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1080,11 +1181,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1093,6 +1196,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1132,11 +1236,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1145,6 +1251,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1267,11 +1374,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/uart.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1280,6 +1389,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/uart.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1315,11 +1425,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1328,6 +1440,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1362,11 +1475,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1375,6 +1490,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1394,11 +1510,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1407,6 +1525,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1427,11 +1546,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1440,6 +1561,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1474,11 +1596,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/gpio.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1487,6 +1611,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/gpio.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1507,11 +1632,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1520,6 +1647,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1540,11 +1668,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1553,6 +1683,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1592,11 +1723,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1605,6 +1738,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1624,11 +1758,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_tim.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1637,6 +1773,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_tim.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1655,11 +1792,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1668,6 +1807,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1683,18 +1823,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o
  ../Inc/main.h
  ../Inc/stm32f1xx_hal_conf.h
  ../Inc/stm32f1xx_it.h
- ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
- ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
  ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
  /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_it.c
 CMakeFiles/minisumo-stm32.elf.dir/Src/syscalls.c.o
@@ -1704,11 +1839,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1717,6 +1854,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1735,11 +1873,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1748,6 +1888,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
@@ -1784,11 +1925,13 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
  ../Drivers/CMSIS/Include/cmsis_armcc.h
- ../Drivers/CMSIS/Include/cmsis_armcc_V6.h
+ ../Drivers/CMSIS/Include/cmsis_armclang.h
+ ../Drivers/CMSIS/Include/cmsis_compiler.h
  ../Drivers/CMSIS/Include/cmsis_gcc.h
+ ../Drivers/CMSIS/Include/cmsis_iccarm.h
+ ../Drivers/CMSIS/Include/cmsis_version.h
  ../Drivers/CMSIS/Include/core_cm3.h
- ../Drivers/CMSIS/Include/core_cmFunc.h
- ../Drivers/CMSIS/Include/core_cmInstr.h
+ ../Drivers/CMSIS/Include/mpu_armv7.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
@@ -1797,6 +1940,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h

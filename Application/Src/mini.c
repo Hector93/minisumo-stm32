@@ -6,9 +6,8 @@
 #include "imu.h"
 #include "packet.h"
 #include "sensorsDist.h"
+#include "sensorsFloor.h"
 
-//extern osMessageQId miniQueueHandle;
-//extern osSemaphoreId miniSemHandle;
 volatile long imuHeading = 0;
 sensorDistData distSensorData;
 
@@ -20,31 +19,51 @@ typedef struct {
   sensorDistData irDist;
 }miniStatus;
 
-void miniprocessMessage(const message *rx);
+void miniprocessMessage(message *rx);
+void imuMessage(message *rx);
+void sensorsFloorMsg(message *rx);
+void sensorsDistMsg(message *rx);
 
 char testmini[5];
-miniStatus status;
+volatile miniStatus status;
 
 void mini(void const * argument){
   message rx;
-  xSemaphoreGive(miniSemHandle);
   for(;;){
-    //for(;;){    HAL_GPIO_TogglePin(led_GPIO_Port, led_Pin);}
-    if(pdPASS == (xQueueReceive(miniQueueHandle, &rx, 0))){
+    if(pdPASS == (xQueueReceive(miniQueueHandle, &rx, 100))){
       miniprocessMessage(&rx);
+      //status.irFloor = 5;
     }
     //actualizando estado
-    status.heading = imuHeading;
-    if(pdPASS == (xSemaphoreTake(miniSemHandle, 0))){//intenta leer region critica, si no puede se salta la actualizacion
-      status.irDist = distSensorData;
-      xSemaphoreGive(miniSemHandle);// falta validar que no falle en todos los casos
-    }
-    vTaskDelay(10);
+    //status.heading = imuHeading;
+    //vTaskDelay(10);
+
+    
   }  
 }
 
-void miniprocessMessage(const message *rx){
+void miniprocessMessage(message *rx){
+  switch(rx->messageUser.IdpO){
+  case sensorsFloorID:
+    sensorsFloorMsg(rx);
+    break;
+  case sensorsDistID:
+    sensorsDistMsg(rx);
+    break;
+  case imuId:
+    imuMessage(rx);
+    break;
+  default:
+    break;
+    
+  }
+}
+
+void imuMessage(message *rx){
   switch(rx->messageUser.type){
+  case HEADING:
+    status.heading = imuHeading;
+    break;
   case TAP_X_U:
     HAL_UART_Transmit(&huart1, (uint8_t*)"tapxu\n", 6, 100);
     break;
@@ -74,6 +93,26 @@ void miniprocessMessage(const message *rx){
     break;
   case REV_LANDSCAPE:
     HAL_UART_Transmit(&huart1, (uint8_t*)"revla\n", 6, 100);
+    break;
+  default:
+    break;
+  }
+}
+
+void sensorsFloorMsg(message *rx){
+  switch(rx->messageUser.type){
+  case ALL_SENSORS:
+    status.irFloor = rx->messageUser.data;
+    break;
+  default:
+    break;
+  }
+}
+
+void sensorsDistMsg(message *rx){
+  switch(rx->messageUser.type){
+  case GALLSENSORS:
+    status.irDist.distDataRaw = rx->messageUser.data;
     break;
   default:
     break;

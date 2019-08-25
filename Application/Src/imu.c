@@ -154,9 +154,11 @@ void read_from_mpl(void){
   }
   
   if (hal.report & PRINT_HEADING) {
+    message tx = createMessage(imuId, miniId, HEADING, 0);
     if (inv_get_sensor_type_heading(data, &accuracy, (inv_time_t*)&timestamp)){
       eMPL_send_data(PACKET_DATA_HEADING, data);
       imuHeading = data[0] * 1.0 / (1<<16);
+      xQueueSend(miniQueueHandle, &tx, 10);
     }
   }
   
@@ -842,7 +844,7 @@ int imuInit(){
   //handle_input('q');
   //handle_input('r');
   handle_input('h');
-  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+  //HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
   return 0;
 }
 
@@ -944,12 +946,13 @@ int imuInvProcessData(){
 }
 
 void imu(void const * argument){
-  
-  xSemaphoreGive(imuSemHandle);
+  HAL_Delay(100);
+  //xSemaphoreGive(imuSemHandle);
   if(imuInit() < 0){
     while(1){}
   }
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+  //while(1);
   
   for(;;){
     //    message rx;
@@ -976,7 +979,11 @@ void imu(void const * argument){
 
 
 uint8_t Sensors_I2C_WriteRegister(unsigned char slave_addr, unsigned char reg_addr, unsigned char length, unsigned char *data){
-  return (HAL_OK == HAL_I2C_Mem_Write(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000) ? 0 : 1);
+  //return (HAL_OK == HAL_I2C_Mem_Write(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000) ? 0 : 1);
+  if(HAL_OK != HAL_I2C_Mem_Write(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000)){
+    while(1){}
+  }
+  return 0;
 }
 
 uint8_t Sensors_I2C_ReadRegister(unsigned char slave_addr, unsigned char reg_addr, unsigned char length, unsigned char *data){
@@ -991,7 +998,8 @@ void HAL_I2C_ErrorCallback(I2C_HandleTypeDef* hi2c){
 }
 
 void mdelay(unsigned long nTime){
-  vTaskDelay(pdMS_TO_TICKS(nTime));
+  HAL_Delay(nTime);
+  //vTaskDelay(pdMS_TO_TICKS(nTime));
 }
 
 uint32_t get_tick_count(){

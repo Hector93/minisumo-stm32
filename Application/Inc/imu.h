@@ -26,7 +26,7 @@
 #define LANDSCAPE     12
 #define REV_PORTRAIT  13
 #define REV_LANDSCAPE 14
-#define HEADING       15     
+#define HEADING       15     //if this field is used the data of message must be 0
 #define QUATERNION    16
 #define ROTMATRIX     17
 #define IMUERROR      255
@@ -37,4 +37,5 @@ uint8_t Sensors_I2C_ReadRegister(unsigned char slave_addr, unsigned char reg_add
 
 void mdelay(unsigned long nTime);
 uint32_t get_tick_count();
+uint8_t iniciaImu();
 #endif

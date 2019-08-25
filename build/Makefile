@@ -176,33 +176,6 @@ Application/Src/imu.c.s:
 	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.s
 .PHONY : Application/Src/imu.c.s
 
-Application/Src/irReceiver.o: Application/Src/irReceiver.c.o
-
-.PHONY : Application/Src/irReceiver.o
-
-# target to build an object file
-Application/Src/irReceiver.c.o:
-	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/irReceiver.c.o
-.PHONY : Application/Src/irReceiver.c.o
-
-Application/Src/irReceiver.i: Application/Src/irReceiver.c.i
-
-.PHONY : Application/Src/irReceiver.i
-
-# target to preprocess a source file
-Application/Src/irReceiver.c.i:
-	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/irReceiver.c.i
-.PHONY : Application/Src/irReceiver.c.i
-
-Application/Src/irReceiver.s: Application/Src/irReceiver.c.s
-
-.PHONY : Application/Src/irReceiver.s
-
-# target to generate assembly for a file
-Application/Src/irReceiver.c.s:
-	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/irReceiver.c.s
-.PHONY : Application/Src/irReceiver.c.s
-
 Application/Src/led.o: Application/Src/led.c.o
 
 .PHONY : Application/Src/led.o
@@ -526,6 +499,33 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.s: Drivers/STM32F1xx_HAL_Driv
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.s:
 	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.s
 .PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.s
+
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.o
+
+.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o
+
+# target to build an object file
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.o
+.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.o
+
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.i: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.i
+
+.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.i
+
+# target to preprocess a source file
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.i
+.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.i
+
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.s: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.s
+
+.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.s
+
+# target to generate assembly for a file
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.s
+.PHONY : Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.s
 
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.o
 
@@ -1012,6 +1012,33 @@ Middlewares/Third_Party/FreeRTOS/Source/queue.s: Middlewares/Third_Party/FreeRTO
 Middlewares/Third_Party/FreeRTOS/Source/queue.c.s:
 	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/queue.c.s
+
+Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o: Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.o
+
+.PHONY : Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o
+
+# target to build an object file
+Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.o:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.o
+.PHONY : Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.o
+
+Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.i: Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i
+
+.PHONY : Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i
+.PHONY : Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i
+
+Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.s: Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.s
+
+.PHONY : Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.s:
+	$(MAKE) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.s
+.PHONY : Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.s
 
 Middlewares/Third_Party/FreeRTOS/Source/tasks.o: Middlewares/Third_Party/FreeRTOS/Source/tasks.c.o
 
@@ -1846,9 +1873,6 @@ help:
 	@echo "... Application/Src/imu.o"
 	@echo "... Application/Src/imu.i"
 	@echo "... Application/Src/imu.s"
-	@echo "... Application/Src/irReceiver.o"
-	@echo "... Application/Src/irReceiver.i"
-	@echo "... Application/Src/irReceiver.s"
 	@echo "... Application/Src/led.o"
 	@echo "... Application/Src/led.i"
 	@echo "... Application/Src/led.s"
@@ -1885,6 +1909,9 @@ help:
 	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
 	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.i"
 	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.s"
+	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.i"
+	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.s"
 	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
 	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.i"
 	@echo "... Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.s"
@@ -1939,6 +1966,9 @@ help:
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/queue.o"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/queue.i"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/queue.s"
+	@echo "... Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o"
+	@echo "... Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.i"
+	@echo "... Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.s"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/tasks.o"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/tasks.i"
 	@echo "... Middlewares/Third_Party/FreeRTOS/Source/tasks.s"

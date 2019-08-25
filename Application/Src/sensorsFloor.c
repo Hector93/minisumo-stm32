@@ -2,6 +2,7 @@
 #include "string.h"
 #include "serial.h"
 #include "message.h"
+#include "mini.h"
 #include "sensorsFloor.h"
 #include "adc.h"
 
@@ -32,14 +33,19 @@ void readyForNewRawData();
 void sensorsFloor(void const* argument){
   HAL_ADCEx_Calibration_Start(&hadc2);
   HAL_ADC_Start(&hadc2);
+  readyForNewRawData();
   calibrateSensors();
+  /* for(;;){ */
+  /*   vTaskDelay(1); */
+  /* } */
+  
   for(;;){
     readyForNewRawData();
     procesIrData(sensorFloorDataRaw, &sensorFloorData);
-    if(sensorFloorData != 0){
-      sensorFloorData = 0;
-    }
+    message msg = createMessage(sensorsFloorID, miniId, ALL_SENSORS, sensorFloorData);
+    xQueueSend(miniQueueHandle, &msg, 10);
   }
+  
 }
 
 void procesIrData(const uint16_t* rawData, uint8_t* irData){
@@ -112,12 +118,13 @@ uint8_t deltaCalculations(uint16_t* previous, uint16_t* current){
 
 
 void readyForNewRawData(){//TODO checar que no se trabe
-  xSemaphoreTake(irflrHandle, 10);
+  xSemaphoreTake(irflrHandle, 1000);
 }
 
 void SensorsFloorInterrupt(ADC_HandleTypeDef* hadc){
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
   if(pdPASS == (xSemaphoreGiveFromISR(irflrHandle,&xHigherPriorityTaskWoken))){
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+
   }
 }

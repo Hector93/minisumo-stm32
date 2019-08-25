@@ -34,7 +34,7 @@ extern ADC_HandleTypeDef hadc1;
 extern ADC_HandleTypeDef hadc2;
 
 /* USER CODE BEGIN Private defines */
-#define ADC_CHANELS 6
+#define ADC_CHANELS 5
    typedef union{
      uint32_t rawADC;
      struct {

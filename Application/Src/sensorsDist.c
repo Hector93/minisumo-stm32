@@ -26,10 +26,14 @@ void sensorsDist(void const* argument){
   HAL_GPIO_WritePin(ird_enFC_GPIO_Port, ird_enFC_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(ird_enFD_GPIO_Port, ird_enFD_Pin, GPIO_PIN_SET);
   HAL_ADCEx_Calibration_Start(&hadc1);
-  
+  vTaskDelay(10 / portTICK_PERIOD_MS);//wait for the sensorsfloor proces to start their adc
+  taskYIELD();
   ADCs_Start();//TODO validar el retorno
   
   xSemaphoreGive(irdistHandle);
+  //for(;;){
+  //  vTaskDelay(1);
+  //}
 
   for(;;){
     if(pdPASS == (xQueueReceive(sensorsDistQueueHandle,&rx,0))){
@@ -37,14 +41,14 @@ void sensorsDist(void const* argument){
     }
     if(pdPASS == (xSemaphoreTake(irdistHandle,10))){
       //procesar la informacion antes de volver a leer el adc
-      if(pdPASS == (xSemaphoreTake(miniSemHandle, 10))){
-	distSensorData = distSensorDataInternal;
-	xSemaphoreGive(miniSemHandle);
-      }
+      rx = createMessage(sensorsDistID, miniId, GALLSENSORS, distSensorDataInternal.distDataRaw);
+      xQueueSend(miniQueueHandle, &rx, 10);      
       processAdc();
       ADCs_Start();//TODO esperar a que sensores de piso se procesen
-	}
+    }
+    taskYIELD();
   }
+  
 }
 
 void SensorDistProcessMessage(message msg){

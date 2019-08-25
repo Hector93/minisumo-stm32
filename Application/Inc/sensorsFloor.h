@@ -18,6 +18,8 @@
 #define sensorsFloorAI 4
 #define sensorsFloorAD 8
 #define sensorsFloorAC 16
+//message type 
+#define ALL_SENSORS 1
 //definir queue del proceso
 extern osThreadId sensorFloorHandle;
 extern osSemaphoreId irflrHandle;
