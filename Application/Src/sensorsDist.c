@@ -39,14 +39,14 @@ void sensorsDist(void const* argument){
     if(pdPASS == (xQueueReceive(sensorsDistQueueHandle,&rx,0))){
       SensorDistProcessMessage(rx);
     }
-    if(pdPASS == (xSemaphoreTake(irdistHandle,10))){
+    if(pdPASS == (xSemaphoreTake(irdistHandle,50))){
       //procesar la informacion antes de volver a leer el adc
       rx = createMessage(sensorsDistID, miniId, GALLSENSORS, distSensorDataInternal.distDataRaw);
       xQueueSend(miniQueueHandle, &rx, 10);      
       processAdc();
       ADCs_Start();//TODO esperar a que sensores de piso se procesen
     }
-    taskYIELD();
+    //taskYIELD();
   }
   
 }

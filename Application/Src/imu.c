@@ -837,7 +837,7 @@ int imuInit(){
   hal.dmp_on = 1;
   //opciones
   //handle_input('8');
-  handle_input('5');
+  handle_input('1');
   handle_input('.');
   //handle_input('a');
   // handle_input('g');
@@ -962,7 +962,7 @@ void imu(void const * argument){
      */
     //handle_input(rx.messageUser.type);
     // }
-    if(pdTRUE == xSemaphoreTake(imuSemHandle, 0)){
+    if(pdTRUE == xSemaphoreTake(imuSemHandle, portMAX_DELAY)){
       if(imuInvProcessData()){
 	/* This function reads bias-compensated sensor data and sensor
 	 * fusion outputs from the MPL. The outputs are formatted as seen
@@ -972,7 +972,7 @@ void imu(void const * argument){
 	read_from_mpl();      
       }
     }
-    taskYIELD();
+    //taskYIELD();
     //vTaskDelay(100);
   }
 }

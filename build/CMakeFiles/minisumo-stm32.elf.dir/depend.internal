@@ -145,8 +145,10 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o
  ../Application/Inc/imu.h
  ../Application/Inc/message.h
  ../Application/Inc/mini.h
+ ../Application/Inc/motors.h
  ../Application/Inc/sensorsDist.h
  ../Application/Inc/sensorsFloor.h
+ ../Application/Inc/serial.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h

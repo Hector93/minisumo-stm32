@@ -7,6 +7,7 @@
 #include "packet.h"
 #include "sensorsDist.h"
 #include "sensorsFloor.h"
+#include "motors.h"
 
 volatile long imuHeading = 0;
 sensorDistData distSensorData;
@@ -28,17 +29,24 @@ char testmini[5];
 volatile miniStatus status;
 
 void mini(void const * argument){
-  message rx;
+  message rx, tx;
   for(;;){
     if(pdPASS == (xQueueReceive(miniQueueHandle, &rx, 100))){
       miniprocessMessage(&rx);
-      //status.irFloor = 5;
-    }
-    //actualizando estado
-    //status.heading = imuHeading;
-    //vTaskDelay(10);
-
-    
+      if(GPIO_PIN_SET == HAL_GPIO_ReadPin(go_mini_GPIO_Port, go_mini_Pin)){
+	// if this is valid the robot can move
+	//
+	tx = createMessage(miniId, motorLID, startMotor, createMotorData(200, BACKWARDS));
+	xQueueSend(motorLQueueHandle, &tx, 50);
+	tx = createMessage(miniId, motorRID, startMotor, createMotorData(200, BACKWARDS));
+	xQueueSend(motorRQueueHandle, &tx, 50);
+      }else{//stop the robot
+	tx = createMessage(miniId, motorLID, stopHard, 0);
+	xQueueSend(motorLQueueHandle, &tx, 50);
+	tx = createMessage(miniId, motorRID, stopHard, 0);
+	xQueueSend(motorRQueueHandle, &tx, 50);
+      }
+    }    
   }  
 }
 

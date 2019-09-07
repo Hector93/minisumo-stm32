@@ -46,7 +46,7 @@ void motorL(const void* argument){
   rx = createMessage(15,3,5,0);
   
   status.motorOpt.speed = 100;
-  status.motorOpt.direction = STOPEDHARD;
+  status.motorOpt.direction = FORWARD;
 
   status.motorOpt.channel = motorLID;
   
@@ -78,7 +78,7 @@ motorInternalData motorProcessMessage(message msg,motorInternalData data){
     return data;
   case stopHard:     // poner pwm de canal a 100% y poner en cero los dos pines del motor
     data.motorOpt.direction = STOPEDHARD;
-    data.motorOpt.speed = STOPEDHARD;
+    data.motorOpt.speed = 255;
     return data;
   case stopFree:     //poner pwm de canal en 0;
     data.motorOpt.speed = STOPED;

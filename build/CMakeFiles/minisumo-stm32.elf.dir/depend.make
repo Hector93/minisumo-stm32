@@ -144,8 +144,10 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.o: ../Application/Sr
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Application/Inc/imu.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Application/Inc/message.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Application/Inc/mini.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Application/Inc/motors.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Application/Inc/sensorsDist.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Application/Inc/sensorsFloor.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Application/Inc/serial.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
