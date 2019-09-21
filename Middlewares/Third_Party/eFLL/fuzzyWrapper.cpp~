@@ -1,0 +1,12 @@
+#include "Fuzzy.h"
+#include "fuzzyWrapper.h"
+
+extern "C" {
+  Fuzzy* newFuzzy() {
+    return new Fuzzy();
+  }
+
+  void deleteFuzzy(Fuzzy* v) {
+    delete v;
+  }
+}

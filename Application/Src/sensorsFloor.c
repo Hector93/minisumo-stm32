@@ -4,6 +4,7 @@
 #include "message.h"
 #include "mini.h"
 #include "sensorsFloor.h"
+#include "sensorsDist.h"
 #include "adc.h"
 
 uint16_t sensorFloorDataRaw[ADC_CHANELS];
@@ -118,7 +119,8 @@ uint8_t deltaCalculations(uint16_t* previous, uint16_t* current){
 
 
 void readyForNewRawData(){//TODO checar que no se trabe
-  xSemaphoreTake(irflrHandle, 1000);
+  xSemaphoreGive(irdistHandle);
+  xSemaphoreTake(irflrHandle, 10);
 }
 
 void SensorsFloorInterrupt(ADC_HandleTypeDef* hadc){

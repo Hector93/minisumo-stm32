@@ -45,7 +45,7 @@ set(USER_LINKER_FLAGS "-specs=nano.specs")
 
 #for debuging the imu add PRINT_IMU_DATA for direct data from mpl library and PRINT_IMU_QUAT for quaternions
 
-set(USER_CFLAGS "-Wall -fmessage-length=0 -DUSE_STDPERIPH_DRIVER -DEMPL -DUSE_DMP -DMPU6050 -DMPL_LOG_NDEBUG=1 -DEMPL_TARGET_STM32F4 -DREMOVE_LOGGING -I\"Middlewares/Third_Party/InvenSense/core/driver/include\" -I\"Middlewares/Third_Party/InvenSense/core/driver/eMPL\" -I\"Middlewares/Third_Party/InvenSense/core/driver/stm32L\" -I\"Middlewares/Third_Party/InvenSense/core/mpl\" -I\"Middlewares/Third_Party/InvenSense/core/mllite\"")
+set(USER_CFLAGS "-Wall -fmessage-length=0 -DUSE_STDPERIPH_DRIVER -DEMPL -DUSE_DMP -DMPU6050 -DMPL_LOG_NDEBUG=1 -DEMPL_TARGET_STM32F4 -DREMOVE_LOGGING -I\"Middlewares/Third_Party/InvenSense/core/driver/include\" -I\"Middlewares/Third_Party/InvenSense/core/driver/eMPL\" -I\"Middlewares/Third_Party/InvenSense/core/driver/stm32L\" -I\"Middlewares/Third_Party/InvenSense/core/mpl\" -I\"Middlewares/Third_Party/InvenSense/core/mllite\" -I\"Middlewares/Third_Party/InvenSense/core/mpl\"")
 set(USER_COMPILER "GNU") # "Clang" or "GNU"
 set(USER_DEBUG TRUE) # Or "False"
 
@@ -108,6 +108,9 @@ else(${USER_DEBUG})
 endif(${USER_DEBUG})
 include("CMakeSetCompiler.cmake")
 
+
+#set(CMAKE_CXX_COMPILER "arm-none-eabi-g++.exe")
+
 #find and add all headers & sources & asm to target
 MACRO(HEADER_DIRECTORIES return_list)
     FILE(GLOB_RECURSE new_list *.h)
@@ -127,7 +130,7 @@ header_directories(INC)
 include_directories(${INC})
 
 #SOURCES
-file(GLOB_RECURSE SRC RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.c)
+file(GLOB_RECURSE SRC RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.c *.cpp)
 string(REGEX REPLACE "[^;]*CMakeFiles/[^;]+;?" "" SRC "${SRC}")
 
 #ASSEMBLER files
@@ -154,7 +157,7 @@ endforeach()
 #setup flags
 
 set(CMAKE_C_FLAGS "${EXTERN_C_FLAGS} ${CMAKE_C_FLAGS} ${STM32_PRJ_CFLAGS} ${OPT} ${USER_CFLAGS}")
-set(CMAKE_CXX_FLAGS "${EXTERN_C_FLAGS} ${CMAKE_CXX_FLAGS} ${STM32_PRJ_CFLAGS} ${OPT} ${USER_CFLAGS}")
+set(CMAKE_CXX_FLAGS "${EXTERN_CXX_FLAGS} ${CMAKE_CXX_FLAGS} ${STM32_PRJ_CFLAGS} ${OPT} ${USER_CFLAGS}")
 set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} ${STM32_PRJ_CFLAGS} ${OPT} ${USER_CFLAGS}")
 
 
@@ -172,7 +175,11 @@ get_directory_property(C_DEFS COMPILE_DEFINITIONS)
 
 #link_directories(/Middlewares/Third_Party/InvenSense/core/mpl)
 add_executable(${TARGET}.elf ${SRC} ${asm_SRC} )
-target_link_libraries(${TARGET}.elf ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/InvenSense/core/mpl/libmplmpu.a -lm)
+target_link_libraries(
+	${TARGET}.elf ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/InvenSense/core/mpl/libmplmpu.a -lm
+)
+
+
 #print size
 add_custom_command(TARGET ${TARGET}.elf POST_BUILD COMMAND ${CMAKE_SIZE} ${TARGET}.elf)
 

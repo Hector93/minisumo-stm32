@@ -8,12 +8,11 @@
 #include "queue.h"
 #include "mini.h"
 
-uint8_t sensorDistStatus;
-extern sensorDistData distSensorData;
+uint8_t sensorDistStatus; //stores the info of enabled sensors
 sensorDistData distSensorDataInternal;
 uint16_t sensorDistDataRaw[ADC_CHANELS];
 
-sensorDistData findOponent();
+int8_t findOponent();
 void irSensorsIoController();
 void SensorDistProcessMessage(message msg);
 void processAdc();
@@ -41,9 +40,10 @@ void sensorsDist(void const* argument){
     }
     if(pdPASS == (xSemaphoreTake(irdistHandle,50))){
       //procesar la informacion antes de volver a leer el adc
+      processAdc();
+      //rx = createMessage(sensorsDistID, miniId, DIRECTION, findOponent());
       rx = createMessage(sensorsDistID, miniId, GALLSENSORS, distSensorDataInternal.distDataRaw);
       xQueueSend(miniQueueHandle, &rx, 10);      
-      processAdc();
       ADCs_Start();//TODO esperar a que sensores de piso se procesen
     }
     //taskYIELD();
@@ -79,10 +79,36 @@ void SensorDistProcessMessage(message msg){
 }
 
 //TODO detectar si hay un oponente en los sensores de distancia
-sensorDistData findOponent(){
-  sensorDistData aux;  
-  aux.distDataRaw = 0;
-  return aux;
+int8_t findOponent(){
+  int8_t direction = -1;
+  uint8_t aux = 0;
+
+  if(aux < distSensorDataInternal.distData.Li){
+    aux = distSensorDataInternal.distData.Li;
+    direction = LIID;
+  }
+  
+  if(aux < distSensorDataInternal.distData.Fi){
+    aux = distSensorDataInternal.distData.Fi;
+    direction = FIID;
+  }
+
+  if(aux < distSensorDataInternal.distData.Fc){
+    aux = distSensorDataInternal.distData.Fc;
+    direction = FCID;
+  }
+
+  if(aux < distSensorDataInternal.distData.Fd){
+    aux = distSensorDataInternal.distData.Fd;
+    direction = FDID;
+  }
+
+  if(aux < distSensorDataInternal.distData.Ld){
+    aux = distSensorDataInternal.distData.Ld;
+    direction = LDID;
+  }
+  
+  return direction;
 }
 
 void irSensorsIoController(){  
@@ -104,7 +130,7 @@ void processAdc(){
     sensorDistDataRaw[LIPOS] = 0;
     distSensorDataInternal.distData.Li = 0;
   }else{
-    distSensorDataInternal.distData.Li = map(sensorDistDataRaw[LIPOS], 0, 4095, 0, 7);    
+    distSensorDataInternal.distData.Li = map(sensorDistDataRaw[LIPOS], 0, 4095, 0, 7);
   }
 
   if((sensorDistStatus & FIID) == 0){

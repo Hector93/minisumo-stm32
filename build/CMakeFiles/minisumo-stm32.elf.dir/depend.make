@@ -199,6 +199,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/mltypes.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/include/stdint_invensense.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/stm32L/packet.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Middlewares/Third_Party/eFLL/fuzzyWrapper.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o: ../Application/Src/mini.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o: ../Application/Inc/message.h
@@ -314,6 +315,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Applicatio
 
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Application/Inc/message.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Application/Inc/mini.h
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Application/Inc/sensorsDist.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Application/Inc/sensorsFloor.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Application/Inc/serial.h
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
@@ -1971,4 +1973,62 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o: ../Middlewares/Third_Party/Free
 CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
 CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o: ../Src/usart.c
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o: ../Middlewares/Third_Party/eFLL/Fuzzy.cpp
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o: ../Middlewares/Third_Party/eFLL/Fuzzy.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyComposition.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyIO.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyInput.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyOutput.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRule.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzySet.h
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyComposition.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyComposition.cpp
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyComposition.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyComposition.h
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyIO.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyIO.cpp
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyIO.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyIO.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyIO.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzySet.h
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyInput.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyIO.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyInput.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyInput.cpp
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyInput.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyInput.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyInput.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzySet.h
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyComposition.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyIO.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyOutput.cpp
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyOutput.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzySet.h
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRule.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRule.cpp
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRule.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRule.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRule.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRule.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRule.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzySet.h
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.cpp
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzySet.h
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzySet.h
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzySet.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzySet.cpp
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzySet.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzySet.h
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o: ../Middlewares/Third_Party/eFLL/Fuzzy.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyComposition.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyIO.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyInput.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyOutput.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRule.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzySet.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o: ../Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o: ../Middlewares/Third_Party/eFLL/fuzzyWrapper.h
 

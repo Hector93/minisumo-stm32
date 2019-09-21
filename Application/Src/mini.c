@@ -8,6 +8,7 @@
 #include "sensorsDist.h"
 #include "sensorsFloor.h"
 #include "motors.h"
+#include "fuzzyWrapper.h"
 
 volatile long imuHeading = 0;
 sensorDistData distSensorData;
@@ -18,28 +19,43 @@ typedef struct {
   uint16_t RMotorSpeed;
   uint8_t irFloor;
   sensorDistData irDist;
+  int8_t direction;
 }miniStatus;
 
 void miniprocessMessage(message *rx);
 void imuMessage(message *rx);
 void sensorsFloorMsg(message *rx);
 void sensorsDistMsg(message *rx);
+void controller();
+void motorControl(uint8_t motorLType, uint16_t motorL, uint8_t motorRType, uint16_t motorR);
 
 char testmini[5];
 volatile miniStatus status;
 
 void mini(void const * argument){
+  Fuzzy* c = newFuzzy();
   message rx, tx;
+  uint8_t vel = 255;
   for(;;){
     if(pdPASS == (xQueueReceive(miniQueueHandle, &rx, 100))){
       miniprocessMessage(&rx);
       if(GPIO_PIN_SET == HAL_GPIO_ReadPin(go_mini_GPIO_Port, go_mini_Pin)){
 	// if this is valid the robot can move
-	//
-	tx = createMessage(miniId, motorLID, startMotor, createMotorData(200, BACKWARDS));
-	xQueueSend(motorLQueueHandle, &tx, 50);
-	tx = createMessage(miniId, motorRID, startMotor, createMotorData(200, BACKWARDS));
-	xQueueSend(motorRQueueHandle, &tx, 50);
+	if(status.irFloor > 0){
+	  vel = 255;
+	  tx = createMessage(miniId, motorLID, startMotor, createMotorData(vel, BACKWARDS));
+	  xQueueSend(motorLQueueHandle, &tx, 50);
+	  tx = createMessage(miniId, motorRID, startMotor, createMotorData(vel, BACKWARDS));
+	  xQueueSend(motorRQueueHandle, &tx, 50);
+
+	}else{
+	  vel = 255;
+	  tx = createMessage(miniId, motorLID, startMotor, createMotorData(vel, FORWARD));
+	  xQueueSend(motorLQueueHandle, &tx, 50);
+	  tx = createMessage(miniId, motorRID, startMotor, createMotorData(vel, FORWARD));
+	  xQueueSend(motorRQueueHandle, &tx, 50);
+	}
+
       }else{//stop the robot
 	tx = createMessage(miniId, motorLID, stopHard, 0);
 	xQueueSend(motorLQueueHandle, &tx, 50);
@@ -48,6 +64,21 @@ void mini(void const * argument){
       }
     }    
   }  
+}
+
+void controller(){
+  /**
+   * procesar sensores de piso
+   * procesar sensores de distancia
+   * procesar acelerometro
+   * regresar decision
+   */
+  //piso [x,x,x,x,x]
+  //dist 0 0 0 0 0
+  //acel 23
+
+
+  
 }
 
 void miniprocessMessage(message *rx){
@@ -65,6 +96,14 @@ void miniprocessMessage(message *rx){
     break;
     
   }
+}
+
+void motorControl(uint8_t motorLType, uint16_t motorL, uint8_t motorRType, uint16_t motorR){
+  message tx;
+  tx = createMessage(miniId, motorLID, motorLType, motorL);
+  xQueueSend(motorLQueueHandle, &tx, 50);
+  tx = createMessage(miniId, motorRID, motorRType, motorR);
+  xQueueSend(motorRQueueHandle, &tx, 50);
 }
 
 void imuMessage(message *rx){
@@ -122,6 +161,8 @@ void sensorsDistMsg(message *rx){
   case GALLSENSORS:
     status.irDist.distDataRaw = rx->messageUser.data;
     break;
+  case DIRECTION:
+    status.direction = rx->messageUser.data;
   default:
     break;
   }

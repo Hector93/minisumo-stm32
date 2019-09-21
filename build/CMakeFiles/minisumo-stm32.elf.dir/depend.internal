@@ -200,6 +200,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o
  ../Middlewares/Third_Party/InvenSense/core/driver/include/mltypes.h
  ../Middlewares/Third_Party/InvenSense/core/driver/include/stdint_invensense.h
  ../Middlewares/Third_Party/InvenSense/core/driver/stm32L/packet.h
+ ../Middlewares/Third_Party/eFLL/fuzzyWrapper.h
  /home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/mini.c
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o
  ../Application/Inc/message.h
@@ -315,6 +316,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o
  ../Application/Inc/message.h
  ../Application/Inc/mini.h
+ ../Application/Inc/sensorsDist.h
  ../Application/Inc/sensorsFloor.h
  ../Application/Inc/serial.h
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
@@ -1972,3 +1974,61 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
  ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h
  /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/usart.c
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/Fuzzy.cpp
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/Fuzzy.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyComposition.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyIO.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyInput.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyOutput.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRule.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzySet.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyComposition.cpp.o
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyComposition.cpp
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyComposition.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyIO.cpp.o
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyIO.cpp
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyIO.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzySet.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyInput.cpp.o
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyIO.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyInput.cpp
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyInput.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzySet.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp.o
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyComposition.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyIO.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyOutput.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzySet.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRule.cpp.o
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRule.cpp
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRule.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzySet.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.cpp.o
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.cpp
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzySet.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp.o
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzySet.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzySet.cpp.o
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzySet.cpp
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzySet.h
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/Fuzzy.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyComposition.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyIO.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyInput.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyOutput.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRule.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzySet.h
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp
+ /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/fuzzyWrapper.h

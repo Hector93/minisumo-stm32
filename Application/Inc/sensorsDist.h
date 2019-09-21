@@ -28,6 +28,7 @@
 
 //type definitions
 //#define getSensor      1
+#define DIRECTION    1
 #define GALLSENSORS  2
 //#define setReading     3
 #define setSensor      4

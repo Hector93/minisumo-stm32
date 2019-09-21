@@ -327,11 +327,11 @@ void extractRawData(){
   ADCFilter filter;
   uint8_t update=1;
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  if(pdFAIL == xSemaphoreTakeFromISR(irdistHandle, &xHigherPriorityTaskWoken)){
-    update |= 1;
-  }else{
-    // while(1);
-  }
+  /* if(pdFAIL == xSemaphoreTakeFromISR(irdistHandle, &xHigherPriorityTaskWoken)){ */
+  /*   update |= 1; */
+  /* }else{ */
+  /*   // while(1); */
+  /* } */
   xHigherPriorityTaskWoken = pdFALSE;
   if(pdFAIL == xSemaphoreTakeFromISR(irflrHandle, &xHigherPriorityTaskWoken)){
     update |= 2; 
@@ -360,7 +360,7 @@ HAL_StatusTypeDef ADCs_Start(){
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
   extractRawData();
   if(hadc->Instance == ADC1){
-    SensorsDistInterrupt(hadc);
+    //SensorsDistInterrupt(hadc);
     SensorsFloorInterrupt(hadc);
   }else if(hadc->Instance == ADC2){
     //    SensorsFloorInterrupt(hadc);
