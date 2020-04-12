@@ -33,36 +33,37 @@ char testmini[5];
 volatile miniStatus status;
 
 void mini(void const * argument){
-  Fuzzy* c = newFuzzy();
+  //Fuzzy* c = newFuzzy();
   message rx, tx;
   uint8_t vel = 255;
   for(;;){
-    if(pdPASS == (xQueueReceive(miniQueueHandle, &rx, 100))){
-      miniprocessMessage(&rx);
-      if(GPIO_PIN_SET == HAL_GPIO_ReadPin(go_mini_GPIO_Port, go_mini_Pin)){
-	// if this is valid the robot can move
-	if(status.irFloor > 0){
-	  vel = 255;
-	  tx = createMessage(miniId, motorLID, startMotor, createMotorData(vel, BACKWARDS));
-	  xQueueSend(motorLQueueHandle, &tx, 50);
-	  tx = createMessage(miniId, motorRID, startMotor, createMotorData(vel, BACKWARDS));
-	  xQueueSend(motorRQueueHandle, &tx, 50);
+    /* if(pdPASS == (xQueueReceive(miniQueueHandle, &rx, 100))){ */
+    /*   miniprocessMessage(&rx); */
+    /*   if(GPIO_PIN_SET == HAL_GPIO_ReadPin(go_mini_GPIO_Port, go_mini_Pin)){ */
+    /* 	// if this is valid the robot can move */
+    /* 	if(status.irFloor > 0){ */
+    /* 	  vel = 255; */
+    /* 	  tx = createMessage(miniId, motorLID, startMotor, createMotorData(vel, BACKWARDS)); */
+    /* 	  xQueueSend(motorLQueueHandle, &tx, 50); */
+    /* 	  tx = createMessage(miniId, motorRID, startMotor, createMotorData(vel, BACKWARDS)); */
+    /* 	  xQueueSend(motorRQueueHandle, &tx, 50); */
 
-	}else{
-	  vel = 255;
-	  tx = createMessage(miniId, motorLID, startMotor, createMotorData(vel, FORWARD));
-	  xQueueSend(motorLQueueHandle, &tx, 50);
-	  tx = createMessage(miniId, motorRID, startMotor, createMotorData(vel, FORWARD));
-	  xQueueSend(motorRQueueHandle, &tx, 50);
-	}
+    /* 	}else{ */
+    /* 	  vel = 255; */
+    /* 	  tx = createMessage(miniId, motorLID, startMotor, createMotorData(vel, FORWARD)); */
+    /* 	  xQueueSend(motorLQueueHandle, &tx, 50); */
+    /* 	  tx = createMessage(miniId, motorRID, startMotor, createMotorData(vel, FORWARD)); */
+    /* 	  xQueueSend(motorRQueueHandle, &tx, 50); */
+    /* 	} */
 
-      }else{//stop the robot
-	tx = createMessage(miniId, motorLID, stopHard, 0);
-	xQueueSend(motorLQueueHandle, &tx, 50);
-	tx = createMessage(miniId, motorRID, stopHard, 0);
-	xQueueSend(motorRQueueHandle, &tx, 50);
-      }
-    }    
+    /*   }else{//stop the robot */
+    /* 	tx = createMessage(miniId, motorLID, stopHard, 0); */
+    /* 	xQueueSend(motorLQueueHandle, &tx, 50); */
+    /* 	tx = createMessage(miniId, motorRID, stopHard, 0); */
+    /* 	xQueueSend(motorRQueueHandle, &tx, 50); */
+    /*   } */
+    /* }     */
+    portYIELD();
   }  
 }
 

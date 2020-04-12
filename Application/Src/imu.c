@@ -154,11 +154,11 @@ void read_from_mpl(void){
   }
   
   if (hal.report & PRINT_HEADING) {
-    message tx = createMessage(imuId, miniId, HEADING, 0);
+    //message tx = createMessage(imuId, miniId, HEADING, 0);
     if (inv_get_sensor_type_heading(data, &accuracy, (inv_time_t*)&timestamp)){
       eMPL_send_data(PACKET_DATA_HEADING, data);
       imuHeading = data[0] * 1.0 / (1<<16);
-      xQueueSend(miniQueueHandle, &tx, 10);
+      //xQueueSend(miniQueueHandle, &tx, 10);
     }
   }
   

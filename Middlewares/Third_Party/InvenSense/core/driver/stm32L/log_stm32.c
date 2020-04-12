@@ -31,6 +31,9 @@
 //#include "uart.h"
 #include "../../../uart.h"
 #include "usart.h"
+#include "message.h"
+#include "imu.h"
+#include "serial.h"
 #define BUF_SIZE        (256)
 #define PACKET_LENGTH   (23)
 
@@ -136,8 +139,10 @@ void eMPL_send_quat(long *quat)
     out[18] = (char)quat[3];
     out[21] = '\r';
     out[22] = '\n';
-
-    HAL_UART_Transmit(&huart1, (unsigned char*)out, PACKET_LENGTH, 1000);
+    message tx = messageDinamicArray(imuId, serialID, ARRAY, out, PACKET_LENGTH);
+    xQueueSend(serialQueueHandle, &tx, 1000);
+    vPortFree(tx.pointer.array);
+    //HAL_UART_Transmit(&huart1, (unsigned char*)out, PACKET_LENGTH, 1000);
     //    for (i=0; i<PACKET_LENGTH; i++) {
       
     //      fputcI(out[i]);
@@ -150,7 +155,7 @@ void eMPL_send_data(unsigned char type, long *data)
 {
 #ifdef PRINT_IMU_DATA
   char out[PACKET_LENGTH];
-  //    int i;
+  uint16_t real_size;
   if (!data)
         return;
     memset(out, 0, PACKET_LENGTH);
@@ -180,7 +185,8 @@ void eMPL_send_data(unsigned char type, long *data)
         out[18] = (char)(data[7] >> 16);
         out[19] = (char)(data[8] >> 24);
         out[20] = (char)(data[8] >> 16);
-        break;
+	real_size = 21;
+	break;
     /* Four bytes per-element. */
     /* Four elements. */
     case PACKET_DATA_QUAT:
@@ -188,7 +194,8 @@ void eMPL_send_data(unsigned char type, long *data)
         out[16] = (char)(data[3] >> 16);
         out[17] = (char)(data[3] >> 8);
         out[18] = (char)data[3];
-    /* Three elements. */
+	real_size = 19;
+	/* Three elements. */
     case PACKET_DATA_ACCEL:
     case PACKET_DATA_GYRO:
     case PACKET_DATA_COMPASS:
@@ -205,17 +212,22 @@ void eMPL_send_data(unsigned char type, long *data)
         out[12] = (char)(data[2] >> 16);
         out[13] = (char)(data[2] >> 8);
         out[14] = (char)data[2];
+	real_size = 15;
         break;
     case PACKET_DATA_HEADING:
         out[3] = (char)(data[0] >> 24);
         out[4] = (char)(data[0] >> 16);
         out[5] = (char)(data[0] >> 8);
         out[6] = (char)data[0];
+	real_size = 7;
         break;
     default:
         return;
     }
-    HAL_UART_Transmit(&huart1, (unsigned char*)out, PACKET_LENGTH, 1000);
+    message tx = messageDinamicArray(imuId, serialID, ARRAY, out, PACKET_LENGTH);
+    xQueueSend(serialQueueHandle, &tx, 1000);
+    vPortFree(tx.pointer.array);
+    //HAL_UART_Transmit(&huart1, (unsigned char*)out, PACKET_LENGTH, 1000);
     //    for (i=0; i<PACKET_LENGTH; i++) {
     //    fputcI(out[i]);
     //}

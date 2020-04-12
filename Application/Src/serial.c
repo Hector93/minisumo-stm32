@@ -11,15 +11,16 @@
  * las ISR estan definidas en usart.h
  *
  */
-
+serialPkt tx;
 void processMessage(message msg);
 
 void serial(void const* argument){
   extern osSemaphoreId serialSemTxHandle;
   extern osSemaphoreId serialSemRxHandle;
   serialPkt rx;
+  uint8_t freeMem = 0;
   //  rx.mws.syncChar = '\n';
-  serialPkt tx;
+  
   rx.mws.syncChar = tx.mws.syncChar = SYNCCHAR;
   
   xSemaphoreGive(serialSemTxHandle);
@@ -30,11 +31,21 @@ void serial(void const* argument){
   for(;;){
     if((uxQueueMessagesWaiting(serialQueueHandle)) > 0){//existe algo por enviar?
       if(pdPASS == (xSemaphoreTake(serialSemTxHandle,0))){//puedo enviar?
+	/* if(freeMem == 1){ */
+	/*   vPortFree(tx.mws.msg.pointer.array); */
+	/*   freeMem=0; */
+	/* } */
 	if(pdPASS == (xQueueReceive(serialQueueHandle,&tx,0))){//envia dato
-	  HAL_UART_Transmit_DMA(&huart1,tx.data,sizeof(serialPkt) - 1);
-	}else{//no pude leer dato a enviar D':
-	  xSemaphoreGive(serialSemTxHandle);
-	}
+	  if (tx.mws.msg.pointer.array[0] == ARRAY){
+	    HAL_UART_Transmit_DMA(&huart1,tx.mws.msg.pointer.array,tx.mws.msg.pointer.size);
+	    freeMem = 1;
+	  }else{
+	      HAL_UART_Transmit_DMA(&huart1,tx.data,sizeof(serialPkt) - 1);
+	    }
+	  
+	  }else{//no pude leer dato a enviar D':
+	    xSemaphoreGive(serialSemTxHandle);
+	  }
       }
     }
     if(pdPASS == (xSemaphoreTake(serialSemRxHandle,0))){
@@ -48,7 +59,7 @@ void serial(void const* argument){
       //HAL_UART_Transmit(&huart1,"hola serial\r\n",13,100);
       HAL_UART_Receive_DMA(&huart1,rx.data,sizeof(serialPkt) - 1);
     }
-    portYIELD();
+    taskYIELD();
   }
  
 }

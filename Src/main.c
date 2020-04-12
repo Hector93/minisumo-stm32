@@ -140,6 +140,7 @@ int main(void)
   MX_I2C1_Init();
   MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
+  HAL_UART_Transmit(&huart1,(uint8_t *)"Minisumo proyect author: Hector Manuel\r\n",40,200);
   //HAL_NVIC_DisableIRQ(EXTI15_10_IRQn);
   //  HAL_TIM_Base_Start_IT(&htim3);
   /* USER CODE END 2 */

@@ -45,6 +45,11 @@ void sensorsFloor(void const* argument){
     procesIrData(sensorFloorDataRaw, &sensorFloorData);
     message msg = createMessage(sensorsFloorID, miniId, ALL_SENSORS, sensorFloorData);
     xQueueSend(miniQueueHandle, &msg, 10);
+    msg = messageDinamicArray(sensorsFloorID, serialID, ARRAY, sensorFloorDataRaw, sizeof(uint16_t)*ADC_CHANELS);
+    xQueueSend(miniQueueHandle, &msg, 100);
+    vPortFree(msg.pointer.array);
+      
+      
   }
   
 }

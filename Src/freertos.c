@@ -58,6 +58,7 @@
 /* USER CODE BEGIN Includes */     
 //#include "message.h"
 #include "../Application/Inc/message.h"
+#include "usart.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -139,7 +140,8 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackTy
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-       
+  HAL_UART_Transmit(&huart1,(uint8_t *)"Inicializacion de FreeRtos\r\n",28,200);
+  HAL_UART_Transmit(&huart1,(uint8_t *)"creacion de semaforos\r\n",23,200);
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -173,6 +175,7 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
+  HAL_UART_Transmit(&huart1,(uint8_t *)"Creacion de colas de comunicacion\r\n",35,200);
   /* USER CODE END RTOS_TIMERS */
 
   /* Create the queue(s) */
@@ -207,6 +210,7 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
   // serialQHandle = &serialQueueHandle;
+  HAL_UART_Transmit(&huart1,(uint8_t *)"Creacion de tareas\r\n",20,200);
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
@@ -227,7 +231,7 @@ void MX_FREERTOS_Init(void) {
   usartHandle = osThreadCreate(osThread(usart), NULL);
 
   /* definition and creation of sensorFloor */
-  osThreadDef(sensorFloor, sensorsFloor, osPriorityHigh, 0, 64);
+  osThreadDef(sensorFloor, sensorsFloor, osPriorityNormal, 0, 64);
   sensorFloorHandle = osThreadCreate(osThread(sensorFloor), NULL);
 
   /* definition and creation of sensorDist */
@@ -235,15 +239,16 @@ void MX_FREERTOS_Init(void) {
   sensorDistHandle = osThreadCreate(osThread(sensorDist), NULL);
 
   /* definition and creation of acelerometro */
-  osThreadDef(acelerometro, imu, osPriorityAboveNormal, 0, 128);
+  osThreadDef(acelerometro, imu, osPriorityNormal, 0, 128);
   acelerometroHandle = osThreadCreate(osThread(acelerometro), NULL);
 
   /* definition and creation of minisumo */
-  osThreadDef(minisumo, mini, osPriorityRealtime, 0, 64);
+  osThreadDef(minisumo, mini, osPriorityNormal, 0, 64);
   minisumoHandle = osThreadCreate(osThread(minisumo), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+  HAL_UART_Transmit(&huart1,(uint8_t *)"iniciando FreeRtos\r\n",20,200);
   /* USER CODE END RTOS_THREADS */
 
 }

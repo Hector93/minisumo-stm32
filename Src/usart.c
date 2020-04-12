@@ -22,6 +22,7 @@
 
 /* USER CODE BEGIN 0 */
 #include "stm32f1xx_hal_uart.h"
+#include "message.h"
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart1;
@@ -149,6 +150,7 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 /* USER CODE BEGIN 1 */
 extern osSemaphoreId serialSemTxHandle;
 extern osSemaphoreId serialSemRxHandle;
+extern serialPkt tx;
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;

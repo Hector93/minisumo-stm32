@@ -43,7 +43,10 @@ void sensorsDist(void const* argument){
       processAdc();
       //rx = createMessage(sensorsDistID, miniId, DIRECTION, findOponent());
       rx = createMessage(sensorsDistID, miniId, GALLSENSORS, distSensorDataInternal.distDataRaw);
-      xQueueSend(miniQueueHandle, &rx, 10);      
+      xQueueSend(miniQueueHandle, &rx, 10);
+      rx = messageDinamicArray(sensorsDistID, serialID, ARRAY, sensorDistDataRaw, sizeof(uint16_t)*ADC_CHANELS);
+      xQueueSend(serialQueueHandle, &rx, 100);
+      vPortFree(rx.pointer.array);
       ADCs_Start();//TODO esperar a que sensores de piso se procesen
     }
     //taskYIELD();
