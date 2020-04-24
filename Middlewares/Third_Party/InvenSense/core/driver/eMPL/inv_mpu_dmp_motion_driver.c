@@ -303,8 +303,12 @@ static struct dmp_s dmp = {
  */
 int dmp_load_motion_driver_firmware(void)
 {
-    return mpu_load_firmware(DMP_CODE_SIZE, dmp_memory, sStartAddress,
-        DMP_SAMPLE_RATE);
+  uint8_t res;
+  taskENTER_CRITICAL();
+  res = mpu_load_firmware(DMP_CODE_SIZE, dmp_memory, sStartAddress,
+			  DMP_SAMPLE_RATE);
+  taskEXIT_CRITICAL();
+  return res;
 }
 
 /**

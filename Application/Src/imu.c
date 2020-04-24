@@ -3,6 +3,7 @@
 #include "usart.h"
 #include "i2c.h"
 #include "FreeRTOS.h"
+#include "xQueSendWrap.h"
 
 #include "inv_mpu.h"
 #include "inv_mpu_dmp_motion_driver.h"
@@ -687,28 +688,28 @@ unsigned short compass_fsr;
 int imuInit(){
   result = mpu_init(&int_param);
   if (result != 0) {
-    //MPL_LOGE("Could not initialize gyro.\n");
+    MPL_LOGE("Could not initialize gyro.\n");
     return -1;
   }
   result = inv_init_mpl();
   if (result != INV_SUCCESS) {
-    //MPL_LOGE("Could not initialize MPL.\n");
+    MPL_LOGE("Could not initialize MPL.\n");
     return -1;
   }
   if(inv_enable_quaternion() != INV_SUCCESS){
-    //MPL_LOGE("Could not quaternion.\n");
+    MPL_LOGE("Could not quaternion.\n");
     return -1;
   }
   if(inv_enable_9x_sensor_fusion() != INV_SUCCESS){
-    //MPL_LOGE("Could not enable 9x sensor fusion.\n");
+    MPL_LOGE("Could not enable 9x sensor fusion.\n");
     return -1;
   }
   if(inv_enable_fast_nomot() != INV_SUCCESS){
-    //MPL_LOGE("Could not enable fast nomot.\n");
+    MPL_LOGE("Could not enable fast nomot.\n");
     return -1;
   }
   if(inv_enable_gyro_tc() != INV_SUCCESS){
-    //MPL_LOGE("Could not enable gyro tc.\n");
+    MPL_LOGE("Could not enable gyro tc.\n");
     return -1;
   }  
 #ifdef COMPASS_ENABLED
@@ -721,12 +722,12 @@ int imuInit(){
   result = inv_start_mpl();
   if (result == INV_ERROR_NOT_AUTHORIZED) {
     while (1) {
-      //MPL_LOGE("Not authorized.\n");
+      MPL_LOGE("Not authorized.\n");
       return -1;
     }
   }
   if (result) {
-    //MPL_LOGE("Could not start the MPL.\n");
+    MPL_LOGE("Could not start the MPL.\n");
     return -1;
   }
 #ifdef COMPASS_ENABLED
@@ -946,10 +947,13 @@ int imuInvProcessData(){
 }
 
 void imu(void const * argument){
-  HAL_Delay(100);
+  //HAL_Delay(100);
   //xSemaphoreGive(imuSemHandle);
-  if(imuInit() < 0){
-    while(1){}
+  taskENTER_CRITICAL();
+  int res = imuInit();
+  taskEXIT_CRITICAL();
+  if(res < 0){
+    while(1){MPL_LOGE("Could not initialize IMU.\r\n");}
   }
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
   //while(1);
@@ -979,11 +983,11 @@ void imu(void const * argument){
 
 
 uint8_t Sensors_I2C_WriteRegister(unsigned char slave_addr, unsigned char reg_addr, unsigned char length, unsigned char *data){
-  //return (HAL_OK == HAL_I2C_Mem_Write(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000) ? 0 : 1);
-  if(HAL_OK != HAL_I2C_Mem_Write(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000)){
-    while(1){}
-  }
-  return 0;
+  return (HAL_OK == HAL_I2C_Mem_Write(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000) ? 0 : 1);
+  /* if(HAL_OK != HAL_I2C_Mem_Write(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000)){ */
+  /*   while(1){} */
+  /* } */
+  /* return 0; */
 }
 
 uint8_t Sensors_I2C_ReadRegister(unsigned char slave_addr, unsigned char reg_addr, unsigned char length, unsigned char *data){

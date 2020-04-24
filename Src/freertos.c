@@ -180,7 +180,7 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the queue(s) */
   /* definition and creation of serialQueue */
-  osMessageQDef(serialQueue, 2, message);
+  osMessageQDef(serialQueue, 4, message);
   serialQueueHandle = osMessageCreate(osMessageQ(serialQueue), NULL);
 
   /* definition and creation of motorRQueue */
@@ -204,7 +204,7 @@ void MX_FREERTOS_Init(void) {
   imuQueueHandle = osMessageCreate(osMessageQ(imuQueue), NULL);
 
   /* definition and creation of miniQueue */
-  osMessageQDef(miniQueue, 4, message);
+  osMessageQDef(miniQueue, 3, message);
   miniQueueHandle = osMessageCreate(osMessageQ(miniQueue), NULL);
 
   /* USER CODE BEGIN RTOS_QUEUES */
@@ -227,11 +227,11 @@ void MX_FREERTOS_Init(void) {
   motorIHandle = osThreadCreate(osThread(motorI), NULL);
 
   /* definition and creation of usart */
-  osThreadDef(usart, serial, osPriorityNormal, 0, 64);
+  osThreadDef(usart, serial, osPriorityRealtime, 0, 64);
   usartHandle = osThreadCreate(osThread(usart), NULL);
 
   /* definition and creation of sensorFloor */
-  osThreadDef(sensorFloor, sensorsFloor, osPriorityNormal, 0, 64);
+  osThreadDef(sensorFloor, sensorsFloor, osPriorityHigh, 0, 64);
   sensorFloorHandle = osThreadCreate(osThread(sensorFloor), NULL);
 
   /* definition and creation of sensorDist */
@@ -239,7 +239,7 @@ void MX_FREERTOS_Init(void) {
   sensorDistHandle = osThreadCreate(osThread(sensorDist), NULL);
 
   /* definition and creation of acelerometro */
-  osThreadDef(acelerometro, imu, osPriorityNormal, 0, 128);
+  osThreadDef(acelerometro, imu, osPriorityAboveNormal, 0, 128);
   acelerometroHandle = osThreadCreate(osThread(acelerometro), NULL);
 
   /* definition and creation of minisumo */
@@ -262,16 +262,6 @@ void MX_FREERTOS_Init(void) {
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void const * argument)
 {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
   for(;;)

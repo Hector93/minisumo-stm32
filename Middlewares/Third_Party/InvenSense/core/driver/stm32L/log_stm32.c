@@ -98,11 +98,11 @@ int _MLPrintLog (int priority, const char* tag, const char* fmt, ...)
       this_length = min(length-ii, PACKET_LENGTH-5);
       memset(out+3, 0, 18);
       memcpy(out+3, buf+ii, this_length);
-      HAL_UART_Transmit(&huart1,(unsigned char*) out, 21, 10000);
+      //HAL_UART_Transmit(&huart1,(unsigned char*) out, 21, 10000);
       /*        for (i=0; i<PACKET_LENGTH; i++) {
-		  fputcI(out[i]);
-        }
-	*/
+		fputcI(out[i]);
+		}
+      */
     }
     
             
@@ -140,13 +140,15 @@ void eMPL_send_quat(long *quat)
     out[21] = '\r';
     out[22] = '\n';
     message tx = messageDinamicArray(imuId, serialID, ARRAY, out, PACKET_LENGTH);
-    xQueueSend(serialQueueHandle, &tx, 1000);
-    vPortFree(tx.pointer.array);
+    if(pdPASS != xQueueSend(serialQueueHandle, &tx, 10)){
+      vPortFree(tx.pointer.array);
+    }
+    //    vPortFree(tx.pointer.array);
     //HAL_UART_Transmit(&huart1, (unsigned char*)out, PACKET_LENGTH, 1000);
     //    for (i=0; i<PACKET_LENGTH; i++) {
       
-    //      fputcI(out[i]);
-    // }
+//      fputcI(out[i]);
+      // }
 #endif
 }
 
@@ -225,8 +227,11 @@ void eMPL_send_data(unsigned char type, long *data)
         return;
     }
     message tx = messageDinamicArray(imuId, serialID, ARRAY, out, PACKET_LENGTH);
-    xQueueSend(serialQueueHandle, &tx, 1000);
-    vPortFree(tx.pointer.array);
+    if(pdPASS != xQueueSend(serialQueueHandle, &tx, 10)){
+      vPortFree(tx.pointer.array);
+    }
+
+    //    vPortFree(tx.pointer.array);
     //HAL_UART_Transmit(&huart1, (unsigned char*)out, PACKET_LENGTH, 1000);
     //    for (i=0; i<PACKET_LENGTH; i++) {
     //    fputcI(out[i]);

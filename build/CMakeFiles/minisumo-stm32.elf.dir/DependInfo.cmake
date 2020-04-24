@@ -15,8 +15,6 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
   "IS_STM32=1"
   "STM32F103xB"
   "USE_HAL_DRIVER"
-  "__packed=__attribute__((__packed__))"
-  "__weak=__attribute__((weak))"
   )
 
 # The include file search paths:
@@ -111,8 +109,6 @@ set(CMAKE_TARGET_DEFINITIONS_C
   "IS_STM32=1"
   "STM32F103xB"
   "USE_HAL_DRIVER"
-  "__packed=__attribute__((__packed__))"
-  "__weak=__attribute__((weak))"
   )
 
 # The include file search paths:
@@ -154,8 +150,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "IS_STM32=1"
   "STM32F103xB"
   "USE_HAL_DRIVER"
-  "__packed=__attribute__((__packed__))"
-  "__weak=__attribute__((weak))"
   )
 
 # The include file search paths:

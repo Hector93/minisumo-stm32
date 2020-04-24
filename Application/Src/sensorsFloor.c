@@ -34,22 +34,19 @@ void readyForNewRawData();
 void sensorsFloor(void const* argument){
   HAL_ADCEx_Calibration_Start(&hadc2);
   HAL_ADC_Start(&hadc2);
-  readyForNewRawData();
+  xSemaphoreGive(irdistHandle);
   calibrateSensors();
-  /* for(;;){ */
-  /*   vTaskDelay(1); */
-  /* } */
-  
+  //xSemaphoreTake(irflrHandle, portMAX_DELAY);
   for(;;){
-    readyForNewRawData();
+    xSemaphoreTake(irflrHandle, portMAX_DELAY);
     procesIrData(sensorFloorDataRaw, &sensorFloorData);
     message msg = createMessage(sensorsFloorID, miniId, ALL_SENSORS, sensorFloorData);
-    xQueueSend(miniQueueHandle, &msg, 10);
-    msg = messageDinamicArray(sensorsFloorID, serialID, ARRAY, sensorFloorDataRaw, sizeof(uint16_t)*ADC_CHANELS);
-    xQueueSend(miniQueueHandle, &msg, 100);
-    vPortFree(msg.pointer.array);
-      
-      
+    
+    message log = messageDinamicArray(sensorsFloorID, serialID, ARRAY, sensorFloorDataRaw, sizeof(uint16_t)*ADC_CHANELS);
+    if(pdPASS != xQueueSend(serialQueueHandle, &log, 0)){
+      vPortFree(msg.pointer.array);
+    }  
+    //xSemaphoreGive(irdistHandle);
   }
   
 }
@@ -66,7 +63,6 @@ void procesIrData(const uint16_t* rawData, uint8_t* irData){
 }
 
 void calibrateSensors(){
-  readyForNewRawData();
   sensorFloorData = 0;
   for(uint8_t i = 0; i < ADC_CHANELS; i++){
     thresholds[i].Low = 3072;
@@ -122,13 +118,10 @@ uint8_t deltaCalculations(uint16_t* previous, uint16_t* current){
   return flag;
 }
 
-
-void readyForNewRawData(){//TODO checar que no se trabe
-  xSemaphoreGive(irdistHandle);
-  xSemaphoreTake(irflrHandle, 10);
-}
-
 void SensorsFloorInterrupt(ADC_HandleTypeDef* hadc){
+  /*
+    this ISR unlocks the sensorsFloorProces so the process can get the data before sensordist starts the conversion again
+  */
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
   if(pdPASS == (xSemaphoreGiveFromISR(irflrHandle,&xHigherPriorityTaskWoken))){
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);

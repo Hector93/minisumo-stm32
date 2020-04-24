@@ -8,6 +8,7 @@
 #include "queue.h"
 #include "mini.h"
 
+
 uint8_t sensorDistStatus; //stores the info of enabled sensors
 sensorDistData distSensorDataInternal;
 uint16_t sensorDistDataRaw[ADC_CHANELS];
@@ -20,35 +21,37 @@ uint8_t map(uint32_t x, uint32_t in_min, uint32_t in_max, uint32_t out_min, uint
 
 void sensorsDist(void const* argument){
   message rx;
+  taskYIELD();
+  const TickType_t xPeriod = pdMS_TO_TICKS( 8);
+  xSemaphoreTake(irdistHandle,portMAX_DELAY);
   sensorDistStatus = 31; //by default all sensors are started
   HAL_GPIO_WritePin(ird_enFI_GPIO_Port, ird_enFI_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(ird_enFC_GPIO_Port, ird_enFC_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(ird_enFD_GPIO_Port, ird_enFD_Pin, GPIO_PIN_SET);
   HAL_ADCEx_Calibration_Start(&hadc1);
-  vTaskDelay(10 / portTICK_PERIOD_MS);//wait for the sensorsfloor proces to start their adc
-  taskYIELD();
   ADCs_Start();//TODO validar el retorno
+
   
-  xSemaphoreGive(irdistHandle);
-  //for(;;){
-  //  vTaskDelay(1);
-  //}
 
   for(;;){
     if(pdPASS == (xQueueReceive(sensorsDistQueueHandle,&rx,0))){
       SensorDistProcessMessage(rx);
     }
-    if(pdPASS == (xSemaphoreTake(irdistHandle,50))){
-      //procesar la informacion antes de volver a leer el adc
-      processAdc();
-      //rx = createMessage(sensorsDistID, miniId, DIRECTION, findOponent());
-      rx = createMessage(sensorsDistID, miniId, GALLSENSORS, distSensorDataInternal.distDataRaw);
-      xQueueSend(miniQueueHandle, &rx, 10);
-      rx = messageDinamicArray(sensorsDistID, serialID, ARRAY, sensorDistDataRaw, sizeof(uint16_t)*ADC_CHANELS);
-      xQueueSend(serialQueueHandle, &rx, 100);
-      vPortFree(rx.pointer.array);
-      ADCs_Start();//TODO esperar a que sensores de piso se procesen
+    //if(pdPASS == (xSemaphoreTake(irdistHandle,100))){
+    //procesar la informacion antes de volver a leer el adc
+    processAdc();
+    //rx = createMessage(sensorsDistID, miniId, DIRECTION, findOponent());
+    rx = createMessage(sensorsDistID, miniId, GALLSENSORS, distSensorDataInternal.distDataRaw);
+    xQueueSend(miniQueueHandle, &rx, 10);
+    message log = messageDinamicArray(sensorsDistID, serialID, ARRAY, sensorDistDataRaw, sizeof(uint16_t)*ADC_CHANELS);
+    if(pdPASS != xQueueSend(serialQueueHandle, &log, 0)){
+      vPortFree(log.pointer.array);
     }
+    while(HAL_OK != ADCs_Start()){
+      ADCs_Start();
+    }
+    //}
+    vTaskDelay(xPeriod);
     //taskYIELD();
   }
   
