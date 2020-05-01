@@ -983,15 +983,17 @@ void imu(void const * argument){
 
 
 uint8_t Sensors_I2C_WriteRegister(unsigned char slave_addr, unsigned char reg_addr, unsigned char length, unsigned char *data){
-  return (HAL_OK == HAL_I2C_Mem_Write(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000) ? 0 : 1);
-  /* if(HAL_OK != HAL_I2C_Mem_Write(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000)){ */
-  /*   while(1){} */
-  /* } */
-  /* return 0; */
+  taskENTER_CRITICAL();
+  uint8_t res = (HAL_OK == HAL_I2C_Mem_Write(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,10000) ? 0 : 1);
+  taskEXIT_CRITICAL();
+  return res;
 }
 
 uint8_t Sensors_I2C_ReadRegister(unsigned char slave_addr, unsigned char reg_addr, unsigned char length, unsigned char *data){
-  return (HAL_OK == HAL_I2C_Mem_Read(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,100000)? 0 : 1);
+  taskENTER_CRITICAL();
+  uint8_t res = (HAL_OK == HAL_I2C_Mem_Read(&hi2c1,slave_addr << 1,reg_addr,sizeof(uint8_t),data,length,100000)? 0 : 1);
+  taskEXIT_CRITICAL();
+  return res;
 }
 
 

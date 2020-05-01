@@ -100,6 +100,7 @@ osSemaphoreId serialSemRxHandle;
 osSemaphoreId irdistHandle;
 osSemaphoreId imuSemHandle;
 osSemaphoreId irflrHandle;
+osSemaphoreId i2cSemHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -168,6 +169,10 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of irflr */
   osSemaphoreDef(irflr);
   irflrHandle = osSemaphoreCreate(osSemaphore(irflr), 1);
+
+  /* definition and creation of i2cSem */
+  osSemaphoreDef(i2cSem);
+  i2cSemHandle = osSemaphoreCreate(osSemaphore(i2cSem), 1);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */

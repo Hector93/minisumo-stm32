@@ -17,7 +17,6 @@ void processMessage(message msg);
 void serial(void const* argument){
   extern osSemaphoreId serialSemTxHandle;
   extern osSemaphoreId serialSemRxHandle;
-  extern osSemaphoreId serialSemHandle;
   serialPkt rx;
   uint8_t freeMem = 0;
   //  rx.mws.syncChar = '\n';
