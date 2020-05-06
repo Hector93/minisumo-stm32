@@ -88,6 +88,7 @@ osThreadId sensorFloorHandle;
 osThreadId sensorDistHandle;
 osThreadId acelerometroHandle;
 osThreadId minisumoHandle;
+osThreadId oledDisHandle;
 osMessageQId serialQueueHandle;
 osMessageQId motorRQueueHandle;
 osMessageQId motorLQueueHandle;
@@ -100,7 +101,6 @@ osSemaphoreId serialSemRxHandle;
 osSemaphoreId irdistHandle;
 osSemaphoreId imuSemHandle;
 osSemaphoreId irflrHandle;
-osSemaphoreId i2cSemHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -115,6 +115,7 @@ extern void sensorsFloor(void const * argument);
 extern void sensorsDist(void const * argument);
 extern void imu(void const * argument);
 extern void mini(void const * argument);
+extern void oled(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -169,10 +170,6 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of irflr */
   osSemaphoreDef(irflr);
   irflrHandle = osSemaphoreCreate(osSemaphore(irflr), 1);
-
-  /* definition and creation of i2cSem */
-  osSemaphoreDef(i2cSem);
-  i2cSemHandle = osSemaphoreCreate(osSemaphore(i2cSem), 1);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -251,6 +248,10 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(minisumo, mini, osPriorityNormal, 0, 64);
   minisumoHandle = osThreadCreate(osThread(minisumo), NULL);
 
+  /* definition and creation of oledDis */
+  osThreadDef(oledDis, oled, osPriorityNormal, 0, 64);
+  oledDisHandle = osThreadCreate(osThread(oledDis), NULL);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   HAL_UART_Transmit(&huart1,(uint8_t *)"iniciando FreeRtos\r\n",20,200);
@@ -268,11 +269,12 @@ void MX_FREERTOS_Init(void) {
 void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
+  UNUSED(argument);
   /* Infinite loop */
   for(;;)
-  {
-    osDelay(1);
-  }
+      {
+	osDelay(1);
+      }
   /* USER CODE END StartDefaultTask */
 }
 

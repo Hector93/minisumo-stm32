@@ -42,11 +42,11 @@ cmake_minimum_required (VERSION 2.6)
 set(OPT "-Os")
 #set(USER_LINKER_FLAGS "-u _printf_float --specasass=nano.specs")
 #set(USER_LINKER_FLAGS "-specs=nano.specs -Wl,--wrap,xQueueGenericSend ")
-set(USER_LINKER_FLAGS "-specs=nano.specs ")
+set(USER_LINKER_FLAGS "-specs=nano.specs -Wl,--print-memory-usage ")
 
 #for debuging the imu add PRINT_IMU_DATA for direct data from mpl library and PRINT_IMU_QUAT for quaternions
 
-set(USER_CFLAGS "-Wall -fmessage-length=0 -DUSE_STDPERIPH_DRIVER -DEMPL -DUSE_DMP -DMPU6050 -DMPL_LOG_NDEBUG=1 -DEMPL_TARGET_STM32F4 -DREMOVE_LOGGING -DPRINT_IMU_DATA -DPRINT_IMU_QUAT -I\"Middlewares/Third_Party/InvenSense/core/driver/include\" -I\"Middlewares/Third_Party/InvenSense/core/driver/eMPL\" -I\"Middlewares/Third_Party/InvenSense/core/driver/stm32L\" -I\"Middlewares/Third_Party/InvenSense/core/mpl\" -I\"Middlewares/Third_Party/InvenSense/core/mllite\" -I\"Middlewares/Third_Party/InvenSense/core/mpl\"")
+set(USER_CFLAGS "-Wall -Wextra -Wdouble-promotion -fmessage-length=0 -DNDEBUG -DUSE_STDPERIPH_DRIVER -DEMPL -DUSE_DMP -DMPU6050 -DMPL_LOG_NDEBUG=1 -DEMPL_TARGET_STM32F4 -DREMOVE_LOGGING -DPRINT_IMU_DATA -DPRINT_IMU_QUAT -DSTM32F1 -DSSD1306_USE_I2C -I\"Middlewares/Third_Party/InvenSense/core/driver/include\" -I\"Middlewares/Third_Party/InvenSense/core/driver/eMPL\" -I\"Middlewares/Third_Party/InvenSense/core/driver/stm32L\" -I\"Middlewares/Third_Party/InvenSense/core/mpl\" -I\"Middlewares/Third_Party/InvenSense/core/mllite\" -I\"Middlewares/Third_Party/InvenSense/core/mpl\"")
 set(USER_COMPILER "GNU") # "Clang" or "GNU"
 set(USER_DEBUG TRUE) # Or "False"
 
@@ -163,7 +163,7 @@ set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} ${STM32_PRJ_CFLAGS} ${OPT} ${USER_CFLAGS
 
 
 set(LDSCRIPT "-T${STM32_PRJ_LD_SCRIPT}")
-set(LINKER_FLAGS "-specs=nosys.specs ${LDSCRIPT} -lc -lm -lnosys -Wl,--gc-sections ${STM32_PRJ_CFLAGS} ${OPT} ${USER_LINKER_FLAGS} ")
+set(LINKER_FLAGS "-specs=nosys.specs ${LDSCRIPT} -lc -lm -lnosys -flto -Wl,--gc-sections ${STM32_PRJ_CFLAGS} ${OPT} ${USER_LINKER_FLAGS} ")
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${LINKER_FLAGS}")
 
 

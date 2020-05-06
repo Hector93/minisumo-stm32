@@ -15,6 +15,7 @@ void motorDirectionInternal(motorInternalData data);
 void motorSpeedInternal(motorInternalData data);
 
 void motorR(const void* argument){
+  UNUSED(argument);
   //  HAL_UART_Transmit(&huart1,"motorD process active\r\n",22,100);
   motorInternalData status;
   //  message tx;
@@ -39,6 +40,7 @@ void motorR(const void* argument){
 }
 
 void motorL(const void* argument){
+  UNUSED(argument);
   //  HAL_UART_Transmit(&huart1,"motorD process active\r\n",22,100);
   motorInternalData status;
   //message tx;

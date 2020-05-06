@@ -33,9 +33,10 @@ char testmini[5];
 volatile miniStatus status;
 
 void mini(void const * argument){
+  UNUSED(argument);
   //Fuzzy* c = newFuzzy();
-  message rx, tx;
-  uint8_t vel = 255;
+  //message rx, tx;
+  //uint8_t vel = 255;
   for(;;){
     /* if(pdPASS == (xQueueReceive(miniQueueHandle, &rx, 100))){ */
     /*   miniprocessMessage(&rx); */

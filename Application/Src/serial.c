@@ -15,6 +15,7 @@ serialPkt tx;
 void processMessage(message msg);
 
 void serial(void const* argument){
+  UNUSED(argument);
   extern osSemaphoreId serialSemTxHandle;
   extern osSemaphoreId serialSemRxHandle;
   serialPkt rx;
@@ -92,6 +93,7 @@ void processMessage(message msg){
     case serialSyncError:
       HAL_UART_Transmit(&huart1,(uint8_t*)"syncError messg\r\n",17,1000);
       aux = createMessage(serialID,externalControllerID,MSG_ERROR,SYNCERROR);
+      break;
 #endif
     default :
       HAL_UART_Transmit(&huart1,(uint8_t*)"unknown package\r\n",17,1000);

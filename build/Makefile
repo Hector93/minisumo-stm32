@@ -304,6 +304,33 @@ Application/Src/motors.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.s
 .PHONY : Application/Src/motors.c.s
 
+Application/Src/oled.o: Application/Src/oled.c.o
+
+.PHONY : Application/Src/oled.o
+
+# target to build an object file
+Application/Src/oled.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.o
+.PHONY : Application/Src/oled.c.o
+
+Application/Src/oled.i: Application/Src/oled.c.i
+
+.PHONY : Application/Src/oled.i
+
+# target to preprocess a source file
+Application/Src/oled.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.i
+.PHONY : Application/Src/oled.c.i
+
+Application/Src/oled.s: Application/Src/oled.c.s
+
+.PHONY : Application/Src/oled.s
+
+# target to generate assembly for a file
+Application/Src/oled.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.s
+.PHONY : Application/Src/oled.c.s
+
 Application/Src/sensorsDist.o: Application/Src/sensorsDist.c.o
 
 .PHONY : Application/Src/sensorsDist.o
@@ -1762,6 +1789,87 @@ Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.s
 .PHONY : Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.s
 
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.o: Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.o
+
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.o
+
+# target to build an object file
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.o
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.o
+
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.i: Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.i
+
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.i
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.i
+
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.s: Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.s
+
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.s
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.s
+
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.o: Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.o
+
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.o
+
+# target to build an object file
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.o
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.o
+
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.i: Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.i
+
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.i
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.i
+
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.s: Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.s
+
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.s
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.s
+
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.o: Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.o
+
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.o
+
+# target to build an object file
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.o
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.o
+
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.i: Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.i
+
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.i
+
+# target to preprocess a source file
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.i
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.i
+
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.s: Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.s
+
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.s
+
+# target to generate assembly for a file
+Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/minisumo-stm32.elf.dir/build.make CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.s
+.PHONY : Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.s
+
 Src/adc.o: Src/adc.c.o
 
 .PHONY : Src/adc.o
@@ -2175,6 +2283,9 @@ help:
 	@echo "... Application/Src/motors.o"
 	@echo "... Application/Src/motors.i"
 	@echo "... Application/Src/motors.s"
+	@echo "... Application/Src/oled.o"
+	@echo "... Application/Src/oled.i"
+	@echo "... Application/Src/oled.s"
 	@echo "... Application/Src/sensorsDist.o"
 	@echo "... Application/Src/sensorsDist.i"
 	@echo "... Application/Src/sensorsDist.s"
@@ -2337,6 +2448,15 @@ help:
 	@echo "... Middlewares/Third_Party/eFLL/fuzzyWrapper.o"
 	@echo "... Middlewares/Third_Party/eFLL/fuzzyWrapper.i"
 	@echo "... Middlewares/Third_Party/eFLL/fuzzyWrapper.s"
+	@echo "... Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.o"
+	@echo "... Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.i"
+	@echo "... Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.s"
+	@echo "... Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.o"
+	@echo "... Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.i"
+	@echo "... Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.s"
+	@echo "... Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.o"
+	@echo "... Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.i"
+	@echo "... Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.s"
 	@echo "... Src/adc.o"
 	@echo "... Src/adc.i"
 	@echo "... Src/adc.s"

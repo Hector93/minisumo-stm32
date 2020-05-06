@@ -793,12 +793,15 @@ int imuInit(){
   dmp_memory[0]=0;
   //if(HAL_OK == (HAL_I2C_IsDeviceReady(&hi2c1,0x50 << 1,15,1000))){
   Sensors_I2C_WriteRegister(0x50,0,1,dmp_memory);
+  //HAL_I2C_Mem_Write(&hi2c1, 0x50 << 1, 0x0061, 32, dmp_memory, 0, 100);
   //    HAL_I2C_Mem_Write(&hi2c1,0x50 << 1,0,sizeof(uint8_t),dmp_memory,1,10000);
   //}
   //if(HAL_OK == (HAL_I2C_IsDeviceReady(&hi2c1,0x50 << 1,15,1000))){
   //  Sensors_I2C_ReadRegister(0x50,0,(unsigned int)3062,dmp_memory);
   //  HAL_I2C_Mem_Read(&hi2c1,0x50 << 1,0,sizeof(uint8_t),dmp_memory,3062,100000);
+  taskENTER_CRITICAL();
   HAL_I2C_Master_Receive(&hi2c1, 0x50 << 1, dmp_memory, 3062, 1000000);
+  taskEXIT_CRITICAL();
   //}
   
   if(0 != dmp_load_motion_driver_firmware()){
@@ -947,6 +950,7 @@ int imuInvProcessData(){
 }
 
 void imu(void const * argument){
+  UNUSED(argument);
   //HAL_Delay(100);
   //xSemaphoreGive(imuSemHandle);
   taskENTER_CRITICAL();
@@ -977,8 +981,8 @@ void imu(void const * argument){
       }
     }
     //taskYIELD();
-    //vTaskDelay(100);
-  }
+  //vTaskDelay(100);
+ }
 }
 
 
@@ -998,6 +1002,7 @@ uint8_t Sensors_I2C_ReadRegister(unsigned char slave_addr, unsigned char reg_add
 
 
 void HAL_I2C_ErrorCallback(I2C_HandleTypeDef* hi2c){
+  UNUSED(hi2c);
   while(1){
     
   }
@@ -1013,9 +1018,11 @@ uint32_t get_tick_count(){
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  gyro_data_ready_cb();
-  if(pdPASS == (xSemaphoreGiveFromISR(imuSemHandle,&xHigherPriorityTaskWoken))){
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+  if(GPIO_Pin == intAcel_Pin){
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    gyro_data_ready_cb();
+    if(pdPASS == (xSemaphoreGiveFromISR(imuSemHandle,&xHigherPriorityTaskWoken))){
+      portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+    }
   }
 }

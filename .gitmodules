@@ -1,0 +1,3 @@
+[submodule "Middlewares/Third_Party/stm32-ssd1306"]
+	path = Middlewares/Third_Party/stm32-ssd1306
+	url = https://github.com/afiskon/stm32-ssd1306.git

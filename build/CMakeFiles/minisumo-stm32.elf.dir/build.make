@@ -142,9 +142,22 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.s"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/motors.c -o CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.s
 
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.o: ../Application/Src/oled.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.o"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/oled.c
+
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.i"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/oled.c > CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.i
+
+CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.s"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/oled.c -o CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.s
+
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o: ../Application/Src/sensorsDist.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/sensorsDist.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.i: cmake_force
@@ -157,7 +170,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o: ../Application/Src/sensorsFloor.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/sensorsFloor.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.i: cmake_force
@@ -170,7 +183,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o: ../Application/Src/serial.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/serial.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.i: cmake_force
@@ -183,7 +196,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.i: cmake_force
@@ -196,7 +209,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.i: cmake_force
@@ -209,7 +222,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.i: cmake_force
@@ -222,7 +235,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.i: cmake_force
@@ -235,7 +248,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.i: cmake_force
@@ -248,7 +261,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.i: cmake_force
@@ -261,7 +274,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.i: cmake_force
@@ -274,7 +287,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.i: cmake_force
@@ -287,7 +300,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.i: cmake_force
@@ -300,7 +313,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.i: cmake_force
@@ -313,7 +326,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.i: cmake_force
@@ -326,7 +339,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.i: cmake_force
@@ -339,7 +352,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.i: cmake_force
@@ -352,7 +365,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.i: cmake_force
@@ -365,7 +378,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.i: cmake_force
@@ -378,7 +391,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.i: cmake_force
@@ -391,7 +404,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.o: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i: cmake_force
@@ -404,7 +417,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.i: cmake_force
@@ -417,7 +430,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/croutine.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/FreeRTOS/Source/croutine.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i: cmake_force
@@ -430,7 +443,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/crouti
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i: cmake_force
@@ -443,7 +456,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/list.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/FreeRTOS/Source/list.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.i: cmake_force
@@ -456,7 +469,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c.i: cmake_force
@@ -469,7 +482,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portab
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i: cmake_force
@@ -482,7 +495,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portab
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/queue.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/FreeRTOS/Source/queue.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.i: cmake_force
@@ -495,7 +508,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i: cmake_force
@@ -508,7 +521,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/tasks.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/FreeRTOS/Source/tasks.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i: cmake_force
@@ -521,7 +534,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.o: ../Middlewares/Third_Party/FreeRTOS/Source/timers.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/FreeRTOS/Source/timers.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.i: cmake_force
@@ -534,7 +547,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu.c.i: cmake_force
@@ -547,7 +560,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/eMPL/inv_mpu_dmp_motion_driver.c.i: cmake_force
@@ -560,7 +573,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o: ../Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver/stm32L/log_stm32.c.i: cmake_force
@@ -573,7 +586,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/driver
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o: ../Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-hal/eMPL_outputs.c.i: cmake_force
@@ -586,7 +599,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/eMPL-h
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.o: ../Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/data_builder.c.i: cmake_force
@@ -599,7 +612,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.o: ../Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/hal_outputs.c.i: cmake_force
@@ -612,7 +625,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.o: ../Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/message_layer.c.i: cmake_force
@@ -625,7 +638,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.o: ../Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/ml_math_func.c.i: cmake_force
@@ -638,7 +651,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.o: ../Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mlmath.c.i: cmake_force
@@ -651,7 +664,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.o: ../Middlewares/Third_Party/InvenSense/core/mllite/mpl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/mllite/mpl.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/mpl.c.i: cmake_force
@@ -664,7 +677,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.o: ../Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/results_holder.c.i: cmake_force
@@ -677,7 +690,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.o: ../Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.i: cmake_force
@@ -690,7 +703,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.o: ../Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.i: cmake_force
@@ -703,7 +716,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/uart.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/uart.c.o: ../Middlewares/Third_Party/InvenSense/uart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/uart.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/uart.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/uart.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/uart.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/uart.c.i: cmake_force
@@ -716,7 +729,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/uart.c.s: c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o: ../Middlewares/Third_Party/eFLL/Fuzzy.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o"
 	arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/Fuzzy.cpp
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.i: cmake_force
@@ -729,7 +742,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.s: cmak
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyComposition.cpp.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyComposition.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyComposition.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyComposition.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyComposition.cpp.o"
 	arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyComposition.cpp.o -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyComposition.cpp
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyComposition.cpp.i: cmake_force
@@ -742,7 +755,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyComposition.
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyIO.cpp.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyIO.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyIO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyIO.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyIO.cpp.o"
 	arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyIO.cpp.o -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyIO.cpp
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyIO.cpp.i: cmake_force
@@ -755,7 +768,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyIO.cpp.s: cm
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyInput.cpp.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyInput.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyInput.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyInput.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyInput.cpp.o"
 	arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyInput.cpp.o -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyInput.cpp
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyInput.cpp.i: cmake_force
@@ -768,7 +781,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyInput.cpp.s:
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyOutput.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp.o"
 	arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp.o -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp.i: cmake_force
@@ -781,7 +794,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyOutput.cpp.s
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRule.cpp.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRule.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRule.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRule.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRule.cpp.o"
 	arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRule.cpp.o -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRule.cpp
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRule.cpp.i: cmake_force
@@ -794,7 +807,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRule.cpp.s: 
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.cpp.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.cpp.o"
 	arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.cpp.o -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.cpp
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleAntecedent.cpp.i: cmake_force
@@ -807,7 +820,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleAntecede
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp.o"
 	arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp.o -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp.i: cmake_force
@@ -820,7 +833,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleConseque
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzySet.cpp.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzySet.cpp.o: ../Middlewares/Third_Party/eFLL/FuzzySet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzySet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzySet.cpp.o"
 	arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzySet.cpp.o -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/FuzzySet.cpp
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzySet.cpp.i: cmake_force
@@ -833,7 +846,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzySet.cpp.s: c
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o: ../Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o"
 	arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp
 
 CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.i: cmake_force
@@ -844,9 +857,48 @@ CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.s"
 	arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.s
 
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.o: ../Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.o"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.i"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c > CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.i
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.s"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.s
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.o: ../Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.o"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.i"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c > CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.i
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.s"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.s
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.o: ../Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.o"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.i"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c > CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.i
+
+CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.s"
+	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c -o CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.s
+
 CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.o: ../Src/adc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/adc.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.i: cmake_force
@@ -859,7 +911,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.o: ../Src/board-st_discovery.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/board-st_discovery.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.i: cmake_force
@@ -872,7 +924,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.o: ../Src/dma.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/dma.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.i: cmake_force
@@ -885,7 +937,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o: ../Src/freertos.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/freertos.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.i: cmake_force
@@ -898,7 +950,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/freertos.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/gpio.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/gpio.c.o: ../Src/gpio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/gpio.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/gpio.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/gpio.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/gpio.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/gpio.c.i: cmake_force
@@ -911,7 +963,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/gpio.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.o: ../Src/i2c.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/i2c.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.i: cmake_force
@@ -924,7 +976,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/i2c.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.o: ../Src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/main.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.i: cmake_force
@@ -937,7 +989,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/main.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o: ../Src/stm32f1xx_hal_msp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_hal_msp.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.i: cmake_force
@@ -950,7 +1002,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_msp.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_tim.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_tim.c.o: ../Src/stm32f1xx_hal_timebase_tim.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_tim.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_tim.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_tim.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_hal_timebase_tim.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_tim.c.i: cmake_force
@@ -963,7 +1015,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_hal_timebase_tim.c.s: cmake_forc
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o: ../Src/stm32f1xx_it.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/stm32f1xx_it.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.i: cmake_force
@@ -976,7 +1028,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/stm32f1xx_it.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/syscalls.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/syscalls.c.o: ../Src/syscalls.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/syscalls.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/syscalls.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/syscalls.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/syscalls.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/syscalls.c.i: cmake_force
@@ -989,7 +1041,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/syscalls.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o: ../Src/system_stm32f1xx.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/system_stm32f1xx.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.i: cmake_force
@@ -1002,7 +1054,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/system_stm32f1xx.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o: ../Src/tim.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/tim.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.i: cmake_force
@@ -1015,7 +1067,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/tim.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o: ../Src/usart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o"
 	arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.o   -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/usart.c
 
 CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.i: cmake_force
@@ -1028,7 +1080,7 @@ CMakeFiles/minisumo-stm32.elf.dir/Src/usart.c.s: cmake_force
 
 CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o: CMakeFiles/minisumo-stm32.elf.dir/flags.make
 CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o: ../startup/startup_stm32f103xb.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building ASM object CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building ASM object CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o"
 	arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103xb.s.o -c /home/hector/Documents/Robotica/firmware/minisumo-stm32/startup/startup_stm32f103xb.s
 
 # Object files for target minisumo-stm32.elf
@@ -1038,6 +1090,7 @@ minisumo__stm32_elf_OBJECTS = \
 "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o" \
+"CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o" \
@@ -1092,6 +1145,9 @@ minisumo__stm32_elf_OBJECTS = \
 "CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzySet.cpp.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o" \
+"CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.o" \
+"CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.o" \
+"CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.o" \
 "CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.o" \
@@ -1116,6 +1172,7 @@ minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Application/Src/led.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o
+minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o
@@ -1170,6 +1227,9 @@ minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eF
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzyRuleConsequent.cpp.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/FuzzySet.cpp.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/fuzzyWrapper.cpp.o
+minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.o
+minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.o
+minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.o
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.o
@@ -1188,7 +1248,7 @@ minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/startup/startup_stm32f103x
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/build.make
 minisumo-stm32.elf: ../Middlewares/Third_Party/InvenSense/core/mpl/libmplmpu.a
 minisumo-stm32.elf: CMakeFiles/minisumo-stm32.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Linking CXX executable minisumo-stm32.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Linking CXX executable minisumo-stm32.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/minisumo-stm32.elf.dir/link.txt --verbose=$(VERBOSE)
 	arm-none-eabi-size minisumo-stm32.elf
 

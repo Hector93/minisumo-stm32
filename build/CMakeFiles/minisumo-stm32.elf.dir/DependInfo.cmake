@@ -36,6 +36,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "../Middlewares/Third_Party/InvenSense/core/mpl"
   "../Middlewares/Third_Party/InvenSense"
   "../Middlewares/Third_Party/eFLL"
+  "../Middlewares/Third_Party/stm32-ssd1306/ssd1306"
   )
 set(CMAKE_DEPENDS_CHECK_C
   "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/imu.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/imu.c.o"
@@ -43,6 +44,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/message.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/message.c.o"
   "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/mini.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/mini.c.o"
   "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/motors.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/motors.c.o"
+  "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/oled.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/oled.c.o"
   "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/sensorsDist.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsDist.c.o"
   "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/sensorsFloor.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/sensorsFloor.c.o"
   "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Application/Src/serial.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Application/Src/serial.c.o"
@@ -87,6 +89,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/start_manager.c.o"
   "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/core/mllite/storage_manager.c.o"
   "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/InvenSense/uart.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/InvenSense/uart.c.o"
+  "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306.c.o"
+  "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_fonts.c.o"
+  "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/stm32-ssd1306/ssd1306/ssd1306_tests.c.o"
   "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/adc.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/adc.c.o"
   "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/board-st_discovery.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/board-st_discovery.c.o"
   "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Src/dma.c" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Src/dma.c.o"
@@ -130,6 +135,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../Middlewares/Third_Party/InvenSense/core/mpl"
   "../Middlewares/Third_Party/InvenSense"
   "../Middlewares/Third_Party/eFLL"
+  "../Middlewares/Third_Party/stm32-ssd1306/ssd1306"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hector/Documents/Robotica/firmware/minisumo-stm32/Middlewares/Third_Party/eFLL/Fuzzy.cpp" "/home/hector/Documents/Robotica/firmware/minisumo-stm32/build/CMakeFiles/minisumo-stm32.elf.dir/Middlewares/Third_Party/eFLL/Fuzzy.cpp.o"
@@ -171,6 +177,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../Middlewares/Third_Party/InvenSense/core/mpl"
   "../Middlewares/Third_Party/InvenSense"
   "../Middlewares/Third_Party/eFLL"
+  "../Middlewares/Third_Party/stm32-ssd1306/ssd1306"
   )
 
 # Targets to which this target links.

@@ -32,6 +32,7 @@ void calibrateSensors();
 void readyForNewRawData();
 
 void sensorsFloor(void const* argument){
+  UNUSED(argument);
   HAL_ADCEx_Calibration_Start(&hadc2);
   HAL_ADC_Start(&hadc2);
   xSemaphoreGive(irdistHandle);
@@ -122,6 +123,7 @@ void SensorsFloorInterrupt(ADC_HandleTypeDef* hadc){
   /*
     this ISR unlocks the sensorsFloorProces so the process can get the data before sensordist starts the conversion again
   */
+  UNUSED(hadc);
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
   if(pdPASS == (xSemaphoreGiveFromISR(irflrHandle,&xHigherPriorityTaskWoken))){
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);

@@ -153,6 +153,7 @@ extern osSemaphoreId serialSemRxHandle;
 extern serialPkt tx;
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
+  UNUSED(huart);//only one uart is used in this proyect
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
   if(pdPASS == (xSemaphoreGiveFromISR(serialSemTxHandle,&xHigherPriorityTaskWoken))){
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
@@ -162,6 +163,7 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+  UNUSED(huart);
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
   if(pdPASS == (xSemaphoreGiveFromISR(serialSemRxHandle,&xHigherPriorityTaskWoken))){
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);

@@ -20,6 +20,7 @@ void processAdc();
 uint8_t map(uint32_t x, uint32_t in_min, uint32_t in_max, uint32_t out_min, uint32_t out_max);
 
 void sensorsDist(void const* argument){
+  UNUSED(argument);
   message rx;
   taskYIELD();
   const TickType_t xPeriod = pdMS_TO_TICKS( 8);
@@ -76,8 +77,9 @@ void SensorDistProcessMessage(message msg){
     }      
     break;
   case getStatus: //regresar estado de sensores y si el adc los esta actualizando
-    rx = createMessage(sensorsDistID, msg.messageUser.IdpO, getStatus, 0);
+    rx = createMessage(sensorsDistID, msg.messageUser.IdpO, getStatus, sensorDistStatus);
     xQueueSend(imuQueueHandle, &rx, 10);
+    break;
   default:
     rx = createMessage(sensorsDistID, msg.messageUser.IdpO, SENSDISTERROR, 0);
     xQueueSend(imuQueueHandle, &rx, 10);
@@ -173,6 +175,7 @@ uint8_t map(uint32_t x, uint32_t in_min, uint32_t in_max, uint32_t out_min, uint
 }
 //ADCCALLBACK
 void SensorsDistInterrupt(ADC_HandleTypeDef* hadc){
+  UNUSED(hadc); //the adc1 always generates the ISR
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
   if(pdPASS == (xSemaphoreGiveFromISR(irdistHandle,&xHigherPriorityTaskWoken))){
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);

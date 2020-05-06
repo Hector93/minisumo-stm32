@@ -14,6 +14,7 @@ BaseType_t __wrap_xQueueGenericSend( QueueHandle_t xQueue, const void * const pv
   if(xQueue == serialQueueHandle){
     xSemaphoreGive(serialSemHandle);
   }  
-  return __real_xQueueGenericSend(xQueue, pvItemToQueue, xTicksToWait, xCopyPosition);
+  //  return __real_xQueueGenericSend(xQueue, pvItemToQueue, xTicksToWait, xCopyPosition);
+  return aux;
 }
 
